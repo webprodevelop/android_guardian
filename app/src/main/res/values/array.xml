@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="fence_radius_array">
+        <item>@string/str_300_meter</item>
+        <item>@string/str_500_meter</item>
+        <item>@string/str_800_meter</item>
+        <item>@string/str_1000_meter</item>
+        <item>@string/str_2000_meter</item>
+        <item>@string/str_3000_meter</item>
+        <item>@string/str_4000_meter</item>
+        <item>@string/str_5000_meter</item>
+    </string-array>
+
+    <string-array name="blood_type_array">
+        <item>@string/str_bloodtype_a</item>
+        <item>@string/str_bloodtype_b</item>
+        <item>@string/str_bloodtype_ab</item>
+        <item>@string/str_bloodtype_o</item>
+    </string-array>
+</resources>

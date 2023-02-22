@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="@android:color/white"
+	android:clickable="true"
+	tools:context=".fragment.user.FragmentRescueQuery">
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/title_bar_height"
+		android:background="@color/color_tab_selected">
+		<ImageView
+			android:id="@+id/ID_IMG_BACK"
+			android:layout_width="@dimen/dim_icon_size"
+			android:layout_height="@dimen/dim_icon_size"
+			android:layout_centerVertical="true"
+			android:layout_marginStart="@dimen/dim_gap_0"
+			android:layout_alignParentStart="true"
+			android:padding="@dimen/dim_gap_0"
+			android:src="@drawable/ic_back_img"/>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:textColor="@android:color/white"
+			android:textSize="@dimen/dim_font_3"
+			android:text="@string/str_rescue_query"/>
+	</RelativeLayout>
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1">
+		<ListView
+			android:id="@+id/ID_LSTVIEW"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginLeft="@dimen/dim_gap_4"
+			android:layout_marginRight="@dimen/dim_gap_4"
+			android:divider="@null"
+			android:dividerHeight="0dp"
+			android:scrollbars="none"/>
+	</RelativeLayout>
+
+</LinearLayout>

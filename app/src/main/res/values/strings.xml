@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_app_name">守门狗</string>
+
+    <string name="str_call_number" translatable="false">0415-xxxxxxxx</string>
+    <string name="str_cm" translatable="false">cm</string>
+    <string name="str_kg" translatable="false">kg</string>
+
+    <string name="str_logo_title">守门狗</string>
+    <string name="str_acquire_code">获取验证码</string>
+    <string name="str_acquire_code_hint">请输入验证码</string>
+    <string name="str_add">添加</string>
+    <string name="str_addition_failed">添加失败！</string>
+    <string name="str_addition_success">添加成功！</string>
+    <string name="str_not_correct_device">不是合适的设备</string>
+    <string name="str_address">地址</string>
+    <string name="str_alert_content">内容</string>
+    <string name="str_alert_list">警报目录</string>
+    <string name="str_auth_code">验证码</string>
+    <string name="str_auth_code_failed">验证码不正确</string>
+    <string name="str_auth_code_not_available">验证码已不再有效</string>
+    <string name="str_back">返回</string>
+    <string name="str_cancel">取消</string>
+    <string name="str_confirm">确定</string>
+    <string name="str_agree">同意</string>
+    <string name="str_nonagree">不同意</string>
+    <string name="str_contact_1">联系人1</string>
+    <string name="str_contact_2">联系人2</string>
+    <string name="str_contact_3">联系人3</string>
+    <string name="str_input_contact_name">请输入联系人姓名</string>
+    <string name="str_input_contact_phone">请输入联系人电话号码</string>
+    <string name="str_date">日期</string>
+    <string name="str_delete">删除</string>
+    <string name="str_deletion_failed">删除失败！</string>
+    <string name="str_deletion_success">删除成功！</string>
+    <string name="str_edit">编辑</string>
+    <string name="str_edition_failed">编辑失败！</string>
+    <string name="str_edition_success">编辑成功！</string>
+    <string name="str_forgot_password">忘记密码</string>
+    <string name="str_group">小组</string>
+    <string name="str_location_label">场景标签</string>
+    <string name="str_login">登      录</string>
+    <string name="str_login_success">登录成功！</string>
+    <string name="str_login_failed">登录失败！</string>
+    <string name="str_logout">退出登录</string>
+    <string name="str_my_device">我的设备</string>
+    <string name="str_next_step">下一步</string>
+    <string name="str_new_password">新密码</string>
+    <string name="str_ok">确认</string>
+    <string name="str_old_password">密码</string>
+    <string name="str_password">密码</string>
+    <string name="str_password_hint">请输入密码</string>
+    <string name="str_new_password_set_hint">请设置新的密码（6–20位）</string>
+    <string name="str_password_set_hint">请设置密码（6–20位）</string>
+    <string name="str_password_invalid">密码由6-20数字和字母组成</string>
+    <string name="str_phone_number">手机号</string>
+    <string name="str_phone_number_hint">请输入手机号</string>
+    <string name="str_phone_number_incorrect">手机号不正确</string>
+    <string name="str_playing_failed">播放视频失败！</string>
+    <string name="str_qr_code">二维码</string>
+    <string name="str_quiz_forgot_password">忘记了你的密码?</string>
+    <string name="str_page_loading_failed">通讯失败</string>
+    <string name="str_register">注      册</string>
+    <string name="str_confirm_register">确认注册</string>
+    <string name="str_back_login">返回登录</string>
+    <string name="str_registration_failed">注册失败！</string>
+    <string name="str_registration_success">注册成功！</string>
+    <string name="str_required">必填</string>
+    <string name="str_reset_failed">密碼更新失败！</string>
+    <string name="str_reset_success">密碼更新成功！</string>
+    <string name="str_save">保存</string>
+    <string name="str_minute">分</string>
+    <string name="str_second">秒</string>
+    <string name="str_sensor_device">设备</string>
+    <string name="str_sensor_list">设备目录</string>
+    <string name="str_setup">设置</string>
+    <string name="str_user_data">个人资料</string>
+    <string name="str_saving_user_info_failed">更改失败！</string>
+    <string name="str_saving_user_info_success">更改成功！</string>z
+    <string name="str_user_name">名字</string>
+    <string name="str_auth_code1">验证码：</string>
+    <string name="str_will_delete_device">要删除设备吗? 无法撤消此操作</string>
+    <string name="str_will_delete_group">要删除此组吗? 无法撤消此操作</string>
+    <string name="str_agree_text">我已仔细阅读并同意《用户协议》与《隐私政策》</string>
+    <string name="str_agree_user_agreement">《用户协议》</string>
+    <string name="str_agree_privacy_policy">《隐私政策》</string>
+    <string name="str_health">健康</string>
+    <string name="str_location">位置</string>
+    <string name="str_discover">发现</string>
+    <string name="str_home">首页</string>
+    <string name="str_discover_title">救援常识</string>
+    <string name="str_device">设备</string>
+    <string name="str_user">我的</string>
+    <string name="str_bind">绑定</string>
+    <string name="str_bind_watch">绑定手表</string>
+    <string name="str_heart_rate">心率</string>
+    <string name="str_weather">天气</string>
+    <string name="str_update_time">更新时间: %s</string>
+    <string name="str_count_per_min">(次/分钟)</string>
+    <string name="str_mmhg">(mmHg)</string>
+    <string name="str_temp_unit">(°C)</string>
+    <string name="str_high_rate">最高心率： %s 次/分钟</string>
+    <string name="str_low_rate">最低心率： %s 次/分钟</string>
+    <string name="str_health_display">健康显示</string>
+    <string name="str_normal_rate_area">正常心率区间：</string>
+    <string name="str_normal_rate_area_value">%d~%d 次/分钟</string>
+    <string name="str_normal_temp_area">正常体温区间：</string>
+    <string name="str_normal_temp_value">%s~%s°C</string>
+    <string name="str_normal_pressure_area">正常血压区间：</string>
+    <string name="str_normal_pressure_value">高压%s~%s mmHg\n低压%s~%s mmHg</string>
+    <string name="str_normal_rate_area_setting">心率异常提示范围设置</string>
+    <string name="str_normal_rate_area_desc">当测量的心率超出设置范围时， 系统将提示您</string>
+    <string name="str_health_period">获取频率： </string>
+    <string name="str_high_rate_value">最大值： </string>
+    <string name="str_low_rate_value">最小值： </string>
+    <string name="str_rate_value_hint">请输入数值 （次/分钟）</string>
+    <string name="str_set_rate_error">最小值不能超过最大值</string>
+    <string name="str_notification_list">消息列表</string>
+    <string name="str_view">查看</string>
+    <string name="str_bind_watch_list">手表列表</string>
+    <string name="str_set_default_control">设为默认监控</string>
+    <string name="str_set_current_control">手表列表监控</string>
+    <string name="str_bind_device">绑定设备</string>
+    <string name="str_abnormal_record">心率异常记录</string>
+    <string name="str_rest_record">静息心率记录</string>
+    <string name="str_survey_date">测量日期</string>
+    <string name="str_survey_time">测量时间</string>
+    <string name="str_health_suggest">健康提示:</string>
+    <string name="str_health_suggest_text">异常可能由多种健康问题导致，如需医疗咨询，请拨打健康咨询热线：400-0909-119或联系客服。</string>
+    <string name="str_call_phone">拨打电话</string>
+    <string name="str_discover_detail">发现详情</string>
+    <string name="str_device_manage">设备管理</string>
+    <string name="str_smart_watch">智能手表</string>
+    <string name="str_fire_sensor">物联网烟感报警器</string>
+    <string name="str_smoke_sensor">物联网燃气报警器</string>
+    <string name="str_serial">设备串号：</string>
+    <string name="str_phonenumber">电话号码：</string>
+    <string name="str_network_state">状态：</string>
+    <string name="str_charging">剩余电量：</string>
+    <string name="str_normal">正常</string>
+    <string name="str_no_take">佩戴异常</string>
+    <string name="str_work_state">工作状态：</string>
+    <string name="str_low_charging">低电量</string>
+    <string name="str_alarm_state">报警状态：</string>
+    <string name="str_alarm">报警</string>
+    <string name="str_service_term">服务期：</string>
+    <string name="str_bind_service_term">服务期为：</string>
+    <string name="str_detail">详情</string>
+    <string name="str_goto">续费</string>
+    <string name="str_sos_contact_set">紧急联系人设置</string>
+    <string name="str_alarm_set">备忘录</string>
+    <string name="str_push_manage">推送管理</string>
+    <string name="str_account_manage">账号管理</string>
+    <string name="str_change_password">修改密码</string>
+    <string name="str_main_data">基本信息</string>
+    <string name="str_face_photo">头像</string>
+    <string name="str_upload_photo">上传头像</string>
+    <string name="str_name">姓名</string>
+    <string name="str_sex">性别</string>
+    <string name="str_woman">女</string>
+    <string name="str_man">男</string>
+    <string name="str_birthday">生日</string>
+    <string name="str_input_required">点击输入（必填）</string>
+    <string name="str_select_required">点击选择（必选）</string>
+    <string name="str_select">点击选择</string>
+    <string name="str_contact_data">联系信息</string>
+    <string name="str_phone">电话</string>
+    <string name="str_weixin_id">微信ID</string>
+    <string name="str_input">点击输入</string>
+    <string name="str_qq_number">QQ号码</string>
+    <string name="str_mail">邮箱</string>
+    <string name="str_sos_contact_name_desc">名字不能为空，请输入名字后重试！</string>
+    <string name="str_sos_contact_phonenumber_desc">手机号不能为空，请输入手机号后重试！</string>
+    <string name="str_sos_contact_code_desc">验证码不能为空，请输入验证码后重试！</string>
+    <string name="str_first_sos_contact">第一紧急联系人</string>
+    <string name="str_input_name">请填写姓名</string>
+    <string name="str_phonenumber1">电话号码</string>
+    <string name="str_input_phone_number">请输入手机号码</string>
+    <string name="str_input_phonenumber">请输入电话号码</string>
+    <string name="str_select_sex">请先择性别</string>
+    <string name="str_second_sos_contact">第二紧急联系人</string>
+    <string name="str_third_sos_contact">第三紧急联系人</string>
+    <string name="str_suggest">提示：</string>
+    <string name="str_update">修改</string>
+    <string name="str_update_success">修改成功</string>
+    <string name="str_update_failed">修改失败</string>
+    <string name="str_monday">周一</string>
+    <string name="str_tuesday">周二</string>
+    <string name="str_wednesday">周三</string>
+    <string name="str_thursday">周四</string>
+    <string name="str_friday">周五</string>
+    <string name="str_saturday">周六</string>
+    <string name="str_sunday">周日</string>
+    <string name="str_work_day">工作日</string>
+    <string name="str_week_end">周末</string>
+    <string name="str_week_daily">每天</string>
+    <string name="str_no_alarm">暂无备忘录</string>
+    <string name="str_alarm_add">新增备忘录</string>
+    <string name="str_alarm_name">名称</string>
+    <string name="str_alarm_time">时间</string>
+    <string name="str_alarm_suggest">提示</string>
+    <string name="str_repeat">重复</string>
+    <string name="str_no_repeat">不重复</string>
+    <string name="str_delete_alarm">你真的要删除警报吗?</string>
+    <string name="str_system_wake_permission">系统提醒权限</string>
+    <string name="str_system_wake_permission_desc">提示音提醒、亮屏提醒、振动提醒、呼吸灯提醒、闪光灯提醒未开启，您可能会错过SOS求援、消防警情提醒等重要消息提示，强烈建议您开启全部提醒授权！</string>
+    <string name="str_get_permission">去授权</string>
+    <string name="str_notification_manage">通知管理</string>
+    <string name="str_notification_sound">通知提示音</string>
+    <string name="str_follow_system">跟随系统</string>
+    <string name="str_sos_emergency">SOS救援消息</string>
+    <string name="str_sos_emergency_desc">手表端发起SOS求援请求时，系统会第一时间提醒您，强烈建议您开启此消息提示！</string>
+    <string name="str_fire_alarm">消防警情消息</string>
+    <string name="str_fire_alarm_desc">当您绑定的物联网消防监控设备监测到警情时，系统会第一时间提醒您，强烈建议您开启此消息提示！</string>
+    <string name="str_disconnect_watch">手表离线提醒</string>
+    <string name="str_disconnect_watch_desc">当您绑定的手表为离线状态时，系统会提示您检查手表联网状态，建议您开启此消息提示。</string>
+    <string name="str_disconnect_firesensor">消防监控设备离线提醒</string>
+    <string name="str_disconnect_firesensor_desc">当您绑定的物联网消防监控设备为离线状态时，系统会提示您检查消防监控设备联网状态，建议您开启此消息提示。</string>
+    <string name="str_abnormal_heart_rate">心率指标异常提醒</string>
+    <string name="str_abnormal_heart_rate_desc">当系统监测到手表用户的心率指标出现异常时，系统会提示您。</string>
+    <string name="str_watch_low_battery">手表低电量提醒</string>
+    <string name="str_watch_low_battery_desc">当手表电量状态为低电量时，系统会提示您手表低电量状态。</string>
+    <string name="str_firesensor_low_battery">消防监控设备低电量提醒</string>
+    <string name="str_firesensor_low_battery_desc">当物联网消防监控设备电量状态为低电量时，系统会提示您手表低电量状态。</string>
+    <string name="str_electronic_fence">电子围栏守护提醒</string>
+    <string name="str_electronic_fence_desc">当手表定位在指定的时间段离开了电子围栏所设置的守护范围时，系统会提醒您。</string>
+    <string name="str_morning_reminder">早间提醒</string>
+    <string name="str_morning_reminder_desc">每天早晨7:30，系统将会向您推送手表使用人的心率情况，以及当天的天气情况。</string>
+    <string name="str_evening_reminder">晚间提醒</string>
+    <string name="str_evening_reminder_desc">每天早晨8:30，系统将会向您推送手表使用人当天的心率情况。</string>
+    <string name="str_current_account">当前账号</string>
+    <string name="str_new_account">更换账号</string>
+    <string name="str_input_new_phonenumber">请输入新的手机号码</string>
+    <string name="str_input_verify_code">请输入验证码</string>
+    <string name="str_orgin_password">原密码</string>
+    <string name="str_input_orgin_password">请输入原密码</string>
+    <string name="str_input_new_password">请输入新密码</string>
+    <string name="str_confirm_password">确认密码</string>
+    <string name="str_input_confirm_password">请在此输入新密码</string>
+    <string name="str_input_manual">手动输入设备串号</string>
+    <string name="str_smartwatch_qr_desc">请扫描手表的二维码，二维码位置：手表 > 绑定 > 二维码</string>
+    <string name="str_sensor_qr_desc">请扫描设备的二维码</string>
+    <string name="str_input_device_number">请输入设备串号（15位数字）</string>
+    <string name="str_please_input">请输入</string>
+    <string name="str_continue">继续</string>
+    <string name="str_device_info">设备信息</string>
+    <string name="str_fill_watch_user_info">请填写智能手表使用人信息</string>
+    <string name="str_name1">姓名：</string>
+    <string name="str_input_watch_user_name">使用人姓名</string>
+    <string name="str_phone1">内置卡号吗：</string>
+    <string name="str_input_watch_user_phone">使用人电话号码</string>
+    <string name="str_sex1">性别：</string>
+    <string name="str_birthday1">生日：</string>
+    <string name="str_select_birthday">请选择出生日期</string>
+    <string name="str_height">身高：</string>
+    <string name="str_select_height">请选择身高（cm）</string>
+    <string name="str_weight">体重：</string>
+    <string name="str_body_temperature">体温</string>
+    <string name="str_select_weight">请选择体重（kg）</string>
+    <string name="str_add_info">附加信息</string>
+    <string name="str_fill_add_info">请填写下列信息以便于在紧急情况下获得更及时的救助</string>
+    <string name="str_blood_type">血型：</string>
+    <string name="str_blood_pressure">血压</string>
+    <string name="str_blood_pressure_header">血压(高/低)</string>
+    <string name="str_select_blood_type">选择血型</string>
+    <string name="str_location1">住址：</string>
+    <string name="str_select_location">请在地图上选择位置</string>
+    <string name="str_detail_address">详细地址：</string>
+    <string name="str_input_detail_address">例：xxx小区 1号楼 2单元 502室</string>
+    <string name="str_disease_history">病史：</string>
+    <string name="str_complete">完成</string>
+    <string name="str_bind_complete">绑定成功</string>
+    <string name="str_bind_complete_desc">您已注册成功!</string>
+    <string name="str_fill_device_user_info">请准确填写以下信息，以便紧急情况下与您联系</string>
+    <string name="str_emergency_contact">紧急联系人：</string>
+    <string name="str_contact_phone">联系电话：</string>
+    <string name="str_input_auth_code">请填写短信验证码</string>
+    <string name="str_location_tag">位置标签：</string>
+    <string name="str_input_location_tag">请填写，如厨房、卧室等</string>
+    <string name="str_device_location">设备地址：</string>
+    <string name="str_device_label">设备名称 ：</string>
+    <string name="str_input_device_label">设备名称</string>
+    <string name="str_network_notification_service_term">网络通知提醒服务期</string>
+    <string name="str_select_service_term">选择服务期时长：</string>
+    <string name="str_year1">1年</string>
+    <string name="str_year2">2年</string>
+    <string name="str_year3">3年</string>
+    <string name="str_year4">4年</string>
+    <string name="str_year5">5年</string>
+    <string name="str_year">年</string>
+    <string name="str_term">%s至%s</string>
+    <string name="str_pay_amount">支付金额：</string>
+    <string name="str_rmb"> 元</string>
+    <string name="str_payment_mode">支付方式：</string>
+    <string name="str_weixin_payment">微信支付</string>
+    <string name="str_zhifubao_payment">支付宝</string>
+    <string name="str_social_payment">社保支付</string>
+    <string name="str_pay">去支付</string>
+    <string name="str_service_term_desc">付款后7天内可申请退款</string>
+    <string name="str_pay_complete">支付成功</string>
+    <string name="str_pay_cancel">支付已取消</string>
+    <string name="str_apply_refund"><u>申请退款</u></string>
+    <string name="str_service_term_length">服务期时长：</string>
+    <string name="str_apply_refund_alert">确定退款吗？网络通知提醒服务期后，设备的所有绑定人都将无法再获得来自设备的数据和通知提醒。</string>
+    <string name="str_refund_complete">退款成功，钱款将在3个工作日内退回您的支付账户</string>
+    <string name="str_confirm_release_device">确定解绑设备吗？</string>
+    <string name="str_release_device_alert">设备解绑后，操作不可直接撤销，您将不会再收到来自设备的信息。</string>
+    <string name="str_release_device">设备已解绑</string>
+    <string name="str_no_device"><u>暂无设备，现在添加</u></string>
+    <string name="str_no_bind_watch_alert">当前尚未绑定手表设备，暂无健康数据，去绑定手表守护家人健康！</string>
+    <string name="str_expire_watch_service_alert">%s的手表网络通知提醒服务期已过期，无法获得设备数据和通知，请延长服务期。</string>
+    <string name="str_expire_sensor_service_alert">%s的%s网络通知提醒服务期已过期，无法获得设备数据和通知，请延长服务期。</string>
+    <string name="str_select_picture_source">选择头像来源</string>
+    <string name="str_select_picture">选择头像</string>
+    <string name="str_take_picture">拍照</string>
+    <string name="str_from_gallery">相册</string>
+    <string name="str_sos_emergency_request">SOS救援请求</string>
+    <string name="str_sos_from">%s的手表发起了SOS救援请求</string>
+    <string name="str_sos_time">SOS救援请求时间：%s</string>
+    <string name="str_select_address">选择地址</string>
+    <string name="str_search_address_hint">请输入搜索关键词</string>
+    <string name="str_current_address">当前位置</string>
+    <string name="str_location_information">位置信息</string>
+    <string name="str_location_track">轨迹</string>
+    <string name="str_no_connect_watch">手表离线，无法获取位置信息</string>
+    <string name="str_position_frequency_setting">定位频率设置</string>
+    <string name="str_common_mode">普通模式</string>
+    <string name="str_position_frequency_15minute">定位频率为每15分钟定位一次</string>
+    <string name="str_power_saving_mode">省电模式</string>
+    <string name="str_position_frequency_60minute">定位频率为每60分钟定位一次</string>
+    <string name="str_emergency_mode">紧急模式（能耗较大）</string>
+    <string name="str_position_frequency_minute">定位频率为每分钟定位一次</string>
+    <string name="str_electronic_fence_setting">电子围栏设置</string>
+    <string name="str_new">新增</string>
+    <string name="str_electronic_fence_name"><u>电子围栏名称</u></string>
+    <string name="str_fence_settings">电子围栏设置</string>
+    <string name="str_radius">半径</string>
+    <string name="str_guard_period">请选择守护时间段：</string>
+    <string name="str_select_start_time">请选择开始时间</string>
+    <string name="str_to">至</string>
+    <string name="str_select_end_time">请选择结束时间</string>
+    <string name="str_300_meter">300米</string>
+    <string name="str_500_meter">500米</string>
+    <string name="str_800_meter">800米</string>
+    <string name="str_1000_meter">1000米</string>
+    <string name="str_2000_meter">2000米</string>
+    <string name="str_3000_meter">3000米</string>
+    <string name="str_4000_meter">4000米</string>
+    <string name="str_5000_meter">5000米</string>
+    <string name="str_radius_format">半径 %d米</string>
+    <string name="str_input_fence_name">请输入电子围栏名称</string>
+    <string name="str_input_fence_radius">请设置电子围栏半径</string>
+    <string name="str_input_fence_point">请选择电子围栏中心点位置</string>
+    <string name="str_date_format">yyyy年MM月dd日</string>
+    <string name="str_incorrect_confirm_password">请输入正确的确认密码</string>
+    <string name="str_change_password_success">密码修改成功</string>
+    <string name="str_change_password_failed">密码修改失败</string>
+    <string name="str_change_mobile_success">修改账号成功</string>
+    <string name="str_api_failed">通讯失败</string>
+    <string name="str_bloodtype_a">A型</string>
+    <string name="str_bloodtype_b">B型</string>
+    <string name="str_bloodtype_ab">AB型</string>
+    <string name="str_bloodtype_o">O型</string>
+    <string name="str_type">型</string>
+    <string name="str_unknown">未知</string>
+    <string name="str_unconnect">佩戴异常</string>
+    <string name="str_check_health">正在检测中......</string>
+    <string name="str_battery_low">低电量</string>
+    <string name="str_no_alart">未报警</string>
+    <string name="str_already_selected_address">已选择，点击修改</string>
+    <string name="str_confirm_off_notification">确定关闭通知提醒吗？关闭后您将不会再收到该消息提醒。</string>
+    <string name="str_today_weather">今日天气</string>
+    <string name="str_weather_address_time">%s   %s 更新</string>
+    <string name="str_weather_today_temperature">今日气温：%d°~%d°</string>
+    <string name="str_weather_quality_type1">优</string>
+    <string name="str_degree">°</string>
+    <string name="str_weather_clear">晴</string>
+    <string name="str_no_database">暂无数据</string>
+    <string name="str_no_permission">当前账号非设备管理员账号，没有设备信息设置权限</string>
+    <string name="str_owner_watch">的手环</string>
+    <string name="str_notification_sos_request_title">SOS救援消息</string>
+    <string name="str_notification_sos_request_content">%s的手表发起了SOS救援请求，定位地址：%s。</string>
+    <string name="str_fire_alarm_title">消防警情消息</string>
+    <string name="str_fire_alarm_content">%s的%s发出了消防报警信息，请及时确认现场情况，以免遭受消防事故损失。</string>
+    <string name="str_sensor_no_connect_title">消防监控设备离线提醒</string>
+    <string name="str_sensor_no_connect_content">%s的已离线，请确认设备的联网状态是否正常。</string>
+    <string name="str_abnormal_heart_rate_title">心率指标异常提醒</string>
+    <string name="str_abnormal_heart_rate_content">%s的手表测量的心率数值为%s次/分钟，超出正常心率范围。</string>
+    <string name="str_watch_low_battery_title">手表低电量提醒</string>
+    <string name="str_watch_low_battery_content">%s的手表电量状态为低电量，请提醒使用人及时充电。</string>
+    <string name="str_sensor_low_battery_title">消防监控设备低电量提醒</string>
+    <string name="str_sensor_low_battery_content">%s的烟感报警器电池状态为低电量，请及时为设备更换电池，以便维持正常的消防监测状态。</string>
+    <string name="str_fence_range_title">电子围栏守护提醒</string>
+    <string name="str_fence_range_content">%s的手表离开了%s所设置的守护范围。</string>
+    <string name="str_alarm_request_title">备忘录提醒</string>
+    <string name="str_alarm_request_content">%s，%s</string>
+    <string name="str_morning_alarm_title">早间提醒</string>
+    <string name="str_morning_alarm_content">早上好，%s今天%s，%s</string>
+    <string name="str_evening_alarm_title">晚间提醒</string>
+    <string name="str_evening_alarm_content">晚上好，%s今天%s</string>
+    <string name="str_service_expire_before_title">网络通知提醒服务期即将过期</string>
+    <string name="str_service_expire_before_content">%s的网络通知提醒服务期即将过期，请尽快延期，以便获得及时的网络通知提醒服务。</string>
+    <string name="str_service_expired_title">网络通知提醒服务期过期提醒</string>
+    <string name="str_service_expired_content">%s的网络通知提醒服务期即将过期，请尽快延期，以便获得及时的网络通知提醒服务。</string>
+    <string name="str_save_user">记住账号</string>
+    <string name="str_save_password">记住密码</string>
+    <string name="str_father">父亲</string>
+    <string name="str_see_details"><u>差异校准设置 >></u></string>
+    <string name="str_more">更多 >></string>
+    <string name="str_hot_news_detail">热点推荐:</string>
+    <string name="str_hot_news">热点推荐</string>
+    <string name="str_monitoring_report">监测报告</string>
+    <string name="str_monitoring_report_01">监测数据</string>
+    <string name="str_monitoring_report_02">健康档案</string>
+    <string name="str_device_status">设备状态</string>
+    <string name="str_device_status_01">设备管理</string>
+    <string name="str_device_status_02">设备检测</string>
+    <string name="str_request_healthdata">实时健康</string>
+    <string name="str_request_healthdata_01">生命体征</string>
+    <string name="str_request_healthdata_02">远程监测</string>
+    <string name="str_service_provision">智能手表</string>
+    <string name="str_position_tracker">位置轨迹</string>
+    <string name="str_position_tracker_01">紧急状态</string>
+    <string name="str_position_tracker_02">位置定位</string>
+    <string name="str_back_quote"><![CDATA[<<]]></string>
+    <string name="str_ward_list">被监护人列表</string>
+    <string name="str_view_data">查看数据</string>
+    <string name="str_filter">筛选</string>
+    <string name="str_position">位置：</string>
+    <string name="str_device_type">设备类型：</string>
+    <string name="str_attribute">归属：</string>
+    <string name="str_working_status">工作状态：</string>
+    <string name="str_online_consultation">在线咨询</string>
+    <string name="str_normal_area_settings">差异范围校准设置</string>
+    <string name="str_health_info_1">1. 根据被监护人自身情况设定合理范围。</string>
+    <string name="str_health_info_2">2. 当测量值超出设置范围时，平台将提示您。</string>
+    <string name="str_high_blood_pressure">高压值：</string>
+    <string name="str_low_blood_pressure">低压值：</string>
+    <string name="str_restore_default"><u>恢复默认值</u></string>
+    <string name="str_high">高</string>
+    <string name="str_low">低</string>
+    <string name="str_service_center">服务中心</string>
+    <string name="str_muy_service">我的服务</string>
+    <string name="str_follow_up_service">后续服务</string>
+    <string name="str_rescure_route">救援路线</string>
+    <string name="str_contact_platform">联系平台</string>
+    <string name="str_to_be_perfected">待完善</string>
+    <string name="str_sos_setup">紧急联系人设置</string>
+    <string name="str_rescue_query">救援查询</string>
+    <string name="str_rescue_time">救援时间</string>
+    <string name="str_rescue_status">状态</string>
+    <string name="str_image_upload">请上传身份证正面照\n点击拍照</string>
+    <string name="str_fill_phone">此号码将作为出现警情时的紧急联系电话，请认真填写并保证通信正常。</string>
+    <string name="str_acquire_number">验  证  码：</string>
+    <string name="str_confirm_phone">确  认</string>
+    <string name="str_sos_help_header">当出现警情时平台会联系下列人员</string>
+    <string name="str_sos_help_footer">（修改第一紧急联系人请至个人资料-联系电话）</string>
+    <string name="str_alert_time">报警时间</string>
+    <string name="str_receive_time">接收任务</string>
+    <string name="str_short_receive_time">接收</string>
+    <string name="str_short_end_time">结束</string>
+    <string name="str_arrive_time">到达现场</string>
+    <string name="str_contact_customer_timer">联系客服</string>
+    <string name="str_agency_time">联系救援机构</string>
+    <string name="str_end_time">任务结束</string>
+    <string name="str_gregorian">公历</string>
+    <string name="str_lunar">农历</string>
+    <string name="str_relation_with_guardian">与监护人关系：</string>
+    <string name="str_permanent_address">常住地址：</string>
+    <string name="str_id_upload">身份证上传</string>
+    <string name="str_social_info">社会保障卡信息：</string>
+    <string name="str_area">区 域：</string>
+    <string name="str_card_number">卡 号：</string>
+    <string name="str_id_card_number">证件号码：</string>
+    <string name="str_id_card_address">地址：</string>
+    <string name="str_current_history">现病史：</string>
+    <string name="str_other_history">其他现病史：</string>
+    <string name="str_family_history">家族病史：</string>
+    <string name="str_other_family_history">其他家族病史：</string>
+    <string name="str_card_front">正面照</string>
+    <string name="str_card_back">反面照</string>
+    <string name="str_birthday_info">请认真输入生日，关系到你的权益 及其他重要提醒事项.</string>
+    <string name="str_device_belong_to">设备归属：</string>
+    <string name="str_other">其他</string>
+    <string name="str_order_number">订单号：</string>
+    <string name="str_payment_time">支付时间：</string>
+    <string name="str_report_notification_info">被监护人本周心率出现%d次异常. 血压共出现%d次高压异常, 请您密切关注.</string>
+    <string name="str_input_residence">请输入手表用户住址</string>
+    <string name="str_input_address">请输入手表用户地址</string>
+    <string name="str_no_devices">当前尚未绑定设备，去绑定设备守护家人健康！</string>
+    <string name="str_no_devices_detail">监测数值会随个体状态、环境因素变化出现波动，属正常现象</string>
+    <string name="str_new_version">新版本已上架了，请到应用市场下载安装</string>
+    <string name="str_verify">确认</string>
+    <string name="str_current_version">当前版本</string>
+    <string name="str_logout_verify">确认退出账号吗?</string>
+    <string name="str_logout_title">温馨提示</string>
+
+    <string name="str_delete_confirm">确定是否删除？</string>
+    <string name="str_delete_all_confirm">确定是否全部删除？</string>
+    <string name="str_read_all_confirm">全部消息标记为已读</string>
+
+    <string name="duo_call_state_init">呼叫中...</string>
+    <string name="duo_call_state_pending">振铃中...</string>
+    <string name="duo_call_state_connecting">连接中...</string>
+    <string name="duo_call_state_hold">挂起</string>
+    <string name="duo_call_state_held">被挂起</string>
+    <string name="duo_call_state_audio_interrupt">对方声音中断</string>
+    <string name="duo_call_state_ok">通话结束</string>
+    <string name="duo_call_state_cancel">通话结束</string>
+    <string name="duo_call_state_canceled">挂断</string>
+    <string name="duo_call_state_missed">未接</string>
+    <string name="duo_call_state_error">异常</string>
+
+    <string name="room_description">菊风云通话，让沟通零距离</string>
+    <string name="room_login">登录</string>
+    <string name="room_logining">登录中。</string>
+    <string name="room_register">注册</string>
+    <string name="room_setting">设置</string>
+    <string name="room_no_net">无网络</string>
+    <string name="room_enter_correct_phone">请输入正确手机号</string>
+    <string name="room_password_too_short">密码长度大于等于6位</string>
+    <string name="room_paticipants_num">参与者(%d)</string>
+    <string name="room_me">我</string>
+    <string name="room_tip">提示</string>
+    <string name="room_leave_sure">确定要离开吗？</string>
+    <string name="room_cancel">取消</string>
+    <string name="room_leave">离开</string>
+    <string name="room_upload_log">上传日志</string>
+    <string name="room_enter_reason">请输入原因</string>
+    <string name="room_ok">确定</string>
+    <string name="room_upload_ok">上传成功</string>
+    <string name="room_upload_fail">操作太频繁，请稍后再试</string>
+    <string name="room_captcha_sended">验证码已发送至</string>
+    <string name="room_next">下一步</string>
+    <string name="room_not_receive_captcha">未收到验证码？</string>
+    <string name="room_displayname">昵称</string>
+    <string name="room_description2">全球互通，群聊、会议轻松实现</string>
+    <string name="room_channel_name">房间名</string>
+    <string name="room_password">密码</string>
+    <string name="room_join_channel">加入房间</string>
+    <string name="room_joining">加入中。。</string>
+    <string name="room_waiting_participant">等成员加入中。。。</string>
+    <string name="room_phone">手机号</string>
+    <string name="room_forget_password_question">忘记密码?</string>
+    <string name="room_version">版本号 V%s(%d)</string>
+    <string name="room_media_setting">媒体设置</string>
+    <string name="room_resolution">分辩率</string>
+    <string name="room_framerate">帧率</string>
+    <string name="room_participant">参与者</string>
+    <string name="room_set_new_password">设置新密码</string>
+    <string name="room_reenter_password">再次确认密码</string>
+    <string name="room_register_description1">欢迎使用菊风云通话</string>
+    <string name="room_register_description2">选择菊风，让您畅享沟通</string>
+    <string name="room_phone_already_register">该手机号已注册</string>
+    <string name="room_change_displayname">昵称修改</string>
+    <string name="room_change_password">密码设置</string>
+    <string name="room_logout">退出登录</string>
+    <string name="room_not_receive_captha_description">1.由于网络原因延迟送达 2.请检查是否有未读短信 3.您可以在时间倒计时完成后 点击重新发送 4.检查手机号是否正确</string>
+    <string name="room_reenter_phone">重新输入手机号</string>
+    <string name="room_close">关闭</string>
+    <string name="room_forget_password">忘记密码</string>
+    <string name="room_sure_captcha_send">确定将验证码发送到</string>
+    <string name="room_net_wrong_tip">网络连接好像有问题哦，请检查网络设置</string>
+    <string name="room_net_wratong">网络连接好像有问题哦，请检查网络设置</string>
+    <string name="room_enter_nickname">请输入昵称</string>
+    <string name="room_sms_code_too_short">验证码要等于4位</string>
+    <string name="room_sms_code_check_failed">验证失败</string>
+    <string name="room_login_failed">账号登录失败</string>
+    <string name="room_change_password_failed">修改密码失败</string>
+    <string name="room_two_password_different">两次输入密码不相同</string>
+    <string name="room_change_password_success">修改密码成功</string>
+    <string name="room_change_display_name">修改昵称</string>
+    <string name="room_new_display_name">新昵称</string>
+    <string name="room_enter_new_nickname">请输入新昵称</string>
+    <string name="room_change_nickname_failed">修改昵称失败</string>
+    <string name="room_change_nickname_success">修改昵称成功</string>
+    <string name="room_resend">重新发送</string>
+    <string name="room_second">%d秒</string>
+    <string name="room_join_channel_failed">加入会议失败</string>
+    <string name="room_join_channel_failed_invalid_password">密码无效，加入会议失败</string>
+    <string name="room_join_channel_failed_full">成员满，加入会议失败</string>
+    <string name="room_join_channel_failed_internal_error">会议异常，加入会议失败</string>
+    <string name="room_title">菊风云多方通话</string>
+    <string name="room_juphoon_room">JUPHOON ROOM</string>
+    <string name="room_invalid_sms_code">验证码错误</string>
+    <string name="room_powered_by_juphoon">Powered by 菊风Juphoon</string>
+    <string name="room_http_error">网络请求发生错误</string>
+    <string name="room_other_participant_number">对方号码</string>
+    <string name="room_send">发送</string>
+    <string name="room_add_participant">添加成员</string>
+    <string name="room_want_to_join_room">加入房间?</string>
+    <string name="room_join">加入</string>
+    <string name="room_room_full">房间人数已满</string>
+    <string name="room_invite_success">邀请成功</string>
+
+    <string name="pay_success">支付成功:</string>
+    <string name="pay_failed">支付失败:</string>
+    <string name="pay_result_callback_msg" formatted="false">微信支付结果：%s</string>
+
+    <string name="str_police_type">警情类别</string>
+    <string name="str_abnormal">体征状态</string>
+    <string name="str_place">位	置</string>
+    <string name="str_occur_time">发生时间</string>
+    <string name="str_volunteer">志愿者1 %s</string>
+    <string name="str_sos_duty">任务：请您5分钟内到达小区门口清理障碍，引导救护车进入.</string>
+    <string name="str_distance_rescue">距离救援点：%s米</string>
+    <string name="str_contact">联系方式：%s</string>
+    <string name="str_distance_ambulance">救护车距离救援点%s米</string>
+    <string name="str_distance_rescue_label">志愿者%d距离救援点%s米</string>
+    <string name="str_distance_you">您距离救援点%s米</string>
+    <string name="str_distance_rescue_kilo">距离救援点：%s公里</string>
+    <string name="str_distance_ambulance_kilo">救护车距离救援点%s公里</string>
+    <string name="str_distance_rescue_label_kilo">志愿者%d距离救援点%s公里</string>
+    <string name="str_distance_you_kilo">您距离救援点%s公里</string>
+
+    <string name="str_agree_policy_text">用户协议和隐私政策 \n
+请你务必审慎阅读, 充分理解“用户协议”和“隐私政策”各条款, 包括但不限于：为了方便监护人和手表联系, 我们需要收集你的手机号码.
+你可阅读 《用户协议》 和 《隐私政策》 了解详细信息. 如你同意, 请点击“同意”开始接受我们的服务.</string>
+
+    <string name="str_agreement_label">用户协议</string>
+    <string name="str_privacy_policy_label">隐私政策</string>
+
+    <string name="str_set_temp_error">体温设置错了</string>
+    <string name="str_set_pressure_error">血压设定错了</string>
+    <string name="str_set__heart_rate_error">心率设定错了</string>
+
+    <string name="str_location_error">非紧急状态中······</string>
+    <string name="str_margin_health_rate">数据仅供参考，不作为治疗依据</string>
+
+    <string name="str_photo_import_title">请上传身份证</string>
+    <string name="str_payment_cancel">支付取消</string>
+    <string name="str_again_exit">再按一次退出程序</string>
+
+    <string name="str_filter_relation">关系：</string>
+    <string name="str_no_device_msg">您暂时还没有绑定设备</string>
+    <string name="str_no_guard_watch">尚未绑定设备</string>
+    <string name="str_progress_status">进行中</string>
+    <string name="str_finish_status">已处理</string>
+    <string name="str_read_status">已读</string>
+    <string name="str_unread_status">未读</string>
+    <string name="str_alarm_title">报警</string>
+    <string name="str_alarm_name_title">报警名称</string>
+    <string name="str_notice_title">通知</string>
+
+    <string name="str_average_heart_rate">平均值：%d次/分钟</string>
+    <string name="str_average_pressure">平均值：%d / %d(mmHg)</string>
+    <string name="str_average_temp">平均值：%.1f(°C)</string>
+    <string name="str_minus_value">--</string>
+
+    <string-array name="date_array">
+        <item>7日</item>
+        <item>20日</item>
+        <item>30日</item>
+        <item>90日</item>
+    </string-array>
+    <string-array name="position_array">
+        <item>自己家</item>
+        <item>子女家</item>
+        <item>父母家</item>
+        <item>岳父母</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="device_type_array">
+        <item>智能手表</item>
+        <item>烟感</item>
+    </string-array>
+    <string-array name="working_type_array">
+        <item>正常</item>
+        <item>佩戴异常</item>
+    </string-array>
+    <string-array name="sensor_working_type_array">
+        <item>正常</item>
+        <item>离线</item>
+        <item>低电量</item>
+    </string-array>
+    <string-array name="location_tab_array">
+        <item>厨房</item>
+        <item>卧室</item>
+        <item>客厅</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="belong_tab_array">
+        <item>自己家</item>
+        <item>子女家</item>
+        <item>父母家</item>
+        <item>岳父母</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="user_relation_array">
+        <item>父子</item>
+        <item>母子</item>
+        <item>兄弟</item>
+        <item>姐妹</item>
+        <item>亲属</item>
+        <item>朋友</item>
+        <item>爱人</item>
+        <item>本人</item>
+    </string-array>
+    <string-array name="user_ill_array">
+        <item>高血压</item>
+        <item>胃病</item>
+        <item>偏头痛</item>
+        <item>贫血</item>
+        <item>心脏病</item>
+        <item>无病史</item>
+    </string-array>
+    <string-array name="health_period_array">
+        <item>2分钟</item>
+        <item>10分钟</item>
+        <item>30分钟</item>
+        <item>1小时</item>
+    </string-array>
+    <string-array name="health_period_value_array">
+        <item>2</item>
+        <item>10</item>
+        <item>30</item>
+        <item>60</item>
+    </string-array>
+    <string-array name="month_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+</resources>

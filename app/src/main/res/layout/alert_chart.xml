@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@android:color/white"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/dim_gap_12"
+		android:orientation="horizontal">
+
+		<ImageView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:src="@drawable/chart_user"/>
+	</LinearLayout>
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<TextView
+			android:id="@+id/ID_TXTVIEW_TITLE"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:padding="@dimen/dim_gap_2"
+			android:text="@string/str_cancel"
+			android:textAlignment="center"
+			android:textColor="@color/color_text_gray"
+			android:textSize="@dimen/dim_font_2" />
+		<TextView
+			android:id="@+id/ID_TXTVIEW_CONFIRM"
+			android:layout_width="@dimen/dim_gap_9"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:padding="@dimen/dim_gap_2"
+			android:text="@string/str_ok"
+			android:textColor="@color/qmui_config_color_blue"
+			android:textSize="@dimen/dim_font_2" />
+	</RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:id="@+id/ID_ROOT_VIEW"
+	tools:context="com.iot.shoumengou.activity.ActivityAgree">
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/title_bar_height"
+		android:background="@color/color_tab_selected">
+
+		<ImageView
+			android:id="@+id/ID_IMGVIEW_BACK"
+			android:layout_width="@dimen/dim_icon_size"
+			android:layout_height="@dimen/dim_icon_size"
+			android:layout_centerVertical="true"
+			android:src="@drawable/ic_back_img" />
+		<TextView
+			android:id="@+id/ID_TXTVIEW_TITLE"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:textColor="@android:color/white"
+			android:textSize="@dimen/dim_font_3"
+			android:text="@string/str_agree_user_agreement"/>
+	</RelativeLayout>
+	<WebView
+		android:id="@+id/ID_WEBVIEW_CONTENT"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_marginLeft="@dimen/dim_gap_3"
+		android:layout_marginRight="@dimen/dim_gap_3"
+		android:layout_weight="1"/>
+</LinearLayout>

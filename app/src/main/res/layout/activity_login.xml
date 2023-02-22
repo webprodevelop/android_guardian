@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:card_view="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/ID_ROOT_VIEW"
+	tools:context="com.iot.shoumengou.activity.ActivityLogin">
+
+	<!-- Background -->
+	<ImageView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@android:color/white"/>
+
+	<!-- Content -->
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:paddingLeft="@dimen/dim_gap_4"
+			android:paddingRight="@dimen/dim_gap_4">
+			<!-- Mark -->
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/dim_logo_size"
+				android:layout_marginTop="@dimen/dim_gap_9"
+				android:layout_marginBottom="@dimen/dim_gap_9"
+				android:gravity="center">
+				<!--			<androidx.cardview.widget.CardView-->
+				<!--				android:id="@+id/ID_CV_IMAGE_MARK"-->
+				<!--				android:layout_width="wrap_content"-->
+				<!--				android:layout_height="wrap_content"-->
+				<!--				android:layout_centerInParent="true"-->
+				<!--				card_view:cardCornerRadius="@dimen/dim_round_small_icon_radius"-->
+				<!--				card_view:cardPreventCornerOverlap="false">-->
+
+				<ImageView
+					android:id="@+id/ID_IMGVIEW_MARK"
+					android:layout_width="@dimen/dim_logo_size"
+					android:layout_height="@dimen/dim_logo_size"
+					android:layout_centerInParent="true"
+					android:scaleType="fitCenter"
+					android:src="@drawable/logo_internal" />
+				<!--			</androidx.cardview.widget.CardView>-->
+				<TextView
+					android:id="@+id/ID_TXTVIEW_TITLE"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/ID_IMGVIEW_MARK"
+					android:layout_marginTop="@dimen/dim_gap_3"
+					android:gravity="center"
+					android:text="@string/str_logo_title"
+					android:textColor="@android:color/black"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="gone" />
+			</RelativeLayout>
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_weight="4"
+				android:layout_marginLeft="@dimen/dim_gap_6"
+				android:layout_marginRight="@dimen/dim_gap_6"
+				android:orientation="vertical">
+				<!-- Phone Number -->
+				<EditText
+					android:id="@+id/ID_EDTTEXT_PHONE"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="@dimen/dim_gap_2"
+					android:background="@drawable/edt_bg_selector"
+					android:maxLength="11"
+					android:inputType="number"
+					android:singleLine="true"
+					android:hint="@string/str_phone_number_hint"/>
+
+				<!-- Required for Phone Number -->
+				<TextView
+					android:id="@+id/ID_TXTVIEW_REQUIRE_PHONE"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="right"
+					android:paddingEnd="@dimen/dim_gap_1"
+					android:paddingBottom="@dimen/dim_gap_2"
+					android:textColor="@android:color/holo_red_dark"
+					android:text="@string/str_required"/>
+
+				<!-- Password -->
+				<EditText
+					android:id="@+id/ID_EDTTEXT_PSWD"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="@dimen/dim_gap_2"
+					android:background="@drawable/edt_bg_selector"
+					android:maxLength="20"
+					android:inputType="textPassword"
+					android:singleLine="true"
+					android:hint="@string/str_password_hint"/>
+
+				<!-- Required for Password -->
+				<TextView
+					android:id="@+id/ID_TXTVIEW_REQUIRE_PSWD"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="right"
+					android:paddingEnd="@dimen/dim_gap_1"
+					android:paddingBottom="@dimen/dim_gap_2"
+					android:textColor="@android:color/holo_red_dark"
+					android:text="@string/str_required"/>
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/dim_gap_1"
+					android:layout_marginBottom="@dimen/dim_gap_5">
+					<CheckBox
+						android:id="@+id/ID_CHECKBOX_NAME"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginStart="@dimen/dim_gap_2"
+						android:textSize="@dimen/dim_font_2"
+						android:text="@string/str_save_user"/>
+					<CheckBox
+						android:id="@+id/ID_CHECKBOX_PASSWORD"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_alignParentEnd="true"
+						android:textSize="@dimen/dim_font_2"
+						android:layout_marginEnd="@dimen/dim_gap_2"
+						android:text="@string/str_save_password"/>
+				</RelativeLayout>
+				<!-- Login -->
+				<Button
+					android:id="@+id/ID_BUTTON_LOGIN"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="@dimen/dim_gap_1"
+					android:textAllCaps="false"
+					android:background="@drawable/selector_button_fill"
+					android:enabled="false"
+					android:stateListAnimator="@null"
+					android:textColor="@color/button_color"
+					android:text="@string/str_login"/>
+				<Button
+					android:id="@+id/ID_BUTTON_REGISTER"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/dim_gap_3"
+					android:layout_marginBottom="@dimen/dim_gap_3"
+					android:background="@drawable/selector_button_fill"
+					android:padding="@dimen/dim_gap_1"
+					android:text="@string/str_register"
+					android:textAllCaps="false"
+					android:textColor="@color/button_color" />
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/dim_gap_3">
+
+					<!-- Forgot Password -->
+					<TextView
+						android:id="@+id/ID_TXTVIEW_FORGOT"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerHorizontal="true"
+						android:padding="@dimen/dim_gap_1"
+						android:text="@string/str_forgot_password"
+						android:textColor="@color/color_text_blue"
+						android:textSize="@dimen/dim_font_2" />
+
+				</RelativeLayout>
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context="com.iot.shoumengou.helper.RoomActivity">
+
+    <FrameLayout
+        android:id="@+id/flPartp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="onShowFull"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clControl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvRoomId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRoomId">
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="9dp"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+            <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+                android:id="@+id/ivNetStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:qmui_selected_mask_color="#22000000" />
+        </LinearLayout>
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:id="@+id/ivLeave"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="61dp"
+            android:onClick="onLeave"
+            android:src="@drawable/ic_meeting_end"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvRoomId"
+            app:qmui_border_width="0dp"
+            app:qmui_is_circle="true"
+            app:qmui_selected_mask_color="#22000000" />
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:id="@+id/ivMute"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="36dp"
+            android:onClick="onMute"
+            android:src="@drawable/ic_meeting_mute_selected"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:qmui_border_width="0dp"
+            app:qmui_is_circle="true"
+            app:qmui_selected_mask_color="#22000000" />
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:id="@+id/ivUnMute"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="36dp"
+            android:onClick="onMute"
+            android:src="@drawable/ic_meeting_mute_unselected"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:qmui_border_width="0dp"
+            app:qmui_is_circle="true"
+            app:qmui_selected_mask_color="#22000000" />
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:id="@+id/ivCameraOpen"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginBottom="36dp"
+            android:onClick="onCamera"
+            android:src="@drawable/ic_meeting_video_selected"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivUnSpeaker"
+            app:layout_constraintStart_toEndOf="@+id/ivMute"
+            app:qmui_border_width="0dp"
+            app:qmui_is_circle="true"
+            app:qmui_selected_mask_color="#22000000" />
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:id="@+id/ivCameraClose"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginBottom="36dp"
+            android:onClick="onCamera"
+            android:src="@drawable/ic_meeting_video_unselected"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivUnSpeaker"
+            app:layout_constraintStart_toEndOf="@+id/ivMute"
+            app:qmui_border_width="0dp"
+            app:qmui_is_circle="true"
+            app:qmui_selected_mask_color="#22000000" />
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:id="@+id/ivSpeaker"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginBottom="36dp"
+            android:onClick="onSpeaker"
+            android:src="@drawable/ic_meeting_speaker_selected"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivSwitchCamera"
+            app:layout_constraintStart_toEndOf="@+id/ivCameraOpen"
+            app:qmui_border_width="0dp"
+            app:qmui_is_circle="true"
+            app:qmui_selected_mask_color="#22000000" />
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:id="@+id/ivUnSpeaker"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginBottom="36dp"
+            android:onClick="onSpeaker"
+            android:src="@drawable/ic_meeting_speaker_unselected"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivSwitchCamera"
+            app:layout_constraintStart_toEndOf="@+id/ivCameraOpen"
+            app:qmui_border_width="0dp"
+            app:qmui_is_circle="true"
+            app:qmui_selected_mask_color="#22000000" />
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:id="@+id/ivSwitchCamera"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="36dp"
+            android:onClick="onSwitchCamera"
+            android:src="@drawable/ic_meeting_switch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:qmui_border_width="0dp"
+            app:qmui_is_circle="true"
+            app:qmui_selected_mask_color="#22000000" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

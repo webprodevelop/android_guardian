@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:padding="@dimen/dim_gap_4"
+	android:orientation="horizontal">
+
+	<TextView
+		android:id="@+id/ID_TXTVIEW_USER"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true"
+		android:layout_alignParentLeft="true"
+		android:textSize="@dimen/dim_font_3"
+		android:textColor="@android:color/black"
+		android:text="User"/>
+
+	<TextView
+		android:id="@+id/ID_BTN_CONTROL"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true"
+		android:layout_alignParentRight="true"
+		android:background="@drawable/selector_small_button_fill"
+		android:paddingTop="@dimen/dim_gap_2"
+		android:paddingBottom="@dimen/dim_gap_2"
+		android:paddingLeft="@dimen/dim_gap_4"
+		android:paddingRight="@dimen/dim_gap_4"
+		android:textSize="@dimen/dim_font_2"
+		android:textColor="@android:color/white"
+		android:text="@string/str_set_default_control"/>
+
+</RelativeLayout>

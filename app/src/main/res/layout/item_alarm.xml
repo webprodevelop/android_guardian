@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:padding="@dimen/dim_gap_3"
+	android:orientation="vertical">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<TextView
+			android:id="@+id/ID_TXTVIEW_ALARM_TIME"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:textStyle="bold"
+			android:textSize="@dimen/dim_font_3"
+			android:textColor="@android:color/black"
+			android:text="07:00"/>
+
+		<Switch
+			android:id="@+id/ID_SWITCH_ONOFF"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:track="@drawable/switch_track_selector"
+			android:thumb="@drawable/switch_thumb"
+			android:switchMinWidth="0dp"
+			android:textOff=""
+			android:textOn=""/>
+
+	</RelativeLayout>
+
+	<TextView
+		android:id="@+id/ID_TXTVIEW_ALARM_NAME"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/dim_gap_2"
+		android:textSize="@dimen/dim_font_3"
+		android:textColor="@android:color/black"
+		android:text="Alarm title"/>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center_vertical"
+		android:layout_marginTop="@dimen/dim_gap_2"
+		android:orientation="horizontal">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="@dimen/dim_font_2"
+			android:textColor="@android:color/black"
+			android:text="@string/str_suggest"/>
+		<TextView
+			android:id="@+id/ID_TXTVIEW_SUGGEST"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:singleLine="true"
+			android:ellipsize="end"
+			android:textSize="@dimen/dim_font_2"
+			android:textColor="@android:color/black"
+			android:text="Alarm content"/>
+	</LinearLayout>
+
+	<TextView
+		android:id="@+id/ID_TXTVIEW_ALARM_PERIOD"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/dim_gap_2"
+		android:textSize="@dimen/dim_font_2"
+		android:textColor="@android:color/black"
+		android:text="Alarm date"/>
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="@dimen/dim_gap_2"
+		android:layout_marginTop="@dimen/dim_gap_4">
+
+		<TextView
+			android:id="@+id/ID_BTN_DELETE"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:background="@drawable/selector_small_red_button_fill"
+			android:paddingLeft="@dimen/dim_gap_5"
+			android:paddingRight="@dimen/dim_gap_5"
+			android:paddingTop="@dimen/dim_gap_1"
+			android:paddingBottom="@dimen/dim_gap_1"
+			android:textSize="@dimen/dim_font_2"
+			android:textColor="@android:color/white"
+			android:text="@string/str_delete"/>
+		<TextView
+			android:id="@+id/ID_BTN_UPDATE"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_toLeftOf="@+id/ID_BTN_DELETE"
+			android:layout_marginRight="@dimen/dim_gap_2"
+			android:background="@drawable/selector_small_orange_button_fill"
+			android:paddingLeft="@dimen/dim_gap_5"
+			android:paddingRight="@dimen/dim_gap_5"
+			android:paddingTop="@dimen/dim_gap_1"
+			android:paddingBottom="@dimen/dim_gap_1"
+			android:textSize="@dimen/dim_font_2"
+			android:textColor="@android:color/white"
+			android:text="@string/str_update"/>
+
+	</RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:padding="@dimen/dim_gap_3">
+	<RelativeLayout
+		android:id="@+id/ID_LYT_IMPORT_PHOTO"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="@dimen/dim_gap_0"
+		android:layout_marginRight="@dimen/dim_gap_0">
+		<TextView
+			android:id="@+id/ID_TEXT_NAME"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/dim_gap_3"
+			android:background="@drawable/edt_bg_selected"
+			android:textColor="@android:color/black"
+			android:textSize="@dimen/dim_font_3"
+			android:text="@string/str_face_photo"/>
+
+		<TextView
+			android:id="@+id/ID_TEXT_STATUS"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:background="@drawable/selector_small_button_fill"
+			android:layout_centerVertical="true"
+			android:layout_alignParentEnd="true"
+			android:paddingTop="@dimen/dim_gap_2"
+			android:paddingBottom="@dimen/dim_gap_2"
+			android:paddingLeft="@dimen/dim_gap_6"
+			android:paddingRight="@dimen/dim_gap_6"
+			android:textSize="@dimen/dim_font_2"
+			android:textColor="@android:color/white"
+			android:text="@string/str_view_data"/>
+	</RelativeLayout>
+</FrameLayout>

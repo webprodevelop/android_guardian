@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/shape_white_fill"
+		android:orientation="vertical">
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="@dimen/dim_gap_2">
+
+			<TextView
+				android:id="@+id/ID_TXTVIEW_KIND"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:textSize="@dimen/dim_font_3"
+				android:textColor="@android:color/black"
+				android:text="Kind"/>
+
+			<TextView
+				android:id="@+id/ID_TXTVIEW_TIME"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_alignParentRight="true"
+				android:textSize="@dimen/dim_font_2"
+				android:textColor="@android:color/black"
+				android:text="2020-05-08 18:46"/>
+
+		</RelativeLayout>
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/dim_discover_image_height">
+
+			<ImageView
+				android:id="@+id/ID_IMGVIEW_PIC"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:scaleType="fitCenter" />
+			<TextView
+				android:id="@+id/ID_TXTVIEW_TITLE"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingTop="@dimen/dim_gap_1"
+				android:paddingBottom="@dimen/dim_gap_1"
+				android:paddingLeft="@dimen/dim_gap_3"
+				android:paddingRight="@dimen/dim_gap_3"
+				android:background="@color/color_trans_black"
+				android:layout_alignParentBottom="true"
+				android:singleLine="true"
+				android:ellipsize="end"
+				android:textSize="@dimen/dim_font_2"
+				android:textColor="@android:color/white"
+				android:text="Title"/>
+		</RelativeLayout>
+
+		<TextView
+			android:id="@+id/ID_TXTVIEW_CONTENT"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:ellipsize="end"
+			android:maxLines="2"
+			android:paddingLeft="@dimen/dim_gap_3"
+			android:paddingTop="@dimen/dim_gap_1"
+			android:paddingRight="@dimen/dim_gap_3"
+			android:paddingBottom="@dimen/dim_gap_1"
+			android:text="Content"
+			android:textColor="@android:color/black"
+			android:textSize="@dimen/dim_font_2"
+			android:visibility="gone" />
+	</LinearLayout>
+</RelativeLayout>

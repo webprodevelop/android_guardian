@@ -1,0 +1,43 @@
+<resources>
+
+	<!-- Base application theme. -->
+	<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+		<!-- Customize your theme here. -->
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+		<!--<item name="colorAccent">@color/colorAccent</item>-->
+		<item name="colorAccent">@color/color_tab_selected</item>
+		<item name="android:windowLightStatusBar">true</item>
+	</style>
+
+	<style name="AppLoginTheme" parent="Theme.AppCompat.Light.NoActionBar">
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+		<item name="colorAccent">@color/color_tab_selected</item>
+		<item name="android:windowLightStatusBar">true</item>
+		<item name="android:windowBackground">@drawable/background_splash</item>
+	</style>
+
+	<style name="NumberPickerTheme">
+		<item name="android:textSize">@dimen/dim_font_3</item>
+		<item name="colorControlNormal">@color/color_tab_normal</item>
+	</style>
+
+	<style name="popup_window_animation">
+		<item name="android:windowEnterAnimation">@anim/slide_in_top</item>
+		<item name="android:windowExitAnimation">@android:anim/fade_out</item>
+	</style>
+	<style name="spinner_style">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">40dp</item>
+		<item name="android:background">@drawable/box_border_radius</item>
+		<item name="android:layout_margin">@dimen/dim_gap_0</item>
+		<item name="android:paddingLeft">@dimen/dim_gap_1</item>
+		<item name="android:paddingRight">@dimen/dim_gap_1</item>
+		<item name="android:paddingTop">@dimen/dim_gap_0</item>
+		<item name="android:paddingBottom">@dimen/dim_gap_0</item>
+		<item name="android:textSize">@dimen/dim_font_2</item>
+		<item name="android:spinnerMode">dropdown</item>
+	</style>
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:padding="@dimen/dim_gap_0">
+
+	<TextView
+		android:id="@+id/ID_TEXT_SERVICE_NAME"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingStart="@dimen/dim_gap_2"
+		android:textColor="@color/color_black"
+		android:text="@string/str_muy_service"
+		android:layout_margin="@dimen/dim_gap_1"
+		android:background="@drawable/box_radius"/>
+
+	<LinearLayout
+		android:background="@android:color/white"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/dim_gap_1"
+		android:gravity="center"
+		android:orientation="horizontal">
+
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/dim_gap_3"
+			android:layout_weight="1"
+			android:textColor="@color/color_text_list_item"
+			android:text="@string/str_service_term"/>
+
+		<TextView
+			android:id="@+id/ID_TEXT_SERVICE_TERM"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:textColor="@android:color/holo_blue_dark"
+			android:text="@string/str_year1"/>
+
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:textColor="@color/color_text_list_item"
+			android:text="@string/str_date"/>
+
+		<TextView
+			android:id="@+id/ID_TEXT_DATE"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="3"
+			android:gravity="left"
+			android:textColor="@android:color/holo_blue_dark"
+			android:text="@string/str_group"/>
+	</LinearLayout>
+</LinearLayout>

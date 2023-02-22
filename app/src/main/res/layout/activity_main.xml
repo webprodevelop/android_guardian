@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:id="@+id/ID_LYT_ROOT"
+	tools:context="com.iot.shoumengou.activity.ActivityMain">
+
+	<androidx.viewpager.widget.ViewPager
+		android:id="@+id/ID_PAGER_CONTENT"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:background="@android:color/white"/>
+
+	<!-- Separator -->
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="@android:color/darker_gray"/>
+
+	<!-- Tab -->
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:padding="@dimen/dim_gap_1"
+		android:background="@color/color_tab">
+
+		<!-- Tab Alert -->
+		<RelativeLayout
+			android:id="@+id/ID_LYT_TAB_DISCOVER"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1">
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:orientation="vertical">
+
+				<ImageView
+					android:layout_width="@dimen/dim_icon_size"
+					android:layout_height="@dimen/dim_icon_size"
+					android:layout_gravity="center_horizontal"
+					android:src="@drawable/ic_tab_discover" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:text="@string/str_home"
+					android:textColor="@color/tab_color"
+					android:textSize="@dimen/dim_font_2" />
+
+			</LinearLayout>
+
+			<ImageView
+				android:id="@+id/ID_IMGVIEW_DISCOVER_NOTIFICATION"
+				android:layout_width="@dimen/dim_gap_2"
+				android:layout_height="@dimen/dim_gap_2"
+				android:layout_alignParentEnd="true"
+				android:layout_marginEnd="@dimen/dim_gap_4"
+				android:src="@drawable/shape_red_circle"
+				android:visibility="gone" />
+		</RelativeLayout>
+
+		<LinearLayout
+			android:id="@+id/ID_LYT_TAB_HEALTH"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:orientation="vertical">
+
+			<ImageView
+				android:layout_width="@dimen/dim_icon_size"
+				android:layout_height="@dimen/dim_icon_size"
+				android:layout_gravity="center_horizontal"
+				android:src="@drawable/ic_tab_health"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:textSize="@dimen/dim_font_2"
+				android:textColor="@color/tab_color"
+				android:text="@string/str_service_center"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/ID_LYT_TAB_LOCATION"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:visibility="gone"
+			android:orientation="vertical">
+
+			<ImageView
+				android:layout_width="@dimen/dim_icon_size"
+				android:layout_height="@dimen/dim_icon_size"
+				android:layout_gravity="center_horizontal"
+				android:src="@drawable/ic_tab_location"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:textSize="@dimen/dim_font_2"
+				android:textColor="@color/tab_color"
+				android:text="@string/str_location"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/ID_LYT_TAB_DEVICE"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:visibility="gone"
+			android:orientation="vertical">
+
+			<ImageView
+				android:layout_width="@dimen/dim_icon_size"
+				android:layout_height="@dimen/dim_icon_size"
+				android:layout_gravity="center_horizontal"
+				android:src="@drawable/ic_tab_device"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:textSize="@dimen/dim_font_2"
+				android:textColor="@color/tab_color"
+				android:text="@string/str_device"/>
+
+		</LinearLayout>
+
+		<RelativeLayout
+			android:id="@+id/ID_LYT_TAB_INFO"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1">
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:orientation="vertical">
+
+				<ImageView
+					android:layout_width="@dimen/dim_icon_size"
+					android:layout_height="@dimen/dim_icon_size"
+					android:layout_gravity="center_horizontal"
+					android:src="@drawable/ic_tab_user"/>
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:textSize="@dimen/dim_font_2"
+					android:textColor="@color/tab_color"
+					android:text="@string/str_user"/>
+
+			</LinearLayout>
+			<ImageView
+				android:id="@+id/ID_IMGVIEW_INFO_NOTIFICATION"
+				android:layout_width="@dimen/dim_gap_2"
+				android:layout_height="@dimen/dim_gap_2"
+				android:visibility="gone"
+				android:layout_alignParentEnd="true"
+				android:layout_marginEnd="@dimen/dim_gap_4"
+				android:src="@drawable/shape_red_circle"/>
+		</RelativeLayout>
+
+	</LinearLayout>
+
+</LinearLayout>

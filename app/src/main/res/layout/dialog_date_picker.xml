@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="@android:color/transparent">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@android:color/white"
+		android:layout_margin="@dimen/dim_gap_5"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/dim_gap_3"
+			android:layout_marginBottom="@dimen/dim_gap_3"
+			android:orientation="horizontal">
+			<Spinner
+				android:id="@+id/ID_SPINNER_YEAR"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:layout_marginStart="@dimen/dim_gap_3"
+				style="@style/spinner_style"/>
+
+			<Spinner
+				android:id="@+id/ID_SPINNER_MONTH"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:layout_marginStart="@dimen/dim_gap_3"
+				style="@style/spinner_style"/>
+		</LinearLayout>
+
+		<com.coolerfall.widget.lunar.LunarView
+			android:id="@+id/ID_LUNAR_VIEW"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/dim_gap_3"
+			android:orientation="horizontal">
+			<TextView
+				android:id="@+id/ID_TXTVIEW_CANCEL"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:padding="@dimen/dim_gap_2"
+				android:textSize="@dimen/dim_font_2"
+				android:text="@string/str_cancel"
+				android:textColor="@color/button_text_color"/>
+			<TextView
+				android:id="@+id/ID_TXTVIEW_CONFIRM"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:padding="@dimen/dim_gap_2"
+				android:textSize="@dimen/dim_font_2"
+				android:text="@string/str_confirm"
+				android:textColor="@color/button_text_color"/>
+		</LinearLayout>
+	</LinearLayout>
+</FrameLayout>

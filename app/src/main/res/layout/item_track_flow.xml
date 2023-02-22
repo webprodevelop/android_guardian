@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/ID_LYT_TRACK_FLOW"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:padding="@dimen/dim_gap_5">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="@dimen/dim_flow_min_width"
+		android:background="@drawable/shape_black_border"
+		android:padding="@dimen/dim_gap_2"
+		android:orientation="vertical">
+		<TextView
+			android:id="@+id/ID_TXTVIEW_TRACK_SOURCE"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="@dimen/dim_gap_1"
+			android:textColor="@android:color/black"
+			android:textSize="@dimen/dim_font_3"
+			android:text=""/>
+		<TextView
+			android:id="@+id/ID_TXTVIEW_TRACK_ADDRESS"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="@dimen/dim_gap_1"
+			android:textColor="@android:color/darker_gray"
+			android:textSize="@dimen/dim_font_2"
+			android:text=""/>
+		<TextView
+			android:id="@+id/ID_TXTVIEW_TRACK_TIME"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="@android:color/darker_gray"
+			android:textSize="@dimen/dim_font_2"
+			android:text="2020-05-13 06:56:33"/>
+	</LinearLayout>
+</LinearLayout>

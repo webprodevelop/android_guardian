@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<LinearLayout
+		android:id="@+id/ID_LL_CONTAINTER"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/dim_gap_7"
+		android:background="@drawable/shape_white_fill"
+		android:paddingLeft="@dimen/dim_gap_4"
+		android:paddingRight="@dimen/dim_gap_4"
+		android:orientation="vertical">
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/dim_gap_2">
+
+			<TextView
+				android:id="@+id/ID_TXTVIEW_TITLE"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:textSize="@dimen/dim_font_2"
+				android:textColor="@android:color/black"
+				android:text="Title"/>
+
+			<TextView
+				android:id="@+id/ID_TXTVIEW_STATS"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginStart="@dimen/dim_gap_1"
+				android:text="@string/app_name"
+				android:layout_toEndOf="@+id/ID_TXTVIEW_TITLE"
+				android:textColor="@android:color/black"
+				android:textSize="@dimen/dim_font_1" />
+
+			<TextView
+				android:id="@+id/ID_TXTVIEW_TIME"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_alignParentEnd="true"
+				android:textSize="@dimen/dim_font_12"
+				android:textColor="@android:color/black"
+				android:text="2020-05-08 18:46"/>
+
+		</RelativeLayout>
+
+		<TextView
+			android:id="@+id/ID_TXTVIEW_CONTENT"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/dim_gap_2"
+			android:layout_marginBottom="@dimen/dim_gap_2"
+			android:textSize="@dimen/dim_font_12"
+			android:textColor="@android:color/black"
+			android:text="Content"/>
+	</LinearLayout>
+</LinearLayout>

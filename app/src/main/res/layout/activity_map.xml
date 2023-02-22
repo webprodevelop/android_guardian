@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:id="@+id/ID_ROOT_VIEW"
+	tools:context="com.iot.shoumengou.activity.ActivityLogin">
+
+	<AutoCompleteTextView
+		android:id="@+id/ID_TXTVIEW_AUTO_ADDRESS"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:imeOptions="actionDone"
+		android:singleLine="true"/>
+
+	<com.baidu.mapapi.map.MapView
+		android:id="@+id/ID_VIEW_MAP"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_below="@id/ID_TXTVIEW_AUTO_ADDRESS"
+		android:clickable="true" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_marginBottom="@dimen/dim_gap_1"
+		android:layout_alignParentBottom="true">
+
+		<!-- Temp -->
+		<View
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:layout_weight="1"/>
+
+		<Button
+			android:id="@+id/ID_BTN_CONFIRM"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="@string/str_confirm"/>
+
+		<!-- Temp -->
+		<View
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:layout_weight="2"/>
+
+	</LinearLayout>
+
+</RelativeLayout>

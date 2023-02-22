@@ -1,0 +1,2 @@
+include ':JuphoonRoom', ':JuphoonCommon', "JuphoonLive", ':JuphoonChat', ':JuphoonClass'
+include ':app'

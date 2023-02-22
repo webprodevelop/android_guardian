@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="@android:color/darker_gray"
+	tools:context="com.iot.shoumengou.fragment.FragmentDiscover">
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/title_bar_height"
+		android:background="@color/color_tab_selected">
+		<ImageView
+			android:id="@+id/ID_IMGVIEW_BACK"
+			android:layout_width="@dimen/dim_icon_size"
+			android:layout_alignParentStart="true"
+			android:layout_height="@dimen/dim_icon_size"
+			android:layout_centerVertical="true"
+			android:visibility="visible"
+			android:layout_margin="@dimen/dim_gap_0"
+			android:src="@drawable/ic_back_img"/>
+
+		<TextView
+			android:id="@+id/ID_TXTVIEW_TITLE"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:text="@string/str_hot_news"
+			android:textColor="@android:color/white"
+			android:textSize="@dimen/dim_font_3" />
+	</RelativeLayout>
+
+	<ListView
+		android:id="@+id/ID_LSTVIEW_DISCOVER"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/color_ios_gray"
+		android:divider="@null"
+		android:scrollbars="none" />
+</LinearLayout>

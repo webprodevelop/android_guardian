@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@android:color/black"
+	android:orientation="vertical"
+	android:id="@+id/ID_ROOT_VIEW"
+	tools:context="com.iot.shoumengou.activity.ActivityScan">
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/title_bar_height"
+		android:background="@color/color_tab_selected">
+		<ImageView
+			android:id="@+id/ID_IMGVIEW_BACK"
+			android:layout_width="@dimen/dim_icon_size"
+			android:layout_height="@dimen/dim_icon_size"
+			android:layout_centerVertical="true"
+			android:layout_margin="@dimen/dim_gap_0"
+			android:src="@drawable/ic_back_img"
+			tools:ignore="ContentDescription" />
+		<TextView
+			android:id="@+id/ID_TXTVIEW_TITLE"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:textColor="@android:color/white"
+			android:textSize="@dimen/dim_font_3"
+			android:text="@string/str_bind_device"/>
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1">
+		<!-- Scanner -->
+		<me.dm7.barcodescanner.zxing.ZXingScannerView
+			android:id="@+id/ID_SCANNER"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			app:borderColor="@android:color/holo_blue_dark"
+			app:borderLength="30dp"/>
+
+		<ImageView
+			android:id="@+id/ID_IMGVIEW_GO_DEVICE_INFO"
+			android:layout_width="@dimen/group_height"
+			android:layout_height="@dimen/group_height"
+			android:padding="@dimen/dim_gap_1"
+			android:visibility="gone"
+			android:background="@drawable/shape_black_oval"
+			android:layout_margin="@dimen/dim_gap_5"
+			android:src="@drawable/ic_back_img"
+			tools:ignore="ContentDescription" />
+
+		<TextView
+			android:id="@+id/ID_TXTVIEW_MANUAL_INPUT"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_marginBottom="@dimen/dim_gap_9"
+			android:gravity="center"
+			android:textSize="@dimen/dim_font_2"
+			android:textColor="@android:color/white"
+			android:text="@string/str_input_manual"/>
+
+		<TextView
+			android:id="@+id/ID_TXTVIEW_SCAN_DESC"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_above="@+id/ID_TXTVIEW_MANUAL_INPUT"
+			android:layout_marginLeft="@dimen/dim_gap_6"
+			android:layout_marginRight="@dimen/dim_gap_6"
+			android:layout_marginBottom="@dimen/dim_gap_9"
+			android:padding="@dimen/dim_gap_1"
+			android:gravity="center"
+			android:textSize="@dimen/dim_font_2"
+			android:textColor="@android:color/white"
+			android:text=""/>
+	</RelativeLayout>
+
+</LinearLayout>

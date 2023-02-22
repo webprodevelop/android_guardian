@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_app_name">DoorKeeper</string>
+
+    <string name="str_logo_title">DoorKeeper</string>
+    <string name="str_acquire_code">Acquire code</string>
+    <string name="str_acquire_code_hint">Please input verify code</string>
+    <string name="str_add">Add</string>
+    <string name="str_addition_failed">Addition is failed!</string>
+    <string name="str_addition_success">Addition is succeed!</string>
+    <string name="str_not_correct_device">Not correct device</string>
+    <string name="str_address">Address</string>
+    <string name="str_alert_content">Content</string>
+    <string name="str_alert_list">Alarm list</string>
+    <string name="str_auth_code">Verify code</string>
+    <string name="str_auth_code_failed">Verify code is incorrect</string>
+    <string name="str_auth_code_not_available">Verify code is invalid</string>
+    <string name="str_back">Back</string>
+    <string name="str_cancel">Cancel</string>
+    <string name="str_confirm">Confirm</string>
+    <string name="str_agree">Agree</string>
+    <string name="str_nonagree">No Agree</string>
+    <string name="str_contact_1">Contact1</string>
+    <string name="str_contact_2">Contact2</string>
+    <string name="str_contact_3">Contact3</string>
+    <string name="str_input_contact_name">Please input contact name</string>
+    <string name="str_input_contact_phone">Please input contact phone number</string>
+    <string name="str_date">Date</string>
+    <string name="str_delete">Delete</string>
+    <string name="str_deletion_failed">Deletion is failed!</string>
+    <string name="str_deletion_success">Deletion is succeed!</string>
+    <string name="str_edit">Edit</string>
+    <string name="str_edition_failed">Edition is failed!</string>
+    <string name="str_edition_success">Edition is succeed!</string>
+    <string name="str_forgot_password">Forgot password</string>
+    <string name="str_group">Group</string>
+    <string name="str_location_label">Location label</string>
+    <string name="str_login">Login</string>
+    <string name="str_login_success">Login is succeed!</string>
+    <string name="str_login_failed">Login is failed!</string>
+    <string name="str_update_success">Update is succeed!</string>
+    <string name="str_update_failed">Update is failed!</string>
+    <string name="str_logout">Logout</string>
+    <string name="str_my_device">My device</string>
+    <string name="str_next_step">Next</string>
+    <string name="str_new_password">New password</string>
+    <string name="str_ok">OK</string>
+    <string name="str_old_password">Old password</string>
+    <string name="str_password">Password</string>
+    <string name="str_password_hint">Please input password</string>
+    <string name="str_password_set_hint">Please set password(6–20 characters)</string>
+    <string name="str_new_password_set_hint">Please set new password(6–20 characters)</string>
+    <string name="str_password_invalid">Password consists of 6–20 digits and letters</string>
+    <string name="str_phone_number">Phone number</string>
+    <string name="str_phone_number_hint">Please input phone number</string>
+    <string name="str_phone_number_incorrect">Phone number incorrect</string>
+    <string name="str_playing_failed">Playing is failed!</string>
+    <string name="str_qr_code">QR Code</string>
+    <string name="str_quiz_forgot_password">Did you forget password?</string>
+    <string name="str_page_loading_failed">Page loading is failed!</string>
+    <string name="str_register">Register</string>
+    <string name="str_confirm_register">Register</string>
+    <string name="str_back_login">Back Login</string>
+    <string name="str_registration_failed">Registration is failed!</string>
+    <string name="str_registration_success">Registration is succeed!</string>
+    <string name="str_required">Required</string>
+    <string name="str_reset_failed">Reset is failed!</string>
+    <string name="str_reset_success">Reset is succeed!</string>
+    <string name="str_save">Save</string>
+    <string name="str_minute">min</string>
+    <string name="str_second">s</string>
+    <string name="str_sensor_device">Sensor device</string>
+    <string name="str_sensor_list">Sensor list</string>
+    <string name="str_setup">Setup</string>
+    <string name="str_user_data">User data</string>
+    <string name="str_saving_user_info_failed">Saving is failed!</string>
+    <string name="str_saving_user_info_success">Saving is succeed!</string>
+    <string name="str_user_name">Name</string>
+    <string name="str_auth_code1">Acquire code：</string>
+    <string name="str_will_delete_device">Do you delete device? This operation cannot cancel</string>
+    <string name="str_will_delete_group">Do you delete group? This operation cannot cancel</string>
+    <string name="str_agree_text">I have read and agreed to the User Agreement and Privacy Policy carefully</string>
+    <string name="str_agree_user_agreement">《用户协议》</string>
+    <string name="str_agree_privacy_policy">《隐私政策》</string>
+    <string name="str_health">Health</string>
+    <string name="str_location">Location</string>
+    <string name="str_discover">Discover</string>
+    <string name="str_home">Home</string>
+    <string name="str_discover_title">Common Sense</string>
+    <string name="str_device">Device</string>
+    <string name="str_user">My Info</string>
+    <string name="str_bind">Bind</string>
+    <string name="str_bind_watch">Bind watch</string>
+    <string name="str_heart_rate">Heart rate</string>
+    <string name="str_weather">Weather</string>
+    <string name="str_update_time">Update time: %s</string>
+    <string name="str_count_per_min">(count/min)</string>
+    <string name="str_mmhg">(mmHg)</string>
+    <string name="str_temp_unit">(°C)</string>
+    <string name="str_high_rate">High rate: %s count/min</string>
+    <string name="str_low_rate">Low rate: %s count/min</string>
+    <string name="str_health_display">Health display</string>
+    <string name="str_normal_rate_area">Normal rate area：</string>
+    <string name="str_normal_rate_area_value">%d~%d count/min</string>
+    <string name="str_normal_temp_area">Normal Temperature</string>
+    <string name="str_normal_temp_value">%s~%s°C</string>
+    <string name="str_normal_pressure_area">Normal Pressure：</string>
+    <string name="str_normal_pressure_value">High%s~%smmHg\nLow%s~%s mmHg</string>
+    <string name="str_normal_rate_area_setting">Normal Heart rate range setting</string>
+    <string name="str_normal_rate_area_desc">When your heart rate is out of range, system let you know</string>
+    <string name="str_health_period">Period： </string>
+    <string name="str_high_rate_value">Max: </string>
+    <string name="str_low_rate_value">Min: </string>
+    <string name="str_rate_value_hint">Please input value (count/min)</string>
+    <string name="str_set_rate_error">Minimum value cannot exceed maximum</string>
+    <string name="str_notification_list">Notification List</string>
+    <string name="str_view">View</string>
+    <string name="str_bind_watch_list">Watch list</string>
+    <string name="str_set_default_control">Set default control</string>
+    <string name="str_set_current_control">Set current control</string>
+    <string name="str_bind_device">Bind device</string>
+    <string name="str_abnormal_record">Abnormal record</string>
+    <string name="str_rest_record">Resting record</string>
+    <string name="str_survey_date">Survey date</string>
+    <string name="str_survey_time">Survey date</string>
+    <string name="str_health_suggest">Health advice:"</string>
+    <string name="str_health_suggest_text">Heart rate abnormalities can be caused by a variety of health problems. For medical advice, please call phone：0415-xxxxxxxx</string>
+    <string name="str_call_number" translatable="false">0415-xxxxxxxx</string>
+    <string name="str_call_phone">Call phone</string>
+    <string name="str_discover_detail">Discover detail</string>
+    <string name="str_device_manage">Device manage</string>
+    <string name="str_smart_watch">Smart watch</string>
+    <string name="str_fire_sensor">Fire sensor</string>
+    <string name="str_smoke_sensor">Smoke sensor</string>
+    <string name="str_serial">Serial：</string>
+    <string name="str_phonenumber">Phone number：</string>
+    <string name="str_network_state">Network state：</string>
+    <string name="str_charging">Remain charging：</string>
+    <string name="str_normal">Normal</string>
+    <string name="str_no_take">Untaken</string>
+    <string name="str_work_state">Work state：</string>
+    <string name="str_low_charging">Low charging</string>
+    <string name="str_alarm_state">Alarm state:</string>
+    <string name="str_alarm">Alarm</string>
+    <string name="str_service_term">Service term：</string>
+    <string name="str_bind_service_term">Service term：</string>
+    <string name="str_detail">Detail</string>
+    <string name="str_goto">Go to</string>
+    <string name="str_sos_contact_set">Emergency contact settings</string>
+    <string name="str_alarm_set">Alarm settings</string>
+    <string name="str_push_manage">Push management</string>
+    <string name="str_account_manage">Account management</string>
+    <string name="str_change_password">Change password</string>
+    <string name="str_main_data">Main information</string>
+    <string name="str_face_photo">Face photo</string>
+    <string name="str_upload_photo">Upload photo</string>
+    <string name="str_name">Name</string>
+    <string name="str_sex">Sex</string>
+    <string name="str_woman">Woman</string>
+    <string name="str_man">Man</string>
+    <string name="str_birthday">Birthday</string>
+    <string name="str_input_required">Please input(required)</string>
+    <string name="str_select_required">Please select(required)</string>
+    <string name="str_select">Please select</string>
+    <string name="str_contact_data">Contact information</string>
+    <string name="str_phone">Phone</string>
+    <string name="str_weixin_id">Weixin ID</string>
+    <string name="str_input">Please input</string>
+    <string name="str_qq_number">QQ number</string>
+    <string name="str_mail">Mail</string>
+    <string name="str_sos_contact_name_desc">The name cannot be empty, please enter name and try again!</string>
+    <string name="str_sos_contact_phonenumber_desc">The phone number cannot be empty, please enter the phone number and try again!</string>
+    <string name="str_sos_contact_code_desc">The verification code cannot be empty, please enter the verification code and try again!</string>
+    <string name="str_first_sos_contact">First emergency contact</string>
+    <string name="str_input_name">Please input name</string>
+    <string name="str_phonenumber1">Phone number</string>
+    <string name="str_input_phone_number">Please input phone number</string>
+    <string name="str_input_phonenumber">Please input phone number</string>
+    <string name="str_select_sex">Please select sex</string>
+    <string name="str_second_sos_contact">Second emergency contact</string>
+    <string name="str_third_sos_contact">Third emergency contact</string>
+    <string name="str_suggest">Suggest:</string>
+    <string name="str_update">Update</string>
+    <string name="str_monday">Mon</string>
+    <string name="str_tuesday">Tue</string>
+    <string name="str_wednesday">Wed</string>
+    <string name="str_thursday">Thu</string>
+    <string name="str_friday">Fri</string>
+    <string name="str_saturday">Sat</string>
+    <string name="str_sunday">Sun</string>
+    <string name="str_work_day">Work Day</string>
+    <string name="str_week_end">Week End</string>
+    <string name="str_week_daily">Each Day</string>
+    <string name="str_no_alarm">No alarms</string>
+    <string name="str_alarm_add">Add alarm</string>
+    <string name="str_alarm_name">Name</string>
+    <string name="str_alarm_time">Time</string>
+    <string name="str_alarm_suggest">Suggest</string>
+    <string name="str_repeat">Repeat</string>
+    <string name="str_no_repeat">No Repeat</string>
+    <string name="str_delete_alarm">Do you really want to delete the alarm?</string>
+    <string name="str_system_wake_permission">System Reminder Permissions</string>
+    <string name="str_system_wake_permission_desc">Sound reminders, light screen reminders, vibration reminders, breathing light reminders, flashing light reminders are not turned on, you may miss important message reminders such as SOS call for help, fire alarm reminders, etc. strongly recommend you turn on all permissions!</string>
+    <string name="str_get_permission">Get permission</string>
+    <string name="str_notification_manage">Notification manage</string>
+    <string name="str_notification_sound">Notification sound</string>
+    <string name="str_follow_system">Follow system</string>
+    <string name="str_sos_emergency">SOS request message</string>
+    <string name="str_sos_emergency_desc">When a SOS request come on from the watch, the system will alert you first and strongly advise you to open this message!</string>
+    <string name="str_fire_alarm">Fire alarm message</string>
+    <string name="str_fire_alarm_desc">The system will remind you of the first time when you will receive a alarm from the fire sensor, and strongly advise you to open this message!</string>
+    <string name="str_disconnect_watch">Watch offline reminder</string>
+    <string name="str_disconnect_watch_desc">When your tied watch is offline, the system prompts you to check the watch\'s network status and recommends that you turn this message on.</string>
+    <string name="str_disconnect_firesensor">Fire sensor offline reminder</string>
+    <string name="str_disconnect_firesensor_desc">When the fire sensor is offline, the system prompts you to check networking status and recommends that you turn this message on.</string>
+    <string name="str_abnormal_heart_rate">Heart rate indicator abnormal reminder</string>
+    <string name="str_abnormal_heart_rate_desc">The system prompts you when the watch\'s heart rate is abnormal.</string>
+    <string name="str_watch_low_battery">Watch low battery reminder</string>
+    <string name="str_watch_low_battery_desc">When the watch\'s battery state is low, the system prompts you for the watch\'s battery state.</string>
+    <string name="str_firesensor_low_battery">Fire sensor low battery reminder</string>
+    <string name="str_firesensor_low_battery_desc">When the fire sensor\'s battery state is low, the system prompts you for the fire sensor\'s battery state.</string>
+    <string name="str_electronic_fence">Electronic fence reminder</string>
+    <string name="str_electronic_fence_desc">The system alerts you when the watch is positioned away from the guard range set by the electronic fence at the specified time period.</string>
+    <string name="str_morning_reminder">Morning reminder</string>
+    <string name="str_morning_reminder_desc">Every morning at 7:30 a.m. the system will push you about the heart rate and the weather conditions of the day.</string>
+    <string name="str_evening_reminder">Evening reminder</string>
+    <string name="str_evening_reminder_desc">Every morning at 8:30 a.m., the system will push you about the heart rate of the day.</string>
+    <string name="str_current_account">Current account</string>
+    <string name="str_new_account">New account</string>
+    <string name="str_input_new_phonenumber">Please input new phone number</string>
+    <string name="str_input_verify_code">Please input verify code</string>
+    <string name="str_orgin_password">Origin password</string>
+    <string name="str_input_orgin_password">Please input origin password</string>
+    <string name="str_input_new_password">Please input new password</string>
+    <string name="str_confirm_password">Confirm password</string>
+    <string name="str_input_confirm_password">Please input new password again</string>
+    <string name="str_input_manual">Input device number manually</string>
+    <string name="str_smartwatch_qr_desc">Please scan smart watch\'s QR code, position: watch > settings > QR code</string>
+    <string name="str_sensor_qr_desc">Please scan device\'s QR code, position: bottom of device, top of battery position</string>
+    <string name="str_input_device_number">Please input device number</string>
+    <string name="str_please_input">Please input</string>
+    <string name="str_continue">Continue</string>
+    <string name="str_device_info">Device information</string>
+    <string name="str_fill_watch_user_info">Please fill watch user information</string>
+    <string name="str_name1">Name:</string>
+    <string name="str_input_watch_user_name">Watch user name(Maximum 5 characters)</string>
+    <string name="str_phone1">Phone:</string>
+    <string name="str_input_watch_user_phone">Please input watch user phone number</string>
+    <string name="str_sex1">Sex:</string>
+    <string name="str_birthday1">Birthday:</string>
+    <string name="str_select_birthday">Please select birthday</string>
+    <string name="str_height">Height:</string>
+    <string name="str_select_height">Please select height(cm)</string>
+    <string name="str_weight">Weight</string>
+    <string name="str_body_temperature">Temperature</string>
+    <string name="str_select_weight">Please select weight(kg)</string>
+    <string name="str_add_info">Additional information</string>
+    <string name="str_fill_add_info">Please fill in the following information to enable timely relief in case of emergency</string>
+    <string name="str_blood_type">Blood type:</string>
+    <string name="str_blood_pressure">Blood pressure</string>
+    <string name="str_blood_pressure_header">BP(High/Low)</string>
+    <string name="str_select_blood_type">Please select blood type</string>
+    <string name="str_location1">Location:</string>
+    <string name="str_select_location">Please select the location in map</string>
+    <string name="str_detail_address">Detail address:</string>
+    <string name="str_input_detail_address">Please input detail address</string>
+    <string name="str_disease_history">Disease history:</string>
+    <string name="str_complete">Complete</string>
+    <string name="str_bind_complete">Bind complete</string>
+    <string name="str_bind_complete_desc">You have successfully registered!</string>
+    <string name="str_fill_device_user_info">Please fill out the following information accurately to contact you in an emergency</string>
+    <string name="str_emergency_contact">Contact name:</string>
+    <string name="str_contact_phone">Phone:</string>
+    <string name="str_input_auth_code">Please input acquire code</string>
+    <string name="str_location_tag">Location tag:</string>
+    <string name="str_input_location_tag">Please input such as kitchen, bedroom, etc</string>
+    <string name="str_device_location">Device address:</string>
+    <string name="str_device_label">Device label:</string>
+    <string name="str_input_device_label">Device label</string>
+    <string name="str_network_notification_service_term">Network notification service term</string>
+    <string name="str_select_service_term">Select service term:</string>
+    <string name="str_year1">1 year</string>
+    <string name="str_year2">2 year</string>
+    <string name="str_year3">3 year</string>
+    <string name="str_year4">4 year</string>
+    <string name="str_year5">5 year</string>
+    <string name="str_year">year</string>
+    <string name="str_term">%s to %s</string>
+    <string name="str_pay_amount">Amount:</string>
+    <string name="str_rmb">%d RMB</string>
+    <string name="str_payment_mode">Payment mode:</string>
+    <string name="str_weixin_payment">Weixin</string>
+    <string name="str_zhifubao_payment">Zhifubao</string>
+    <string name="str_social_payment">Social Payment</string>
+    <string name="str_pay">Pay</string>
+    <string name="str_service_term_desc">You can apply for a refund within 7 days of payment</string>
+    <string name="str_pay_complete">Payment complete</string>
+    <string name="str_pay_cancel">Payment has been cancelled</string>
+    <string name="str_apply_refund"><u>Apply refund</u></string>
+    <string name="str_service_term_length">Term length:</string>
+    <string name="str_apply_refund_alert">Are you sure about the refund? After the network notification reminder service period, all binders of the device will no longer be able to obtain data and notification alerts from the device</string>
+    <string name="str_refund_complete">The refund is successful and the money will be returned to your payment account within 3 working days</string>
+    <string name="str_confirm_release_device">Do you want to untie the equipment?</string>
+    <string name="str_release_device_alert">The operation cannot be undone directly after the device is unbound and you will not receive any more information from the device.</string>
+    <string name="str_release_device">Device is unbound</string>
+    <string name="str_no_device"><u>No devices, please add now.</u></string>
+    <string name="str_no_bind_watch_alert">The watch device is not yet tied, there is no health data, go and bind the watch to protect the family\'s health!</string>
+    <string name="str_expire_watch_service_alert">Remind service period for %s\'s watch has expired. Please extend service period</string>
+    <string name="str_expire_sensor_service_alert">Remind service period for %s\'s %s has expired. Please extend service period</string>
+    <string name="str_select_picture_source">Select picture source</string>
+    <string name="str_select_picture">Please select picture</string>
+    <string name="str_take_picture">Take photo</string>
+    <string name="str_from_gallery">From gallery</string>
+    <string name="str_sos_emergency_request">SOS help request</string>
+    <string name="str_sos_from">SOS help request has been issued from the watch of %s</string>
+    <string name="str_sos_time">SOS help request time: %s</string>
+    <string name="str_select_address">Select address</string>
+    <string name="str_search_address_hint">Please input search keyword</string>
+    <string name="str_current_address">Current address</string>
+    <string name="str_location_information">Location information</string>
+    <string name="str_location_track">Track</string>
+    <string name="str_no_connect_watch">The watch is offline and cannot get location information</string>
+    <string name="str_position_frequency_setting">Position frequency settings</string>
+    <string name="str_common_mode">Common mode</string>
+    <string name="str_position_frequency_15minute">Detect position by 15 minutes</string>
+    <string name="str_power_saving_mode">Power saving mode</string>
+    <string name="str_position_frequency_60minute">Detect position by 60 minutes</string>
+    <string name="str_emergency_mode">Emergency mode (high energy consumption)</string>
+    <string name="str_position_frequency_minute">Detect position by a minutes</string>
+    <string name="str_electronic_fence_setting">Electronic fence settings</string>
+    <string name="str_new">New</string>
+    <string name="str_electronic_fence_name"><u>Electronic fence name</u></string>
+    <string name="str_fence_settings">Electronic fence settings</string>
+    <string name="str_radius">Radius</string>
+    <string name="str_guard_period">Please select guard period:</string>
+    <string name="str_select_start_time">Select start time</string>
+    <string name="str_to">to</string>
+    <string name="str_select_end_time">Select end time</string>
+    <string name="str_300_meter">300m</string>
+    <string name="str_500_meter">500m</string>
+    <string name="str_800_meter">800m</string>
+    <string name="str_1000_meter">1000m</string>
+    <string name="str_2000_meter">2000m</string>
+    <string name="str_3000_meter">3000m</string>
+    <string name="str_4000_meter">4000m</string>
+    <string name="str_5000_meter">5000m</string>
+    <string name="str_radius_format">Radius %dm</string>
+    <string name="str_input_fence_name">Please input fence name</string>
+    <string name="str_input_fence_radius">Please input radius of the fence </string>
+    <string name="str_input_fence_point">Please point center of the fence</string>
+    <string name="str_date_format">yyyy-MM-dd</string>
+    <string name="str_incorrect_confirm_password">Incorrect confirm password</string>
+    <string name="str_change_password_success">Password is updated.</string>
+    <string name="str_change_password_failed">Password updating is failed.</string>
+    <string name="str_change_mobile_success">Account is updated.</string>
+    <string name="str_api_failed">Communication is failed</string>
+    <string name="str_bloodtype_a">A type</string>
+    <string name="str_bloodtype_b">B type</string>
+    <string name="str_bloodtype_ab">AB type</string>
+    <string name="str_bloodtype_o">O type</string>
+    <string name="str_type">type</string>
+    <string name="str_cm" translatable="false">cm</string>
+    <string name="str_kg" translatable="false">kg</string>
+    <string name="str_unknown">Unknown</string>
+    <string name="str_unconnect">Disconnect</string>
+    <string name="str_check_health">Checking Health Status......</string>
+    <string name="str_battery_low">Low battery</string>
+    <string name="str_no_alart">No alert</string>
+    <string name="str_already_selected_address">Already selected, click for updating</string>
+    <string name="str_confirm_off_notification">Do you want to disable the notification? You will not receive the message again after disable.</string>
+    <string name="str_today_weather">Today weather</string>
+    <string name="str_weather_address_time">%s   %s updated</string>
+    <string name="str_weather_today_temperature">Temperature:%d°~%d°</string>
+    <string name="str_weather_quality_type1">Prefect</string>
+    <string name="str_degree">°</string>
+    <string name="str_weather_clear">Clear</string>
+    <string name="str_no_database">No database, please bind the watch</string>
+    <string name="str_no_permission">Current account have not manage permission.</string>
+    <string name="str_owner_watch">\'s watch</string>
+    <string name="str_notification_sos_request_title">SOS rescue request</string>
+    <string name="str_notification_sos_request_content">%s\'s watch issues SOS rescue request, location address:%s.</string>
+    <string name="str_fire_alarm_title">Fire alarm</string>
+    <string name="str_fire_alarm_content">%s\'s %s issues fire alarm, please check the situation in case of fire damage.</string>
+    <string name="str_sensor_no_connect_title">Sensor offline reminder</string>
+    <string name="str_sensor_no_connect_content">%s\'s sensor is offline, please check the connect status or work status of the sensor.</string>
+    <string name="str_abnormal_heart_rate_title">Abnormal heart rate reminder</string>
+    <string name="str_abnormal_heart_rate_content">%s\'s watch detect abnormal heart rate as %s c/m, is out of the normal range of heart rates.</string>
+    <string name="str_watch_low_battery_title">Watch low battery reminder</string>
+    <string name="str_watch_low_battery_content">%s\'s watch battery condition is low, please remind users to recharge their watch in time.</string>
+    <string name="str_sensor_low_battery_title">Sensor low battery reminder</string>
+    <string name="str_sensor_low_battery_content">%s\'s sensor battery condition is low, please replace the battery in time for the sensor to maintain normal fire monitoring status.</string>
+    <string name="str_fence_range_title">Electronic fence guarding reminder</string>
+    <string name="str_fence_range_content">%s\'s watch is out of the range set by %s.</string>
+    <string name="str_alarm_request_title">Alarm reminder</string>
+    <string name="str_alarm_request_content">%s, %s</string>
+    <string name="str_morning_alarm_title">Morning reminder</string>
+    <string name="str_morning_alarm_content">Good morning, %s %s, %s</string>
+    <string name="str_evening_alarm_title">Evening reminder</string>
+    <string name="str_evening_alarm_content">Good evening, %s %s</string>
+    <string name="str_service_expire_before_title">The reminder service period is about to expire</string>
+    <string name="str_service_expire_before_content">%s\'s reminder service period is about to expire. please extend it as soon as possible to obtain timely network notification reminder service.</string>
+    <string name="str_service_expired_title">Service period expired reminder</string>
+    <string name="str_service_expired_content">%s\'s reminder service period is about to expire. please extend it as soon as possible to obtain timely network notification reminder service.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="str_save_user">Save user name</string>
+    <string name="str_save_password">Save password</string>
+    <string name="str_father">Father</string>
+    <string name="str_see_details"><u>See Details >></u></string>
+    <string name="str_more">More >></string>
+    <string name="str_hot_news_detail">Hot News:</string>
+    <string name="str_hot_news">Hot News</string>
+    <string name="str_monitoring_report">Report</string>
+    <string name="str_monitoring_report_01">Report</string>
+    <string name="str_monitoring_report_02"></string>
+    <string name="str_service_provision">Service Provision</string>
+    <string name="str_device_status">Status</string>
+    <string name="str_device_status_01">Status</string>
+    <string name="str_device_status_02"></string>
+    <string name="str_request_healthdata">Health</string>
+    <string name="str_request_healthdata_01">Health</string>
+    <string name="str_request_healthdata_02"></string>
+    <string name="str_position_tracker">Location</string>
+    <string name="str_position_tracker_01">Location</string>
+    <string name="str_position_tracker_02"></string>
+    <string name="str_back_quote"><![CDATA[<<]]></string>
+    <string name="str_ward_list">WARD LIST</string>
+    <string name="str_view_data">VIEW DATA</string>
+    <string name="str_filter">Filter</string>
+    <string name="str_position">Position：</string>
+    <string name="str_device_type">Device Type：</string>
+    <string name="str_attribute">Attribute：</string>
+    <string name="str_working_status">Working Status：</string>
+    <string name="str_online_consultation">Support</string>
+    <string name="str_normal_area_settings">Health Settings</string>
+    <string name="str_health_info_1">1. Set a reasonable range according to the ward\'s own situation</string>
+    <string name="str_health_info_2">2. When the measured value exceeds the setting range, the platform will prompt you.</string>
+    <string name="str_high_blood_pressure">High pressure value：</string>
+    <string name="str_low_blood_pressure">Low pressure value：</string>
+    <string name="str_restore_default"><u>Default</u></string>
+    <string name="str_high">High</string>
+    <string name="str_low">Low</string>
+    <string name="str_service_center">Service Center</string>
+    <string name="str_muy_service">My Service</string>
+    <string name="str_follow_up_service">Follow Up Service</string>
+    <string name="str_rescure_route">Rescure Route</string>
+    <string name="str_contact_platform">Contact Platform</string>
+    <string name="str_to_be_perfected">Perfected</string>
+    <string name="str_sos_setup">SOS Set Up</string>
+    <string name="str_rescue_query">Rescue Query</string>
+    <string name="str_rescue_time">Rescue Time</string>
+    <string name="str_rescue_status">Rescue Status</string>
+    <string name="str_image_upload">Please upload the front photo of your ID card</string>
+    <string name="str_fill_phone">This number will be used as an emergency contact number in case of an alarm, please fill in carefully and ensure normal communication.</string>
+    <string name="str_acquire_number">Verification code:</string>
+    <string name="str_confirm_phone">Confirm</string>
+    <string name="str_sos_help_header">In case of alarm, the platform will contact the following officers:</string>
+    <string name="str_sos_help_footer">(Modify First Emergency Contact Personal Data - Contact Telephone)</string>
+    <string name="str_alert_time">Alert Time</string>
+    <string name="str_receive_time">Receive Time</string>
+    <string name="str_short_receive_time">接收</string>
+    <string name="str_short_end_time">结束</string>
+    <string name="str_arrive_time">Arrive Time</string>
+    <string name="str_contact_customer_timer">Customer Time</string>
+    <string name="str_agency_time">Agency Time</string>
+    <string name="str_end_time">End Time</string>
+    <string name="str_gregorian">Gregorian</string>
+    <string name="str_lunar">Lunar</string>
+    <string name="str_relation_with_guardian">Relation</string>
+    <string name="str_permanent_address">Residence Address</string>
+    <string name="str_id_upload">Upload ID</string>
+    <string name="str_social_info">Social Info：</string>
+    <string name="str_area">Area</string>
+    <string name="str_card_number">CC</string>
+    <string name="str_id_card_number">ID Number：</string>
+    <string name="str_id_card_address">Address：</string>
+    <string name="str_current_history">Current History：</string>
+    <string name="str_other_history">Other History：</string>
+    <string name="str_family_history">Family History：</string>
+    <string name="str_other_family_history">Other FH：</string>
+    <string name="str_card_front">Front</string>
+    <string name="str_card_back">Back</string>
+    <string name="str_birthday_info">Please input your birthday.</string>
+    <string name="str_device_belong_to">Device Belongs To：</string>
+    <string name="str_other">Others</string>
+    <string name="str_order_number">Order Number：</string>
+    <string name="str_payment_time">Payment Time：</string>
+    <string name="str_report_notification_info">The guardian\'s heart rate showed %d abnormalities this week. The blood pressure showed %d times. Please pay close attention.</string>
+    <string name="str_input_residence">Please input watch user residence</string>
+    <string name="str_input_address">Please input watch user address</string>
+    <string name="str_no_devices">No device connected, please connect and protect the health of your family！</string>
+    <string name="str_no_devices_detail">监测数值会随个体状态、环境因素变化出现波动，属正常现象</string>
+    <string name="str_new_version">新版本已上架了，请到应用市场下载安装</string>
+    <string name="str_verify">确认</string>
+    <string name="str_current_version">当前版本</string>
+    <string name="str_logout_verify">确认退出账号吗?</string>
+    <string name="str_logout_title">温馨提示</string>
+
+    <string name="str_delete_confirm">确定是否删除？</string>
+    <string name="str_delete_all_confirm">确定是否全部删除？</string>
+    <string name="str_read_all_confirm">全部消息标记为已读</string>
+
+    <string name="duo_call_state_init">呼叫中...</string>
+    <string name="duo_call_state_pending">振铃中...</string>
+    <string name="duo_call_state_connecting">连接中...</string>
+    <string name="duo_call_state_hold">挂起</string>
+    <string name="duo_call_state_held">被挂起</string>
+    <string name="duo_call_state_audio_interrupt">对方声音中断</string>
+    <string name="duo_call_state_ok">通话结束</string>
+    <string name="duo_call_state_cancel">通话结束</string>
+    <string name="duo_call_state_canceled">挂断</string>
+    <string name="duo_call_state_missed">未接</string>
+    <string name="duo_call_state_error">异常</string>
+
+    <string name="room_description">菊风云通话，让沟通零距离</string>
+    <string name="room_login">登录</string>
+    <string name="room_logining">登录中。</string>
+    <string name="room_register">注册</string>
+    <string name="room_setting">设置</string>
+    <string name="room_no_net">无网络</string>
+    <string name="room_enter_correct_phone">请输入正确手机号</string>
+    <string name="room_password_too_short">密码长度大于等于6位</string>
+    <string name="room_paticipants_num">参与者(%d)</string>
+    <string name="room_me">我</string>
+    <string name="room_tip">提示</string>
+    <string name="room_leave_sure">确定要离开吗？</string>
+    <string name="room_cancel">取消</string>
+    <string name="room_leave">离开</string>
+    <string name="room_upload_log">上传日志</string>
+    <string name="room_enter_reason">请输入原因</string>
+    <string name="room_ok">确定</string>
+    <string name="room_upload_ok">上传成功</string>
+    <string name="room_upload_fail">操作太频繁，请稍后再试</string>
+    <string name="room_captcha_sended">验证码已发送至</string>
+    <string name="room_next">下一步</string>
+    <string name="room_not_receive_captcha">未收到验证码？</string>
+    <string name="room_displayname">昵称</string>
+    <string name="room_description2">全球互通，群聊、会议轻松实现</string>
+    <string name="room_channel_name">房间名</string>
+    <string name="room_password">密码</string>
+    <string name="room_join_channel">加入房间</string>
+    <string name="room_joining">加入中。。</string>
+    <string name="room_waiting_participant">等成员加入中。。。</string>
+    <string name="room_phone">手机号</string>
+    <string name="room_forget_password_question">忘记密码?</string>
+    <string name="room_version">版本号 V%s(%d)</string>
+    <string name="room_media_setting">媒体设置</string>
+    <string name="room_resolution">分辩率</string>
+    <string name="room_framerate">帧率</string>
+    <string name="room_participant">参与者</string>
+    <string name="room_set_new_password">设置新密码</string>
+    <string name="room_reenter_password">再次确认密码</string>
+    <string name="room_register_description1">欢迎使用菊风云通话</string>
+    <string name="room_register_description2">选择菊风，让您畅享沟通</string>
+    <string name="room_phone_already_register">该手机号已注册</string>
+    <string name="room_change_displayname">昵称修改</string>
+    <string name="room_change_password">密码设置</string>
+    <string name="room_logout">退出登录</string>
+    <string name="room_not_receive_captha_description">1.由于网络原因延迟送达 2.请检查是否有未读短信 3.您可以在时间倒计时完成后 点击重新发送 4.检查手机号是否正确</string>
+    <string name="room_reenter_phone">重新输入手机号</string>
+    <string name="room_close">关闭</string>
+    <string name="room_forget_password">忘记密码</string>
+    <string name="room_sure_captcha_send">确定将验证码发送到</string>
+    <string name="room_net_wrong_tip">网络连接好像有问题哦，请检查网络设置</string>
+    <string name="room_net_wratong">网络连接好像有问题哦，请检查网络设置</string>
+    <string name="room_enter_nickname">请输入昵称</string>
+    <string name="room_sms_code_too_short">验证码要等于4位</string>
+    <string name="room_sms_code_check_failed">验证失败</string>
+    <string name="room_login_failed">账号登录失败</string>
+    <string name="room_change_password_failed">修改密码失败</string>
+    <string name="room_two_password_different">两次输入密码不相同</string>
+    <string name="room_change_password_success">修改密码成功</string>
+    <string name="room_change_display_name">修改昵称</string>
+    <string name="room_new_display_name">新昵称</string>
+    <string name="room_enter_new_nickname">请输入新昵称</string>
+    <string name="room_change_nickname_failed">修改昵称失败</string>
+    <string name="room_change_nickname_success">修改昵称成功</string>
+    <string name="room_resend">重新发送</string>
+    <string name="room_second">%d秒</string>
+    <string name="room_join_channel_failed">加入会议失败</string>
+    <string name="room_join_channel_failed_invalid_password">密码无效，加入会议失败</string>
+    <string name="room_join_channel_failed_full">成员满，加入会议失败</string>
+    <string name="room_join_channel_failed_internal_error">会议异常，加入会议失败</string>
+    <string name="room_title">菊风云多方通话</string>
+    <string name="room_juphoon_room">JUPHOON ROOM</string>
+    <string name="room_invalid_sms_code">验证码错误</string>
+    <string name="room_powered_by_juphoon">Powered by 菊风Juphoon</string>
+    <string name="room_http_error">网络请求发生错误</string>
+    <string name="room_other_participant_number">对方号码</string>
+    <string name="room_send">发送</string>
+    <string name="room_add_participant">添加成员</string>
+    <string name="room_want_to_join_room">加入房间?</string>
+    <string name="room_join">加入</string>
+    <string name="room_room_full">房间人数已满</string>
+    <string name="room_invite_success">邀请成功</string>
+
+    <string name="pay_success">支付成功:</string>
+    <string name="pay_failed">支付失败:</string>
+    <string name="pay_result_callback_msg" formatted="false">微信支付结果：%s</string>
+
+    <string name="str_police_type">Police Type</string>
+    <string name="str_abnormal">Abnormal</string>
+    <string name="str_place">Place</string>
+    <string name="str_occur_time">Occur Time</string>
+    <string name="str_volunteer">Volunteer %s</string>
+    <string name="str_sos_duty">任务：请您5分钟内到达小区门口清理障碍，引导救护车进入.</string>
+    <string name="str_distance_rescue">距离救援点：%s米</string>
+    <string name="str_contact">联系方式：%s</string>
+    <string name="str_distance_ambulance">救护车距离救援点%s米</string>
+    <string name="str_distance_rescue_label">志愿者%d距离救援点%s米</string>
+    <string name="str_distance_you">您距离救援点%s米</string>
+    <string name="str_distance_rescue_kilo">距离救援点：%s公里</string>
+    <string name="str_distance_ambulance_kilo">救护车距离救援点%s公里</string>
+    <string name="str_distance_rescue_label_kilo">志愿者%d距离救援点%s公里</string>
+    <string name="str_distance_you_kilo">您距离救援点%s公里</string>
+
+    <string name="str_agree_policy_text">用户协议和隐私政策 \n
+请你务必审慎阅读, 充分理解“用户协议”和“隐私政策”各条款, 包括但不限于：为了方便监护人和手表联系, 我们需要收集你的手机号码.
+你可阅读 《用户协议》 和 《隐私政策》 了解详细信息. 如你同意, 请点击“同意”开始接受我们的服务.</string>
+
+    <string name="str_agreement_label">用户协议</string>
+    <string name="str_privacy_policy_label">隐私政策</string>
+
+    <string name="str_set_temp_error">体温设置错了</string>
+    <string name="str_set_pressure_error">血压设定错了</string>
+    <string name="str_set__heart_rate_error">心率设定错了</string>
+
+    <string name="str_location_error">敬请期待</string>
+    <string name="str_margin_health_rate">数据仅供参考，不作为治疗依据</string>
+
+    <string name="str_photo_import_title">请上传身份证</string>
+    <string name="str_payment_cancel">支付取消</string>
+    <string name="str_again_exit">Please click BACK again to exit</string>
+
+    <string name="str_filter_relation">关系：</string>
+    <string name="str_no_device_msg">您暂时还没有绑定设备</string>
+
+    <string name="str_no_guard_watch">尚未绑定设备</string>
+    <string name="str_progress_status">进行中</string>
+    <string name="str_finish_status">已处理</string>
+    <string name="str_read_status">已读</string>
+    <string name="str_unread_status">未读</string>
+    <string name="str_alarm_title">报警</string>
+    <string name="str_alarm_name_title">报警名称</string>
+    <string name="str_notice_title">通知</string>
+
+    <string name="str_average_heart_rate">平均值：%d次/分钟</string>
+    <string name="str_average_pressure">平均值：%d / %d(mmHg)</string>
+    <string name="str_average_temp">平均值：%.1f(°C)</string>
+    <string name="str_minus_value">--</string>
+
+    <string-array name="date_array">
+        <item>7日</item>
+        <item>20日</item>
+        <item>30日</item>
+        <item>90日</item>
+    </string-array>
+    <string-array name="position_array">
+        <item>Own</item>
+        <item>Children</item>
+        <item>Parent</item>
+        <item>Parents</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="device_type_array">
+        <item>Watch</item>
+        <item>Smoke</item>
+    </string-array>
+    <string-array name="working_type_array">
+        <item>Normal</item>
+        <item>Abnormal</item>
+    </string-array>
+    <string-array name="location_tab_array">
+        <item>厨房</item>
+        <item>卧室</item>
+        <item>客厅</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="belong_tab_array">
+        <item>自己家</item>
+        <item>子女家</item>
+        <item>父母家</item>
+        <item>岳父母</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="user_relation_array">
+        <item>父子</item>
+        <item>母子</item>
+        <item>兄弟</item>
+        <item>姐妹</item>
+        <item>亲属</item>
+        <item>朋友</item>
+        <item>爱人</item>
+    </string-array>
+    <string-array name="user_ill_array">
+        <item>请选择</item>
+        <item>高血压</item>
+        <item>胃病</item>
+        <item>偏头痛</item>
+        <item>贫血</item>
+        <item>心脏病</item>
+        <item>无病史</item>
+    </string-array>
+</resources>

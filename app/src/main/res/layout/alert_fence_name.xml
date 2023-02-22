@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="@dimen/dim_gap_2"
+	android:background="@drawable/dialog_bg">
+
+	<EditText
+		android:id="@+id/ID_EDTTEXT_FENCE_NAME"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="@dimen/dim_gap_2"
+		android:layout_margin="@dimen/dim_gap_3"
+		android:background="@drawable/edt_bg_selector"
+		android:maxLength="20"
+		android:inputType="text"
+		android:singleLine="true"
+		android:hint="@string/str_input_fence_name"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_marginTop="@dimen/dim_gap_3"
+		android:layout_marginBottom="@dimen/dim_gap_3">
+		<TextView
+			android:id="@+id/ID_TXTVIEW_CANCEL"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:padding="@dimen/dim_gap_2"
+			android:textSize="@dimen/dim_font_2"
+			android:text="@string/str_cancel"
+			android:textColor="@color/button_text_color"/>
+		<TextView
+			android:id="@+id/ID_TXTVIEW_CONFIRM"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:padding="@dimen/dim_gap_2"
+			android:textSize="@dimen/dim_font_2"
+			android:text="@string/str_confirm"
+			android:textColor="@color/button_text_color"/>
+	</LinearLayout>
+
+</LinearLayout>

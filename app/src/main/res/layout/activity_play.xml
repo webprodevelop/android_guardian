@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/activity_play"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="@android:color/black">
+
+	<com.ezvizuikit.open.EZUIPlayer
+		android:id="@+id/ID_PLAYER"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:background="@android:color/black" />
+
+	<TextView
+		android:id="@+id/ID_TXTVIEW_TITLE"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:layout_marginTop="@dimen/dim_gap_8"
+		android:gravity="center"
+		android:textColor="@android:color/white"
+		android:text="@string/str_qr_code"/>
+
+	<TextView
+		android:id="@+id/ID_TXTVIEW_CANCEL"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_marginBottom="@dimen/dim_gap_8"
+		android:padding="@dimen/dim_gap_1"
+		android:gravity="center"
+		android:textColor="@android:color/white"
+		android:text="@string/str_back"/>
+
+</RelativeLayout>

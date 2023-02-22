@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="colorPrimary">#60A0FF</color>
+	<color name="colorPrimaryDark">#4060E0</color>
+	<color name="colorAccent">#D81B60</color>
+
+	<color name="color_bg_odd">#F0F0F0</color>
+	<color name="color_bg_even">#E0E0E0</color>
+	<color name="color_border">#C0C0C0</color>
+	<color name="color_tab_selected">#00c7ff</color>
+	<color name="color_tab_normal">#8a8a8a</color>
+	<color name="color_text_group_name">#FFFFFF</color>
+	<color name="color_text_list_header">#5090E0</color>
+	<color name="color_text_list_item">#404040</color>
+	<color name="color_text_gray">#606060</color>
+	<color name="color_blue">#0000ff</color>
+	<color name="color_text_blue">#3291f8</color>
+	<color name="color_tab">#efefef</color>
+	<color name="color_ring">#adebfd</color>
+	<color name="color_back">#52ccef</color>
+	<color name="color_list_item">#f2f2f2</color>
+	<color name="color_trans_black">#80000000</color>
+	<color name="color_black">#AF000000</color>
+	<color name="color_red">#FF2525</color>
+	<color name="color_orange">#FF6200</color>
+	<color name="color_green">#00b266</color>
+	<color name="color_notification_active">#2ea7e0</color>
+
+	<color name="color_ios_gray">#f5f4f5</color>
+	<color name="color_trans_back">#a0cccccc</color>
+</resources>

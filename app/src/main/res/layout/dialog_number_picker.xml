@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@android:color/transparent"
+	android:padding="@dimen/dim_gap_5"
+	android:orientation="vertical">
+
+	<NumberPicker
+		android:id="@+id/ID_NUMPICK"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:theme="@style/NumberPickerTheme"
+		android:background="@drawable/dialog_bg"/>
+</LinearLayout>

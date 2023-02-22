@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal">
+
+	<!-- Date -->
+	<TextView
+		android:id="@+id/ID_TXTVIEW_DATE"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="3"
+		android:padding="@dimen/dim_gap_1"
+		android:gravity="center"
+		android:textColor="@color/color_text_list_item"
+		android:text="@string/str_date"/>
+
+	<!-- Separator -->
+	<View
+		android:layout_width="1dp"
+		android:layout_height="match_parent"
+		android:background="@color/color_border"/>
+
+	<!-- Group -->
+	<TextView
+		android:id="@+id/ID_TXTVIEW_GROUP"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="3"
+		android:padding="@dimen/dim_gap_1"
+		android:gravity="center"
+		android:textColor="@color/color_text_list_item"
+		android:text="@string/str_group"/>
+
+	<!-- Separator -->
+	<View
+		android:layout_width="1dp"
+		android:layout_height="match_parent"
+		android:background="@color/color_border"/>
+
+	<!-- Device -->
+	<TextView
+		android:id="@+id/ID_TXTVIEW_DEVICE"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="5"
+		android:padding="@dimen/dim_gap_1"
+		android:gravity="center"
+		android:textColor="@color/color_text_list_item"
+		android:text="@string/str_sensor_device"/>
+
+	<!-- Separator -->
+	<View
+		android:layout_width="1dp"
+		android:layout_height="match_parent"
+		android:background="@color/color_border"/>
+
+	<!-- Alert -->
+	<TextView
+		android:id="@+id/ID_TXTVIEW_ALERT"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="2"
+		android:padding="@dimen/dim_gap_1"
+		android:gravity="center"
+		android:textColor="@color/color_text_list_item"
+		android:text="@string/str_alert_content"/>
+
+	<!-- Separator -->
+	<View
+		android:layout_width="1dp"
+		android:layout_height="match_parent"
+		android:background="@color/color_border"/>
+
+</LinearLayout>

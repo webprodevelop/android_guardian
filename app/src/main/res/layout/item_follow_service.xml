@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:padding="@dimen/dim_gap_0">
+
+	<TextView
+		android:id="@+id/ID_TEXT_SERVICE_NAME"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingStart="@dimen/dim_gap_2"
+		android:textColor="@color/color_black"
+		android:text="@string/str_muy_service"
+		android:layout_margin="@dimen/dim_gap_1"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/dim_gap_1"
+		android:background="@color/color_ios_gray"
+		android:gravity="center"
+		android:orientation="horizontal">
+
+		<TextView
+			android:id="@+id/ID_TEXT_TERM_1"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/dim_gap_3"
+			android:layout_weight="1"
+			android:text="@string/str_service_term"
+			android:textAlignment="center"
+			android:textColor="@color/color_text_list_item" />
+
+		<TextView
+			android:id="@+id/ID_TEXT_PRICE_1"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="2"
+			android:text="@string/str_year1"
+			android:textAlignment="center"
+			android:textColor="@android:color/holo_blue_dark" />
+	</LinearLayout>
+	<LinearLayout
+		android:background="@android:color/white"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/dim_gap_1"
+		android:gravity="center"
+		android:orientation="horizontal">
+
+		<TextView
+			android:id="@+id/ID_TEXT_TERM_2"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/dim_gap_3"
+			android:layout_weight="1"
+			android:textAlignment="center"
+			android:textColor="@color/color_text_list_item"
+			android:text="@string/str_service_term"/>
+
+		<TextView
+			android:id="@+id/ID_TEXT_PRICE_2"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="2"
+			android:textAlignment="center"
+			android:textColor="@android:color/holo_blue_dark"
+			android:text="@string/str_year1"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/dim_gap_1"
+		android:background="@color/color_ios_gray"
+		android:gravity="center"
+		android:orientation="horizontal">
+
+		<TextView
+			android:id="@+id/ID_TEXT_TERM_3"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/dim_gap_3"
+			android:layout_weight="1"
+			android:text="@string/str_service_term"
+			android:textAlignment="center"
+			android:textColor="@color/color_text_list_item" />
+
+		<TextView
+			android:id="@+id/ID_TEXT_PRICE_3"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="2"
+			android:text="@string/str_year1"
+			android:textAlignment="center"
+			android:textColor="@android:color/holo_blue_dark" />
+	</LinearLayout>
+	<LinearLayout
+		android:background="@android:color/white"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/dim_gap_1"
+		android:gravity="center"
+		android:orientation="horizontal">
+
+		<TextView
+			android:id="@+id/ID_TEXT_TERM_4"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/dim_gap_3"
+			android:layout_weight="1"
+			android:textAlignment="center"
+			android:textColor="@color/color_text_list_item"
+			android:text="@string/str_service_term"/>
+
+		<TextView
+			android:id="@+id/ID_TEXT_PRICE_4"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="2"
+			android:textAlignment="center"
+			android:textColor="@android:color/holo_blue_dark"
+			android:text="@string/str_year1"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/dim_gap_1"
+		android:background="@color/color_ios_gray"
+		android:gravity="center"
+		android:orientation="horizontal">
+
+		<TextView
+			android:id="@+id/ID_TEXT_TERM_5"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/dim_gap_3"
+			android:layout_weight="1"
+			android:text="@string/str_service_term"
+			android:textAlignment="center"
+			android:textColor="@color/color_text_list_item" />
+
+		<TextView
+			android:id="@+id/ID_TEXT_PRICE_5"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="2"
+			android:text="@string/str_year1"
+			android:textAlignment="center"
+			android:textColor="@android:color/holo_blue_dark" />
+	</LinearLayout>
+</LinearLayout>

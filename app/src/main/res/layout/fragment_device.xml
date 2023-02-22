@@ -1,0 +1,5214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/color_bg_even"
+	android:clickable="true"
+	android:orientation="vertical">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/title_bar_height"
+		android:background="@color/color_tab_selected">
+		<ImageView
+			android:id="@+id/ID_IMG_BACK"
+			android:layout_width="@dimen/dim_icon_size"
+			android:layout_height="@dimen/dim_icon_size"
+			android:layout_centerVertical="true"
+			android:layout_marginStart="@dimen/dim_gap_0"
+			android:layout_alignParentStart="true"
+			android:padding="@dimen/dim_gap_0"
+			android:src="@drawable/ic_back_img"
+			tools:ignore="ContentDescription" />
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerHorizontal="true"
+			android:layout_centerVertical="true"
+			android:text="@string/str_device_manage"
+			android:textColor="@android:color/white"
+			android:textSize="@dimen/dim_font_3" />
+		<TextView
+			android:id="@+id/ID_TEXT_FILTER"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginEnd="@dimen/dim_gap_2"
+			android:layout_alignParentEnd="true"
+			android:textColor="@android:color/white"
+			android:textSize="@dimen/dim_font_2"
+			android:text="@string/str_filter"
+			tools:ignore="RelativeOverlap" />
+	</RelativeLayout>
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+			<LinearLayout
+				android:id="@+id/ID_LL_FILTER"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingStart="@dimen/dim_gap_5"
+				android:paddingEnd="@dimen/dim_gap_5"
+				android:orientation="vertical">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/dim_gap_2"
+					android:gravity="center">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/str_device_type"/>
+					<Spinner
+						android:id="@+id/spinner_device_type"
+						android:layout_width="match_parent"
+						android:layout_marginStart="@dimen/dim_gap_3"
+						android:layout_height="@dimen/dim_gap_5"
+						style="@style/spinner_style"/>
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/dim_gap_2"
+					android:orientation="horizontal"
+					android:baselineAligned="false">
+					<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:gravity="center_vertical">
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/str_network_state"/>
+						<Spinner
+							android:id="@+id/spinner_working_status"
+							android:layout_width="0dp"
+							android:layout_height="@dimen/dim_gap_5"
+							android:layout_weight="1"
+							android:layout_marginStart="@dimen/dim_gap_3"
+							style="@style/spinner_style"
+							tools:ignore="NestedWeights" />
+					</LinearLayout>
+					<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:layout_marginStart="@dimen/dim_gap_3"
+						android:gravity="center_vertical">
+
+						<TextView
+							android:id="@+id/ID_TEXT_RELATION"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/str_filter_relation" />
+						<Spinner
+							android:id="@+id/spinner_position"
+							android:layout_width="0dp"
+							android:layout_height="@dimen/dim_gap_5"
+							android:layout_weight="1"
+							android:layout_marginStart="@dimen/dim_gap_3"
+							style="@style/spinner_style"
+							tools:ignore="NestedWeights" />
+					</LinearLayout>
+				</LinearLayout>
+			</LinearLayout>
+			<RelativeLayout
+				android:id="@+id/ID_RL_WATCH"
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/group_height"
+				android:layout_margin="@dimen/dim_gap_2"
+				android:background="@drawable/shape_green_fill">
+				<ImageView
+					android:id="@+id/ID_IMGVIEW_WATCH_ADD"
+					android:layout_width="@dimen/dim_icon_size"
+					android:layout_height="@dimen/dim_icon_size"
+					android:layout_centerVertical="true"
+					android:layout_alignParentEnd="true"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:src="@drawable/ic_add_device"
+					tools:ignore="ContentDescription" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerInParent="true"
+					android:textColor="@android:color/white"
+					android:textSize="@dimen/dim_font_3"
+					android:text="@string/str_service_provision"
+					tools:ignore="RelativeOverlap" />
+			</RelativeLayout>
+
+			<TextView
+				android:id="@+id/ID_TXTVIEW_NO_WATCH"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:gravity="center"
+				android:text="@string/str_no_device"
+				android:textColor="@color/color_text_blue"
+				android:textSize="@dimen/dim_font_3"
+				android:visibility="visible" />
+
+			<com.iot.shoumengou.view.ExpandableHeightListView
+				android:id="@+id/ID_LSTVIEW_WATCH"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:divider="@null">
+			</com.iot.shoumengou.view.ExpandableHeightListView>
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE01"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE01_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentEnd="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device"
+						tools:ignore="ContentDescription" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE01"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE01_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE01_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE02"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE02_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE02"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE02_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE02_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE03"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE03_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE03"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE03_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE03_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE04"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE04_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE04"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE04_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE04_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE05"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE05_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE05"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE05_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE05_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE06"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE06_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE06"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE06_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE06_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE07"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE07_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE07"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE07_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE07_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE08"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE08_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE08"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE08_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE08_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE09"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE09_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE09"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE09_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE09_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE10"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE10_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE10"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE10_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE10_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE11"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE11_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE11"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE11_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE11_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE12"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE12_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE12"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE12_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE12_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE13"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE13_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE13"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE13_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE13_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE14"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE14_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE14"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE14_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE14_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE15"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE15_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE15"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE15_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE15_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE16"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE16_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE16"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE16_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE16_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE17"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE17_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE17"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE17_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE17_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE18"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE18_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE18"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE18_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE18_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE19"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE19_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE19"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE19_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE19_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE20"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE20_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE20"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE20_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE20_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE21"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE21_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE21"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE21_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE21_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE22"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE22_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE22"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE22_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE22_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE23"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE23_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE23"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE23_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE23_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE24"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE24_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE24"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE24_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE24_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE25"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE25_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE25"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE25_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE25_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE26"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE26_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE26"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE26_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE26_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE27"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE27_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE27"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE27_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE27_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE28"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE28_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE28"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE28_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE28_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE29"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE29_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE29"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE29_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE29_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE30"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE30_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE30"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE30_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE30_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE31"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE31_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE31"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE31_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE31_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE32"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE32_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE32"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE32_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE32_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE33"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE33_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE33"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE33_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE33_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE34"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE34_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE34"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE34_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE34_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE35"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE35_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE35"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE35_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE35_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE36"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE36_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE36"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE36_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE36_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE37"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE37_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE37"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE37_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE37_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE38"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE38_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE38"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE38_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE38_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE39"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE39_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE39"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE39_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE39_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE40"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE40_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE40"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE40_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE40_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE41"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE41_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE41"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE41_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE41_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE42"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE42_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE42"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE42_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE42_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE43"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE43_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE43"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE43_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE43_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE44"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE44_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE44"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE44_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE44_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE45"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE45_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE45"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE45_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE45_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE46"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE46_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE46"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE46_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE46_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE47"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE47_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE47"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE47_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE47_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE48"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE48_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE48"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE48_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE48_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE49"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE49_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE49"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE49_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE49_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE50"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE50_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE50"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE50_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE50_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE51"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE51_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE51"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE51_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE51_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE52"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE52_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE52"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE52_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE52_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE53"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE53_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE53"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE53_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE53_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE54"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE54_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE54"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE54_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE54_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE55"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE55_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE55"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE55_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE55_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE56"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE56_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE56"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE56_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE56_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE57"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE57_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE57"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE57_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE57_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE58"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE58_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE58"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE58_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE58_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE59"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE59_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE59"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE59_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE59_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE60"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE60_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE60"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE60_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE60_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE61"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE61_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE61"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE61_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE61_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE62"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE62_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE62"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE62_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE62_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE63"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE63_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE63"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE63_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE63_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE64"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE64_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE64"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE64_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE64_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE65"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE65_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE65"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE65_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE65_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE66"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE66_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE66"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE66_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE66_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE67"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE67_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE67"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE67_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE67_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE68"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE68_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE68"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE68_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE68_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE69"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE69_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE69"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE69_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE69_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE70"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE70_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE70"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE70_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE70_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE71"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE71_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE71"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE71_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE71_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE72"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE72_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE72"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE72_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE72_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE73"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE73_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE73"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE73_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE73_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE74"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE74_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE74"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE74_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE74_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE75"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE75_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE75"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE75_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE75_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE76"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE76_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE76"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE76_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE76_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE77"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE77_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE77"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE77_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE77_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE78"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE78_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE78"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE78_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE78_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE79"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE79_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE79"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE79_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE79_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE80"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE80_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE80"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE80_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE80_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE81"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE81_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE81"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE81_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE81_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE82"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE82_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE82"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE82_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE82_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE83"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE83_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE83"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE83_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE83_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE84"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE84_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE84"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE84_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE84_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE85"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE85_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE85"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE85_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE85_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE86"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE86_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE86"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE86_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE86_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE87"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE87_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE87"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE87_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE87_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE88"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE88_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE88"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE88_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE88_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE89"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE89_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE89"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE89_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE89_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE90"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE90_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE90"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE90_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE90_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE91"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE91_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE91"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE91_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE91_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE92"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE92_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE92"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE92_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE92_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE93"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE93_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE93"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE93_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE93_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE94"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE94_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE94"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE94_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE94_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE95"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE95_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE95"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE95_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE95_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE96"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE96_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE96"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE96_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE96_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE97"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE97_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE97"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE97_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE97_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE98"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE98_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE98"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE98_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE98_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+
+
+			<LinearLayout
+				android:id="@+id/ID_TYPE99"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/group_height"
+					android:layout_margin="@dimen/dim_gap_2"
+					android:background="@drawable/shape_green_fill">
+
+					<ImageView
+						android:id="@+id/ID_IMGVIEW_TYPE99_ADD"
+						android:layout_width="@dimen/dim_icon_size"
+						android:layout_height="@dimen/dim_icon_size"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:layout_margin="@dimen/dim_gap_2"
+						android:src="@drawable/ic_add_device" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:id="@+id/ID_TXTVIEW_TYPE99"
+						android:textColor="@android:color/white"
+						android:textSize="@dimen/dim_font_3" />
+				</RelativeLayout>
+
+				<TextView
+					android:id="@+id/ID_TXTVIEW_NO_TYPE99_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:text="@string/str_no_device"
+					android:textColor="@color/color_text_blue"
+					android:textSize="@dimen/dim_font_3"
+					android:visibility="visible" />
+
+				<com.iot.shoumengou.view.ExpandableHeightListView
+					android:id="@+id/ID_LSTVIEW_TYPE99_SENSOR"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null"></com.iot.shoumengou.view.ExpandableHeightListView>
+			</LinearLayout>
+
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>
+

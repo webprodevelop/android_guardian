@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:gravity="center_vertical"
+	android:orientation="horizontal">
+	<ImageView
+		android:layout_width="@dimen/dim_icon_size"
+		android:layout_height="@dimen/dim_icon_size"
+		android:padding="@dimen/dim_gap_1"
+		android:src="@drawable/check_selector"/>
+	<TextView
+		android:id="@+id/ID_TXTVIEW_DISEASE"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/dim_gap_2"
+		android:textColor="@android:color/black"
+		android:textSize="@dimen/dim_font_2"
+		android:text="Disease1"/>
+</LinearLayout>
