@@ -80,8 +80,8 @@ public class VolleyRequest {
                             }
                             String token = resp.getString("token");
                             if (token.length() > 0) {
-                                Prefs.Instance().setUserToken(token);
-                                Prefs.Instance().commit();
+//                                Prefs.Instance().setUserToken(token);
+//                                Prefs.Instance().commit();
                             }
                         } catch (JSONException ignored) {
 

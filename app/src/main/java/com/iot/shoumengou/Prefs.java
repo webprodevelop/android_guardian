@@ -11,6 +11,10 @@ public class Prefs {
 	private static final String PREF_USER_TOKEN			= "user_token";
 	private static final String PREF_USER_NAME			= "user_name";
 	private static final String PREF_USER_PHONE			= "user_phone";
+	private static final String PREF_CONTACT2_NAME		= "contact2_name";
+	private static final String PREF_CONTACT2_PHONE		= "contact2_phone";
+	private static final String PREF_CONTACT3_NAME		= "contact3_name";
+	private static final String PREF_CONTACT3_PHONE		= "contact3_phone";
 	private static final String PREF_USER_PSWD			= "user_pswd";
 	private static final String PREF_SAVE_PHONE			= "save_phone";
 	private static final String PREF_SAVE_PSWD			= "save_pswd";
@@ -85,6 +89,22 @@ public class Prefs {
 
 	public String getUserPhone() {
 		return m_prefsRead.getString(PREF_USER_PHONE, "");
+	}
+
+	public String getContact2Name() {
+		return m_prefsRead.getString(PREF_CONTACT2_NAME, "");
+	}
+
+	public String getContact2Phone() {
+		return m_prefsRead.getString(PREF_CONTACT2_PHONE, "");
+	}
+
+	public String getContact3Name() {
+		return m_prefsRead.getString(PREF_CONTACT3_NAME, "");
+	}
+
+	public String getContact3Phone() {
+		return m_prefsRead.getString(PREF_CONTACT3_PHONE, "");
 	}
 
 	public String getUserPswd() {
@@ -245,6 +265,22 @@ public class Prefs {
 
 	public void setUserPhone(String a_sUserPhone) {
 		m_prefsWrite.putString(PREF_USER_PHONE, a_sUserPhone);
+	}
+
+	public void setContact2Name(String name) {
+		m_prefsWrite.putString(PREF_CONTACT2_NAME, name);
+	}
+
+	public void setContact2Phone(String phone) {
+		m_prefsWrite.putString(PREF_CONTACT2_PHONE, phone);
+	}
+
+	public void setContact3Name(String name) {
+		m_prefsWrite.putString(PREF_CONTACT3_NAME, name);
+	}
+
+	public void setContact3Phone(String phone) {
+		m_prefsWrite.putString(PREF_CONTACT3_PHONE, phone);
 	}
 
 	public void setUserPswd(String a_sUserPswd) {

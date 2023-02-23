@@ -27,6 +27,19 @@
 			android:textSize="@dimen/dim_font_3"
 			android:text="@string/str_device_info"/>
 	</RelativeLayout>
+	<TextView
+		android:id="@+id/ID_TXTVIEW_INPUT_DESC"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:gravity="center"
+		android:layout_marginLeft="@dimen/dim_gap_3"
+		android:layout_marginRight="@dimen/dim_gap_3"
+		android:layout_marginTop="@dimen/dim_gap_5"
+		android:layout_marginBottom="@dimen/dim_gap_3"
+		android:text="@string/str_fill_sensor_user_register_info"
+		android:textColor="@android:color/holo_red_light"
+		android:textSize="@dimen/dim_font_2" />
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"

@@ -170,20 +170,17 @@ public class ActivityInputDeviceNumber extends ActivityBase implements OnClickLi
 					ItemWatchInfo itemWatchInfo = new ItemWatchInfo(dataObject);
 					itemWatchInfo.type = "";
 
-					ItemWatchInfo itemWatch = Util.findWatchEntry(itemWatchInfo.serial);
-					if (itemWatch == null) {
-						Util.addWatchEntry(itemWatchInfo);
+					if (itemWatchInfo.isManager && itemWatchInfo.name.isEmpty()) {
+						startDeviceInfoActivity(itemWatchInfo, true);
 					} else {
-						Util.updateWatchEntry(itemWatch, itemWatchInfo);
-					}
+						ItemWatchInfo itemWatch = Util.findWatchEntry(itemWatchInfo.serial);
+						if (itemWatch == null) {
+							Util.addWatchEntry(itemWatchInfo);
+						} else {
+							Util.updateWatchEntry(itemWatch, itemWatchInfo);
+						}
 
-					Util.setMoniteringWatchInfo(itemWatchInfo);
-					Prefs.Instance().setMoniteringWatchSerial(itemWatchInfo.serial);
-					Prefs.Instance().commit();
-
-					if (itemWatchInfo.isManager && itemWatchInfo.phone.isEmpty()) {
-						startDeviceInfoActivity(itemWatchInfo);
-					} else {
+						Util.setMoniteringWatchInfo(itemWatchInfo);
 						startBindCompleteActivity(itemWatchInfo);
 					}
 				}
@@ -218,16 +215,17 @@ public class ActivityInputDeviceNumber extends ActivityBase implements OnClickLi
 
 					JSONObject dataObject = jsonObject.getJSONObject("data");
 					ItemSensorInfo itemSensorInfo = new ItemSensorInfo(dataObject);
-					ItemSensorInfo itemSensor = Util.findSensorEntry(itemSensorInfo.type, itemSensorInfo.serial);
-					if (itemSensor == null) {
-						Util.addSensorEntry(itemSensorInfo);
-					} else {
-						Util.updateSensorEntry(itemSensor, itemSensorInfo);
-					}
 
-					if (itemSensorInfo.isManager && itemSensorInfo.contactPhone.isEmpty()) {
-						startDeviceInfoActivity(itemSensorInfo);
+					if (itemSensorInfo.isManager && itemSensorInfo.contactName.isEmpty()) {
+						startDeviceInfoActivity(itemSensorInfo, true);
 					} else {
+						ItemSensorInfo itemSensor = Util.findSensorEntry(itemSensorInfo.type, itemSensorInfo.serial);
+						if (itemSensor == null) {
+							Util.addSensorEntry(itemSensorInfo);
+						} else {
+							Util.updateSensorEntry(itemSensor, itemSensorInfo);
+						}
+
 						startBindCompleteActivity(itemSensorInfo);
 					}
 				}
@@ -244,14 +242,16 @@ public class ActivityInputDeviceNumber extends ActivityBase implements OnClickLi
 		}, TAG);
 	}
 
-	private void startDeviceInfoActivity(ItemDeviceInfo itemDeviceInfo) {
+	private void startDeviceInfoActivity(ItemDeviceInfo itemDeviceInfo, boolean isRegister) {
 		Intent intent;
 		if (deviceType.isEmpty()) {
 			intent = new Intent(this, ActivityWatchInfo.class);
 			intent.putExtra("device_data", (ItemWatchInfo)itemDeviceInfo);
+			intent.putExtra("isRegister", isRegister);
 		} else {
 			intent = new Intent(this, ActivitySensorInfo.class);
 			intent.putExtra("device_data", (ItemSensorInfo)itemDeviceInfo);
+			intent.putExtra("isRegister", isRegister);
 		}
 
 		startActivityForResult(intent, REQUEST_DEVICE_INFO);

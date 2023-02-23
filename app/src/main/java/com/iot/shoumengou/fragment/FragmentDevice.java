@@ -928,7 +928,6 @@ public class FragmentDevice extends Fragment implements View.OnClickListener, Ad
 						mWatchArray.add(itemWatchInfo);
 						if (Util.monitoringWatchId == itemWatchInfo.id) {
 							Util.setMoniteringWatchInfo(itemWatchInfo);
-							Prefs.Instance().setMoniteringWatchSerial(itemWatchInfo.serial);
 						}
 					}
 

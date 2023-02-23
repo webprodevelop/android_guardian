@@ -88,8 +88,6 @@ public class FragmentWardList extends Fragment implements View.OnClickListener  
         lvWardInfo.setOnItemClickListener((parent, view, position, id) -> {
             ItemWatchInfo info = mWatchArray.get(position);
             Util.setMoniteringWatchInfo(info);
-            Prefs.Instance().setMoniteringWatchSerial(info.serial);
-            Prefs.Instance().commit();
 
             adapterWatchInfo.notifyDataSetChanged();
         });
@@ -128,7 +126,6 @@ public class FragmentWardList extends Fragment implements View.OnClickListener  
                             mWatchArray.add(itemWatchInfo);
                             if (Util.monitoringWatchId == itemWatchInfo.id) {
                                 Util.setMoniteringWatchInfo(itemWatchInfo);
-                                Prefs.Instance().setMoniteringWatchSerial(itemWatchInfo.serial);
                             }
                         }
 

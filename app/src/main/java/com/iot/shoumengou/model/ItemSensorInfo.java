@@ -1,6 +1,8 @@
 //@formatter:off
 package com.iot.shoumengou.model;
 
+import android.util.Log;
+
 import org.json.JSONObject;
 
 import java.io.Serializable;
@@ -29,32 +31,33 @@ public class ItemSensorInfo extends ItemDeviceInfo implements Serializable {
 
 	}
 
-	public ItemSensorInfo(String type, int id, String serial, boolean isManager, String serviceStartDate, String serviceEndDate, boolean netStatus, String sensorType, String contactName, String contactPhone,
-						  String locationLabel, String labelRelative, String lat, String lon, String province, String city, String district, String residence, String address, boolean batteryStatus, boolean alarmStatus) {
-		this.type = type;
-		this.id = id;
-		this.serial = serial;
-		this.isManager = isManager;
-		this.serviceStartDate = serviceStartDate;
-		this.serviceEndDate = serviceEndDate;
-		this.netStatus = netStatus;
-		this.sensorType = sensorType;
-		this.contactName = contactName;
-		this.contactPhone = contactPhone;
-		this.locationLabel = locationLabel;
-		this.labelRelative = labelRelative;
-		this.lat = lat;
-		this.lon = lon;
-		this.province = province;
-		this.city = city;
-		this.district = district;
-		this.residence = residence;
-		this.address = address;
-		this.batteryStatus = batteryStatus;
-		this.alarmStatus = alarmStatus;
-	}
+//	public ItemSensorInfo(String type, int id, String serial, boolean isManager, String serviceStartDate, String serviceEndDate, boolean netStatus, String sensorType, String contactName, String contactPhone,
+//						  String locationLabel, String labelRelative, String lat, String lon, String province, String city, String district, String residence, String address, boolean batteryStatus, boolean alarmStatus) {
+//		this.type = type;
+//		this.id = id;
+//		this.serial = serial;
+//		this.isManager = isManager;
+//		this.serviceStartDate = serviceStartDate;
+//		this.serviceEndDate = serviceEndDate;
+//		this.netStatus = netStatus;
+//		this.sensorType = sensorType;
+//		this.contactName = contactName;
+//		this.contactPhone = contactPhone;
+//		this.locationLabel = locationLabel;
+//		this.labelRelative = labelRelative;
+//		this.lat = lat;
+//		this.lon = lon;
+//		this.province = province;
+//		this.city = city;
+//		this.district = district;
+//		this.residence = residence;
+//		this.address = address;
+//		this.batteryStatus = batteryStatus;
+//		this.alarmStatus = alarmStatus;
+//	}
 
 	public ItemSensorInfo(JSONObject dataObject) {
+		try {
 		this.isManager = dataObject.optBoolean("is_manager");
 		this.id = dataObject.optInt("id");
 		this.type = dataObject.optString("type");
@@ -76,5 +79,8 @@ public class ItemSensorInfo extends ItemDeviceInfo implements Serializable {
 		this.province = dataObject.optString("province");
 		this.city = dataObject.optString("city");
 		this.district = dataObject.optString("district");
+		} catch (Exception ex) {
+			Log.d("scott-test-ItemSensorInfo", ex.getMessage());
+		}
 	}
 }

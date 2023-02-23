@@ -177,6 +177,81 @@ public class ActivityMain extends FragmentActivity {
 		getAllNotifications();
 		//EventBus.getDefault().register(this);
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+		checkPermissions();
+	}
+
+	public static boolean hasPermissions(Context context, String... permissions) {
+		if (context != null && permissions != null) {
+			for (String permission : permissions) {
+				if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	public void checkPermissions() {
+		int PERMISSION_ALL = 1;
+		String[] PERMISSIONS = {
+				android.Manifest.permission.ACCESS_FINE_LOCATION,
+				android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+				android.Manifest.permission.CAMERA,
+				android.Manifest.permission.RECORD_AUDIO,
+				android.Manifest.permission.CALL_PHONE,
+				android.Manifest.permission.READ_PHONE_STATE,
+		};
+
+		if (!hasPermissions(this, PERMISSIONS)) {
+			ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
+		}
+
+//		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//			if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//				ActivityCompat.requestPermissions(
+//						this,
+//						new String[] { Manifest.permission.ACCESS_FINE_LOCATION },
+//						AppConst.REQUEST_PERMISSION_LOCATION
+//				);
+//			}
+//			if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+//				ActivityCompat.requestPermissions(
+//						this,
+//						new String[] { Manifest.permission.WRITE_EXTERNAL_STORAGE },
+//						AppConst.REQUEST_PERMISSION_STORAGE
+//				);
+//			}
+//			if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+//				ActivityCompat.requestPermissions(
+//						this,
+//						new String[] { Manifest.permission.CAMERA },
+//						AppConst.REQUEST_PERMISSION_STORAGE
+//				);
+//			}
+//			if (checkSelfPermission(Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+//				ActivityCompat.requestPermissions(
+//						this,
+//						new String[] { Manifest.permission.RECORD_AUDIO },
+//						AppConst.REQUEST_PERMISSION_STORAGE
+//				);
+//			}
+//			if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+//				ActivityCompat.requestPermissions(
+//						this,
+//						new String[] { Manifest.permission.CALL_PHONE },
+//						AppConst.REQUEST_PERMISSION_STORAGE
+//				);
+//			}
+//			if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+//				ActivityCompat.requestPermissions(
+//						this,
+//						new String[] { Manifest.permission.READ_PHONE_STATE },
+//						AppConst.REQUEST_PERMISSION_STORAGE
+//				);
+//			}
+//			//Util.ignoreBatteryOptimization(this);
+//		}
 	}
 
 	public void showProgress() {
@@ -191,21 +266,24 @@ public class ActivityMain extends FragmentActivity {
 
 	}
 
-	public void startHealthProgress(Runnable refreshHealthData){
+	public void startHealthProgress(Runnable refreshHealthData, boolean showDialog){
 		Util.refreshHealthData = refreshHealthData;
 		Util.monitoringWatch.takeOnStatus = true;
 		Util.monitoringWatch.netStatus = true;
 		Util.isUpdatedHealthData = false;
 		Util.healthDataStart = new Date().getTime();
 		Util.healthCheckStart = 0;
-		m_healthProgressDlg = new ProgressDialog(this);
-		m_healthProgressDlg.setMax(180); // Progress Dialog Max Value
-		m_healthProgressDlg.setMessage(""); // Setting Message
-		m_healthProgressDlg.setTitle("健康体征远程检测中······"); // Setting Title
-		m_healthProgressDlg.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL); // Progress Dialog Style Horizontal
-		m_healthProgressDlg.setCancelable(false);
-		m_healthProgressDlg.setProgress(0);
-		m_healthProgressDlg.show();
+		if (showDialog){
+			m_healthProgressDlg = new ProgressDialog(this);
+			m_healthProgressDlg.setMax(180); // Progress Dialog Max Value
+			m_healthProgressDlg.setMessage(""); // Setting Message
+			m_healthProgressDlg.setTitle("正在更新数据······"); // Setting Title
+			m_healthProgressDlg.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL); // Progress Dialog Style Horizontal
+			m_healthProgressDlg.setCancelable(false);
+			m_healthProgressDlg.setProgress(0);
+			m_healthProgressDlg.show();
+		}
+
 		healthDataHandler.postDelayed(runnableHealthData, 1000);
 		FragmentNewDiscover fragmentNewDiscover = (FragmentNewDiscover)((FragmentParentDiscover)(fragmentArrayList.get(0))).getChildFragment(FragmentNewDiscover.class.getSimpleName());
 		if (fragmentNewDiscover != null) {
@@ -214,7 +292,7 @@ public class ActivityMain extends FragmentActivity {
 	}
 
 	public void resumeHealthProgress(){
-		if (null != m_healthProgressDlg && 0 != Util.healthDataStart && null != Util.refreshHealthData){
+		if ( 0 != Util.healthDataStart && null != Util.refreshHealthData){ // null != m_healthProgressDlg &&
 			healthDataHandler.postDelayed(runnableHealthData, 1000);
 		}else{
 			closeHealthProcess();
@@ -277,9 +355,9 @@ public class ActivityMain extends FragmentActivity {
 	private final Runnable runnableHealthData = new Runnable() {
 		@Override
 		public void run() {
-			if (null == m_healthProgressDlg) {
-				return;
-			}
+//			if (null == m_healthProgressDlg) {
+//				return;
+//			}
 			if (Util.healthDataStart == 0){
 				return;
 			}
@@ -293,9 +371,11 @@ public class ActivityMain extends FragmentActivity {
 				closeHealthProcess();
 				return;
 			}else {
-				m_healthProgressDlg.setProgress((int) (timeDiff / 1000));
-				if (!m_healthProgressDlg.isShowing()){
-					m_healthProgressDlg.show();
+				if (m_healthProgressDlg != null){
+					m_healthProgressDlg.setProgress((int) (timeDiff / 1000));
+					if (!m_healthProgressDlg.isShowing()){
+						m_healthProgressDlg.show();
+					}
 				}
 			}
 
@@ -573,52 +653,6 @@ public class ActivityMain extends FragmentActivity {
 		IS_IN_STACK = true;
 		IS_FOREGROUND = true;
 
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-			if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-				ActivityCompat.requestPermissions(
-						this,
-						new String[] { Manifest.permission.ACCESS_FINE_LOCATION },
-						AppConst.REQUEST_PERMISSION_LOCATION
-				);
-			}
-			if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-				ActivityCompat.requestPermissions(
-						this,
-						new String[] { Manifest.permission.WRITE_EXTERNAL_STORAGE },
-						AppConst.REQUEST_PERMISSION_STORAGE
-				);
-			}
-			if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-				ActivityCompat.requestPermissions(
-						this,
-						new String[] { Manifest.permission.CAMERA },
-						AppConst.REQUEST_PERMISSION_STORAGE
-				);
-			}
-			if (checkSelfPermission(Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
-				ActivityCompat.requestPermissions(
-						this,
-						new String[] { Manifest.permission.RECORD_AUDIO },
-						AppConst.REQUEST_PERMISSION_STORAGE
-				);
-			}
-			if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-				ActivityCompat.requestPermissions(
-						this,
-						new String[] { Manifest.permission.CALL_PHONE },
-						AppConst.REQUEST_PERMISSION_STORAGE
-				);
-			}
-			if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-				ActivityCompat.requestPermissions(
-						this,
-						new String[] { Manifest.permission.READ_PHONE_STATE },
-						AppConst.REQUEST_PERMISSION_STORAGE
-				);
-			}
-			//Util.ignoreBatteryOptimization(this);
-		}
-
 		ItemNotification itemNotification = (ItemNotification)getIntent().getSerializableExtra("notification_data");
 		if (itemNotification != null) {
 			showNotificationPopup(itemNotification);
@@ -854,6 +888,9 @@ public class ActivityMain extends FragmentActivity {
 						JSONObject dataObject = new JSONObject(strData);
 						JSONObject infoObject = dataObject.optJSONObject("info");
 						if (infoObject != null) {
+							// cancel health check
+							closeHealthProcess();
+
 							@SuppressLint("InflateParams") View popupView = getLayoutInflater().inflate(R.layout.popup_notification, null);
 							LinearLayout llContainer = popupView.findViewById(R.id.ID_LL_CONTAINTER);
 							TextView tvTitle = popupView.findViewById(R.id.ID_TXTVIEW_TITLE);
@@ -1058,20 +1095,15 @@ public class ActivityMain extends FragmentActivity {
 							if (Util.monitoringWatchId == itemWatchInfo.id) {
 								isRegistered = true;
 								Util.setMoniteringWatchInfo(itemWatchInfo);
-								Prefs.Instance().setMoniteringWatchSerial(itemWatchInfo.serial);
 							}
 
 							if (i == dataArrayObject.length() - 1 && !isRegistered) {
 								Util.setMoniteringWatchInfo(Util.getAllWatchEntries().get(0));
-								Prefs.Instance().setMoniteringWatchSerial(Util.getAllWatchEntries().get(0).serial);
-								Prefs.Instance().commit();
 							}
 						}
 					}
 					else {
 						Util.setMoniteringWatchInfo(null);
-						Prefs.Instance().setMoniteringWatchSerial("");
-						Prefs.Instance().commit();
 					}
 
 					initControls();

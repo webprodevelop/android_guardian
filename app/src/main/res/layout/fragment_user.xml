@@ -175,14 +175,15 @@
 				android:layout_height="wrap_content"
 				android:layout_marginLeft="@dimen/dim_gap_5"
 				android:layout_marginRight="@dimen/dim_gap_5">
+
 				<TextView
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:padding="@dimen/dim_gap_3"
 					android:background="@drawable/edt_bg_selected"
+					android:padding="@dimen/dim_gap_3"
+					android:text="@string/str_contact_platform"
 					android:textColor="@android:color/black"
-					android:textSize="@dimen/dim_font_3"
-					android:text="@string/str_contact_platform"/>
+					android:textSize="@dimen/dim_font_3" />
 				<ImageView
 					android:id="@+id/ID_IMGVIEW_NOTIFICATION_MANAGE_ARROW"
 					android:layout_width="@dimen/dim_icon_size"
@@ -298,14 +299,38 @@
 				android:layout_height="wrap_content"
 				android:layout_marginLeft="@dimen/dim_gap_5"
 				android:layout_marginRight="@dimen/dim_gap_5">
+
 				<TextView
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:padding="@dimen/dim_gap_3"
 					android:background="@drawable/edt_bg_selected"
+					android:padding="@dimen/dim_gap_3"
+					android:text="@string/str_privacy_policy_label"
 					android:textColor="@android:color/black"
-					android:textSize="@dimen/dim_font_3"
-					android:text="@string/str_privacy_policy_label"/>
+					android:textSize="@dimen/dim_font_3" />
+				<ImageView
+					android:layout_width="@dimen/dim_icon_size"
+					android:layout_height="@dimen/dim_icon_size"
+					android:src="@drawable/ic_forward"
+					android:layout_alignParentEnd="true"
+					android:layout_centerVertical="true"
+					android:tint="@android:color/black" />
+			</RelativeLayout>
+			<RelativeLayout
+				android:id="@+id/ID_LYT_RMACCOUNT"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="@dimen/dim_gap_5"
+				android:layout_marginRight="@dimen/dim_gap_5">
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/edt_bg_selected"
+					android:padding="@dimen/dim_gap_3"
+					android:text="@string/str_remove_account"
+					android:textColor="@android:color/black"
+					android:textSize="@dimen/dim_font_3" />
 				<ImageView
 					android:layout_width="@dimen/dim_icon_size"
 					android:layout_height="@dimen/dim_icon_size"
@@ -321,14 +346,15 @@
 				android:layout_marginLeft="@dimen/dim_gap_5"
 				android:layout_marginRight="@dimen/dim_gap_5"
 				android:layout_marginBottom="@dimen/dim_font_5">
+
 				<TextView
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:padding="@dimen/dim_gap_3"
 					android:background="@drawable/edt_bg_selected"
+					android:padding="@dimen/dim_gap_3"
+					android:text="@string/str_logout"
 					android:textColor="@android:color/black"
-					android:textSize="@dimen/dim_font_3"
-					android:text="@string/str_logout"/>
+					android:textSize="@dimen/dim_font_3" />
 				<ImageView
 					android:layout_width="@dimen/dim_icon_size"
 					android:layout_height="@dimen/dim_icon_size"

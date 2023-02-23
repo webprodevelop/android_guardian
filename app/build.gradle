@@ -20,16 +20,16 @@ android {
 		applicationId "com.iot.shoumengou"
 		minSdkVersion 23
 		targetSdkVersion 30
-		versionCode 26
-		versionName "2.6"
+		versionCode 27
+		versionName "2.7"
 		testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 		ndk {
-			abiFilters "armeabi-v7a"
+			abiFilters "arm64-v8a", "armeabi", "armeabi-v7a"
 		}
 		manifestPlaceholders = [
-			JPUSH_PKGNAME : applicationId,
-			JPUSH_APPKEY  : "ca86b4e74d1d5d96f7303cc6",		// 7fc7eb722340dc6542dcc115 //在此替换你的APPKey
-			APP_CHANNEL   : "developer-default",				// 应用渠道号
+			JPUSH_PKGNAME: applicationId,
+			JPUSH_APPKEY : "380de1ed22680440f99a8890",//值来自开发者平台取得的AppKey
+			JPUSH_CHANNEL: "default_developer",
 			MEIZU_APPKEY:"MZ-魅族的APPKEY",
 			MEIZU_APPID:"MZ-魅族的APPID",
 			XIAOMI_APPID:"MI-小米的APPID",

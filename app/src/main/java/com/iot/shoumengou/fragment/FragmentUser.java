@@ -1,11 +1,13 @@
 //@formatter:off
 package com.iot.shoumengou.fragment;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -19,6 +21,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import com.iot.shoumengou.BuildConfig;
@@ -40,6 +43,7 @@ import com.iot.shoumengou.http.HttpAPI;
 import com.iot.shoumengou.http.HttpAPIConst;
 import com.iot.shoumengou.http.VolleyCallback;
 import com.iot.shoumengou.model.ItemWatchInfo;
+import com.iot.shoumengou.util.AppConst;
 import com.iot.shoumengou.util.Util;
 import com.squareup.picasso.Picasso;
 
@@ -63,6 +67,7 @@ public class FragmentUser extends Fragment implements View.OnClickListener {
 	private RelativeLayout	mAccountManageView;
 	private RelativeLayout	mChangePasswordView;
 	private RelativeLayout	mLogoutView;
+	private RelativeLayout	mRemoveAccountView;
 	private RelativeLayout	mAgreement;
 	private RelativeLayout	mPrivacy;
 	private TextView		mVersion;
@@ -104,6 +109,7 @@ public class FragmentUser extends Fragment implements View.OnClickListener {
 		mAccountManageView = layout.findViewById(R.id.ID_LYT_CASH_MAANGE);
 		mChangePasswordView = layout.findViewById(R.id.ID_LYT_UPDATE_PASSWORD);
 		mLogoutView = layout.findViewById(R.id.ID_LYT_LOGOUT);
+		mRemoveAccountView = layout.findViewById(R.id.ID_LYT_RMACCOUNT);
 
 		mAgreement = layout.findViewById(R.id.ID_LYT_AGREEMENT);
 		mPrivacy = layout.findViewById(R.id.ID_LYT_POLICY);
@@ -122,34 +128,9 @@ public class FragmentUser extends Fragment implements View.OnClickListener {
 		mAccountManageView.setOnClickListener(this);
 		mChangePasswordView.setOnClickListener(this);
 		mLogoutView.setOnClickListener(this);
+		mRemoveAccountView.setOnClickListener(this);
 		mAgreement.setOnClickListener(this);
 		mPrivacy.setOnClickListener(this);
-	}
-
-	private void checkSOSContacts() {
-		boolean bExistContact = false;
-		if (monitoringWatchInfo == null) {
-			monitoringWatchInfo = Util.monitoringWatch;
-		}
-		if (monitoringWatchInfo != null) {
-			if ((monitoringWatchInfo.sosContactName1 != null && !monitoringWatchInfo.sosContactName1.isEmpty() && monitoringWatchInfo.sosContactPhone1 != null && !monitoringWatchInfo.sosContactPhone1.isEmpty())
-					|| (monitoringWatchInfo.sosContactName2 != null && !monitoringWatchInfo.sosContactName2.isEmpty() && monitoringWatchInfo.sosContactPhone2 != null && !monitoringWatchInfo.sosContactPhone1.isEmpty())
-					|| (monitoringWatchInfo.sosContactName3 != null && !monitoringWatchInfo.sosContactName3.isEmpty() && monitoringWatchInfo.sosContactPhone3 != null && !monitoringWatchInfo.sosContactPhone1.isEmpty())) {
-				bExistContact = true;
-			}
-		}
-
-		//showSOSContactNotification(!bExistContact);
-	}
-
-	public void showSOSContactNotification(boolean show) {
-		if (show) {
-			mSOSContactNotiView.setVisibility(View.VISIBLE);
-		} else {
-			mSOSContactNotiView.setVisibility(View.GONE);
-		}
-
-		showInfoNotification();
 	}
 
 	public void showPushManageNotification(boolean show) {
@@ -204,7 +185,6 @@ public class FragmentUser extends Fragment implements View.OnClickListener {
 			mUserPerfect.setVisibility(View.INVISIBLE);
 		}
 		setUserInfo();
-		checkSOSContacts();
 	}
 
 	@SuppressLint("NonConstantResourceId")
@@ -224,7 +204,8 @@ public class FragmentUser extends Fragment implements View.OnClickListener {
 				onAlarmSet();
 				break;
 			case R.id.ID_LYT_NOTIFICATION_MANAGE:
-				onChartRequest();
+//				onChartRequest();
+				onConnectService();
 				break;
 			case R.id.ID_LYT_CASH_MAANGE:
 				onAccountManagement();
@@ -234,6 +215,9 @@ public class FragmentUser extends Fragment implements View.OnClickListener {
 				break;
 			case R.id.ID_LYT_LOGOUT:
 				onLogout();
+				break;
+			case R.id.ID_LYT_RMACCOUNT:
+				onRemoveAccount();
 				break;
 			case R.id.ID_LYT_AGREEMENT:
 				Intent intent1 = new Intent(getActivity(), ActivityAgree.class);
@@ -283,12 +267,8 @@ public class FragmentUser extends Fragment implements View.OnClickListener {
 	}
 
 	private void onSOSContactSet() {
-		if (Util.monitoringWatch != null && Util.monitoringWatch.isManager) {
-			Intent intent = new Intent(getActivity(), ActivitySOSContact.class);
-			startActivity(intent);
-		} else {
-			Util.showToastMessage(getContext(), R.string.str_no_permission);
-		}
+		Intent intent = new Intent(getActivity(), ActivitySOSContact.class);
+		startActivity(intent);
 	}
 
 	private void onRescueQuery() {
@@ -350,6 +330,86 @@ public class FragmentUser extends Fragment implements View.OnClickListener {
 		confirmDlg.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 		confirmDlg.setView(confirmView);
 		confirmDlg.show();
+	}
+
+	private void onRemoveAccount() {
+		LayoutInflater layoutInflater = LayoutInflater.from(getContext());
+		View confirmView = layoutInflater.inflate(R.layout.alert_remove_account, null);
+
+		final AlertDialog confirmDlg = new AlertDialog.Builder(getContext()).create();
+
+		TextView btnCancel = confirmView.findViewById(R.id.ID_TXTVIEW_CANCEL);
+		TextView btnConfirm = confirmView.findViewById(R.id.ID_TXTVIEW_CONFIRM);
+
+		btnCancel.setOnClickListener(v -> confirmDlg.dismiss());
+
+		btnConfirm.setOnClickListener(v -> {
+			confirmDlg.dismiss();
+
+			((ActivityMain) Objects.requireNonNull(getActivity())).showProgress();
+			HttpAPI.removeAccount(Prefs.Instance().getUserToken(), Prefs.Instance().getUserPhone(), new VolleyCallback() {
+				@Override
+				public void onSuccess(String response) {
+					try {
+						JSONObject jsonObject = new JSONObject(response);
+						int iRetCode = jsonObject.getInt("retcode");
+						if (iRetCode != HttpAPIConst.RESP_CODE_SUCCESS) {
+							((ActivityMain) Objects.requireNonNull(getActivity())).dismissProgress();
+							return;
+						}
+
+						iotdbHelper.clearAll();
+
+						if (!Prefs.Instance().isSavedPhone()) {
+							Prefs.Instance().setUserPhone("");
+							Prefs.Instance().commit();
+						}
+						if (!Prefs.Instance().isSavedPWSD()) {
+							Prefs.Instance().setUserPswd("");
+							Prefs.Instance().commit();
+						}
+
+						Intent intent = new Intent(getActivity(), ActivityLogin.class);
+						intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+						intent.putExtra("log_out", true);
+						startActivity(intent);
+
+						((ActivityMain) Objects.requireNonNull(getActivity())).dismissProgress();
+					}
+					catch (JSONException e) {
+						((ActivityMain) Objects.requireNonNull(getActivity())).dismissProgress();
+						Util.ShowDialogError(R.string.str_api_failed);
+					}
+				}
+
+				@Override
+				public void onError(Object error) {
+					((ActivityMain) Objects.requireNonNull(getActivity())).dismissProgress();
+					Util.ShowDialogError(R.string.str_api_failed);
+				}
+			}, "FragmentUser");
+		});
+
+		confirmDlg.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+		confirmDlg.setView(confirmView);
+		confirmDlg.show();
+	}
+
+	private void onConnectService() {
+		if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+			ActivityCompat.requestPermissions(
+					getActivity(),
+					new String[]{Manifest.permission.CALL_PHONE},
+					AppConst.REQUEST_PERMISSION_STORAGE
+			);
+			return;
+		}
+		if (null != Util.servicePhone && !Util.servicePhone.isEmpty()){
+			Intent intent = new Intent(Intent.ACTION_CALL);
+//			intent.setData(Uri.parse("tel:400-0909-119"));
+			intent.setData(Uri.parse("tel:" + Util.servicePhone));
+			Objects.requireNonNull(getActivity()).startActivity(intent);
+		}
 	}
 
 	private void onChartRequest() {

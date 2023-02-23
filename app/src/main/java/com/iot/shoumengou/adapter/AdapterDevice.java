@@ -140,9 +140,9 @@ public class AdapterDevice extends ArrayAdapter<ItemDeviceInfo> {
                     viewHolder.tvCharging.setTextColor(Color.RED);
                 }
             } else {
-                viewHolder.tvNetState.setText(R.string.str_unconnect);
+                viewHolder.tvNetState.setText(R.string.str_unconnect_watch);
                 viewHolder.tvNetState.setTextColor(Color.RED);
-                viewHolder.tvStatus.setText(R.string.str_unconnect);
+                viewHolder.tvStatus.setText(R.string.str_unconnect_watch);
                 viewHolder.tvStatus.setTextColor(Color.RED);
 
                 viewHolder.tvCharging.setText(R.string.str_unknown);
@@ -175,9 +175,9 @@ public class AdapterDevice extends ArrayAdapter<ItemDeviceInfo> {
                     viewHolder.tvStatus.setTextColor(Color.RED);
                 }
             } else {
-                viewHolder.tvNetState.setText(R.string.str_unconnect);
+                viewHolder.tvNetState.setText(R.string.str_unconnect_sensor);
                 viewHolder.tvNetState.setTextColor(Color.RED);
-                viewHolder.tvStatus.setText(R.string.str_unconnect);
+                viewHolder.tvStatus.setText(R.string.str_unconnect_sensor);
                 viewHolder.tvStatus.setTextColor(Color.RED);
             }
 
@@ -206,10 +206,12 @@ public class AdapterDevice extends ArrayAdapter<ItemDeviceInfo> {
                 if (itemDeviceInfo.type.isEmpty()) {
                     intent = new Intent(getContext(), ActivityWatchInfo.class);
                     intent.putExtra("device_data", (ItemWatchInfo)itemDeviceInfo);
+                    intent.putExtra("isRegister", false);
                     ((Activity)getContext()).startActivityForResult(intent, ActivityMain.REQUEST_SCAN_SMART_WATCH);
                 } else {
                     intent = new Intent(getContext(), ActivitySensorInfo.class);
                     intent.putExtra("device_data", (ItemSensorInfo)itemDeviceInfo);
+                    intent.putExtra("isRegister", false);
                     ((Activity)getContext()).startActivityForResult(intent, ActivityMain.REQUEST_SCAN_FIRE_SENSOR);
                 }
             } else {
@@ -268,12 +270,8 @@ public class AdapterDevice extends ArrayAdapter<ItemDeviceInfo> {
                 if (!deviceList.isEmpty()) {
                     ItemWatchInfo ldeviceInfo = (ItemWatchInfo) deviceList.get(deviceList.size()-1);
                     Util.setMoniteringWatchInfo(ldeviceInfo);
-                    Prefs.Instance().setMoniteringWatchSerial(ldeviceInfo.serial);
-                    Prefs.Instance().commit();
                 } else {
                     Util.setMoniteringWatchInfo(null);
-                    Prefs.Instance().setMoniteringWatchSerial("");
-                    Prefs.Instance().commit();
                 }
             }
         }

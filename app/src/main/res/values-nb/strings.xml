@@ -76,6 +76,7 @@
     <string name="str_saving_user_info_failed">Saving is failed!</string>
     <string name="str_saving_user_info_success">Saving is succeed!</string>
     <string name="str_user_name">Name</string>
+    <string name="str_remove_account">remove_account</string>
     <string name="str_auth_code1">Acquire code：</string>
     <string name="str_will_delete_device">Do you delete device? This operation cannot cancel</string>
     <string name="str_will_delete_group">Do you delete group? This operation cannot cancel</string>
@@ -242,6 +243,8 @@
     <string name="str_continue">Continue</string>
     <string name="str_device_info">Device information</string>
     <string name="str_fill_watch_user_info">Please fill watch user information</string>
+    <string name="str_fill_watch_user_register_info">All must be filled out before you can add a bound watch. Otherwise, it will not be added</string>
+    <string name="str_fill_sensor_user_register_info">All must be filled out before you can add a bound sensor. Otherwise, it will not be added</string>
     <string name="str_name1">Name:</string>
     <string name="str_input_watch_user_name">Watch user name(Maximum 5 characters)</string>
     <string name="str_phone1">Phone:</string>
@@ -362,7 +365,8 @@
     <string name="str_cm" translatable="false">cm</string>
     <string name="str_kg" translatable="false">kg</string>
     <string name="str_unknown">Unknown</string>
-    <string name="str_unconnect">Disconnect</string>
+    <string name="str_unconnect_watch">Disconnect</string>
+    <string name="str_unconnect_sensor">Disconnect</string>
     <string name="str_check_health">Checking Health Status......</string>
     <string name="str_battery_low">Low battery</string>
     <string name="str_no_alart">No alert</string>
@@ -493,6 +497,7 @@
     <string name="str_verify">确认</string>
     <string name="str_current_version">当前版本</string>
     <string name="str_logout_verify">确认退出账号吗?</string>
+    <string name="str_remove_account_verify">注销账号会删除您个人所有信息\n您确定要注销账号吗?</string>
     <string name="str_logout_title">温馨提示</string>
 
     <string name="str_delete_confirm">确定是否删除？</string>
@@ -625,7 +630,7 @@
     <string name="str_set__heart_rate_error">心率设定错了</string>
 
     <string name="str_location_error">敬请期待</string>
-    <string name="str_margin_health_rate">数据仅供参考，不作为治疗依据</string>
+    <string name="str_margin_health_rate">非医疗设备检测，数据不可以用于医疗</string>
 
     <string name="str_photo_import_title">请上传身份证</string>
     <string name="str_payment_cancel">支付取消</string>
@@ -673,6 +678,7 @@
         <item>厨房</item>
         <item>卧室</item>
         <item>客厅</item>
+        <item>卫生间</item>
         <item>其他</item>
     </string-array>
     <string-array name="belong_tab_array">

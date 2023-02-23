@@ -75,6 +75,7 @@
     <string name="str_sensor_list">设备目录</string>
     <string name="str_setup">设置</string>
     <string name="str_user_data">个人资料</string>
+    <string name="str_remove_account">注销账号</string>
     <string name="str_saving_user_info_failed">更改失败！</string>
     <string name="str_saving_user_info_success">更改成功！</string>z
     <string name="str_user_name">名字</string>
@@ -245,9 +246,11 @@
     <string name="str_continue">继续</string>
     <string name="str_device_info">设备信息</string>
     <string name="str_fill_watch_user_info">请填写智能手表使用人信息</string>
+    <string name="str_fill_watch_user_register_info">把所有必填项填写完成后才可以添加绑定的手表。否则不添加。</string>
+    <string name="str_fill_sensor_user_register_info">把所有必填项填写完成后才可以添加绑定的设备。否则不添加。</string>
     <string name="str_name1">姓名：</string>
     <string name="str_input_watch_user_name">使用人姓名</string>
-    <string name="str_phone1">内置卡号吗：</string>
+    <string name="str_phone1">内置卡号码：</string>
     <string name="str_input_watch_user_phone">使用人电话号码</string>
     <string name="str_sex1">性别：</string>
     <string name="str_birthday1">生日：</string>
@@ -363,8 +366,9 @@
     <string name="str_bloodtype_o">O型</string>
     <string name="str_type">型</string>
     <string name="str_unknown">未知</string>
-    <string name="str_unconnect">佩戴异常</string>
-    <string name="str_check_health">正在检测中......</string>
+    <string name="str_unconnect_watch">佩戴异常</string>
+    <string name="str_unconnect_sensor">离线</string>
+    <string name="str_check_health">正在监测中......</string>
     <string name="str_battery_low">低电量</string>
     <string name="str_no_alart">未报警</string>
     <string name="str_already_selected_address">已选择，点击修改</string>
@@ -414,7 +418,7 @@
     <string name="str_monitoring_report_02">健康档案</string>
     <string name="str_device_status">设备状态</string>
     <string name="str_device_status_01">设备管理</string>
-    <string name="str_device_status_02">设备检测</string>
+    <string name="str_device_status_02">设备监测</string>
     <string name="str_request_healthdata">实时健康</string>
     <string name="str_request_healthdata_01">生命体征</string>
     <string name="str_request_healthdata_02">远程监测</string>
@@ -493,6 +497,7 @@
     <string name="str_verify">确认</string>
     <string name="str_current_version">当前版本</string>
     <string name="str_logout_verify">确认退出账号吗?</string>
+    <string name="str_remove_account_verify">注销账号会删除您个人所有信息\n您确定要注销账号吗?</string>
     <string name="str_logout_title">温馨提示</string>
 
     <string name="str_delete_confirm">确定是否删除？</string>
@@ -625,7 +630,7 @@
     <string name="str_set__heart_rate_error">心率设定错了</string>
 
     <string name="str_location_error">非紧急状态中······</string>
-    <string name="str_margin_health_rate">数据仅供参考，不作为治疗依据</string>
+    <string name="str_margin_health_rate">非医疗设备检测，数据不可以用于医疗</string>
 
     <string name="str_photo_import_title">请上传身份证</string>
     <string name="str_payment_cancel">支付取消</string>
@@ -677,6 +682,7 @@
         <item>厨房</item>
         <item>卧室</item>
         <item>客厅</item>
+        <item>卫生间</item>
         <item>其他</item>
     </string-array>
     <string-array name="belong_tab_array">

@@ -258,6 +258,7 @@ public class HttpAPI {
         params.put("token", token);
         params.put("mobile", mobile);
         params.put("id", String.valueOf(itemSensorInfo.id));
+        params.put("type", itemSensorInfo.type);
         params.put("device_serial", itemSensorInfo.serial);
         params.put("contact_name", itemSensorInfo.contactName);
         params.put("contact_phone", itemSensorInfo.contactPhone);
@@ -298,7 +299,6 @@ public class HttpAPI {
 
     public static void setSosContacts(String token,
                                       String mobile,
-                                      String deviceSerial,
                                       String sosContact2Name,
                                       String sosContact2Phone,
                                       String sosContact2Code,
@@ -313,7 +313,6 @@ public class HttpAPI {
         params.put("pAct", "setSosContacts");
         params.put("token", token);
         params.put("mobile", mobile);
-        params.put("device_serial", deviceSerial);
         params.put("sos_contact2_name", sosContact2Name);
         params.put("sos_contact2_phone", sosContact2Phone);
         params.put("sos_contact2_verify_code", sosContact2Code);
@@ -739,6 +738,17 @@ public class HttpAPI {
         params.put("token", token);
         params.put("mobile", mobile);
         params.put("id", String.valueOf(id));
+
+        VolleyRequest.getStringResponsePost(url, params, resultCallback, tag);
+    }
+
+    public static void removeAccount(String token, String mobile, final VolleyCallback resultCallback, String tag) {
+        String url = HttpAPIConst.URL_API;
+
+        Map<String, String> params = new HashMap<>();
+        params.put("pAct", "removeAccount");
+        params.put("token", token);
+        params.put("mobile", mobile);
 
         VolleyRequest.getStringResponsePost(url, params, resultCallback, tag);
     }

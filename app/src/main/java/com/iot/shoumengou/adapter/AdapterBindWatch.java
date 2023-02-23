@@ -47,8 +47,6 @@ public class AdapterBindWatch extends ArrayAdapter<ItemWatchInfo> {
         viewHolder.tvCotrol.setOnClickListener(view -> {
             if (!item.serial.equals(Prefs.Instance().getMoniteringWatchSerial())) {
                 Util.setMoniteringWatchInfo(item);
-                Prefs.Instance().setMoniteringWatchSerial(item.serial);
-                Prefs.Instance().commit();
 
                 notifyDataSetChanged();
             }

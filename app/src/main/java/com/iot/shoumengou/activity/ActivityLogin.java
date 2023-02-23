@@ -281,6 +281,11 @@ public class ActivityLogin extends ActivityBase {
 					Prefs.Instance().setDistrict(strDistrict);
 					Prefs.Instance().setUserPhoto(strPhoto);
 					Prefs.Instance().setUserCard(card);
+					// soscontact
+					Prefs.Instance().setContact2Name(dataObject.optString("sos_contact2_name"));
+					Prefs.Instance().setContact2Phone(dataObject.optString("sos_contact2_phone"));
+					Prefs.Instance().setContact3Name(dataObject.optString("sos_contact3_name"));
+					Prefs.Instance().setContact3Phone(dataObject.optString("sos_contact3_phone"));
 
 					Prefs.Instance().commit();
 
@@ -308,6 +313,8 @@ public class ActivityLogin extends ActivityBase {
 		// When Intent has JPush Notification Data
 		if (getIntent() != null && getIntent().getExtras() != null)
 			intent.putExtras(getIntent().getExtras());
+		// set first health check
+		Util.isFirstHealthCheck = true;
 		startActivity(intent);
 
 		finish();
@@ -325,7 +332,7 @@ public class ActivityLogin extends ActivityBase {
 
 	private void checkPolicyAndAgreement() {
 		LayoutInflater layoutInflater = LayoutInflater.from(this);
-		View confirmView = layoutInflater.inflate(R.layout.alert_delete_alarm, null);
+		View confirmView = layoutInflater.inflate(R.layout.alert_policy_alarm, null);
 
 		final AlertDialog confirmDlg = new AlertDialog.Builder(this).create();
 
@@ -383,6 +390,7 @@ public class ActivityLogin extends ActivityBase {
 
 			Prefs.Instance().setAgreed();
 			Prefs.Instance().commit();
+			App.Instance().initSDK();
 		});
 
 		btnCancel.setText(R.string.str_nonagree);
@@ -494,6 +502,8 @@ public class ActivityLogin extends ActivityBase {
 					JSONObject verObject = dataObject.getJSONObject("appVersion");
 					Util.storeAppVersion = verObject.optString("app_ver_android");
 					Util.storeAppURL = verObject.optString("store_url_android");
+
+					Util.servicePhone = dataObject.optString("servicePhone");
 
 					m_dlgProgress.dismiss();
 					if (BuildConfig.VERSION_NAME.compareTo(Util.storeAppVersion) < 0) {

@@ -99,6 +99,12 @@ public class FragmentNewDiscover extends Fragment implements View.OnClickListene
         loadDiscoverList();
         updateNotificationState();
 
+        // set isFirstHealthCheck as false
+        if (Util.isFirstHealthCheck) {
+            Util.isFirstHealthCheck = false;
+            // start the healthCheck
+            tryHealthCheck(false);
+        }
         return rootView;
     }
 
@@ -153,7 +159,7 @@ public class FragmentNewDiscover extends Fragment implements View.OnClickListene
                 tvStatus.setTextColor(Color.RED);
             }
         } else {
-            tvStatus.setText(R.string.str_unconnect);
+            tvStatus.setText(R.string.str_unconnect_watch);
             tvStatus.setTextColor(Color.RED);
         }
 
@@ -393,45 +399,7 @@ public class FragmentNewDiscover extends Fragment implements View.OnClickListene
                 Objects.requireNonNull(parentFrag).pushChildFragment(fragmentDevice, FragmentDevice.class.getSimpleName());
                 break;
             case R.id.ID_LL_HEALTH:
-                ((ActivityMain) Objects.requireNonNull(getActivity())).showProgress();
-                HttpAPI.requestHealthData(Prefs.Instance().getUserToken(),
-                        Prefs.Instance().getUserPhone(),
-                        "5G", Prefs.Instance().getMoniteringWatchSerial(),
-                        new VolleyCallback() {
-                            @Override
-                            public void onSuccess(String response) {
-                                try {
-                                    JSONObject jsonObject = new JSONObject(response);
-                                    int iRetCode = jsonObject.getInt("retcode");
-
-                                    if (iRetCode != HttpAPIConst.RESP_CODE_SUCCESS) {
-                                        String sMsg = jsonObject.getString("msg");
-                                        ((ActivityMain) Objects.requireNonNull(getActivity())).dismissProgress();
-                                        Util.ShowDialogError(sMsg);
-                                        if (iRetCode == HttpAPIConst.RespCode.DEVICE_STATUS_OFFLINE){
-                                            Util.monitoringWatch.netStatus = false;
-                                            updateMonitoringWatchStatus();
-                                        }
-                                        return;
-                                    }
-
-                                    // scott show process and wait to health data
-                                    ((ActivityMain) Objects.requireNonNull(getActivity())).startHealthProgress(refreshHealthData);
-
-                                } catch (JSONException e) {
-
-                                }
-                                ((ActivityMain) Objects.requireNonNull(getActivity())).dismissProgress();
-
-
-                            }
-
-                            @Override
-                            public void onError(Object error) {
-                                ((ActivityMain) Objects.requireNonNull(getActivity())).dismissProgress();
-
-                            }
-                        }, getActivity().getClass().getSimpleName());
+                tryHealthCheck(true);
                 break;
             case R.id.ID_LL_LOCATION:
                 Util.ShowDialogError(Objects.requireNonNull(getContext()).getResources().getString(R.string.str_location_error));
@@ -458,6 +426,54 @@ public class FragmentNewDiscover extends Fragment implements View.OnClickListene
 //                }
                 break;
         }
+    }
+
+    public void tryHealthCheck(boolean showDialog) {
+        if (Prefs.Instance().getMoniteringWatchSerial().isEmpty()) {
+            return;
+        }
+        ((ActivityMain) Objects.requireNonNull(getActivity())).showProgress();
+        HttpAPI.requestHealthData(Prefs.Instance().getUserToken(),
+                Prefs.Instance().getUserPhone(),
+                "5G", Prefs.Instance().getMoniteringWatchSerial(),
+                new VolleyCallback() {
+                    @Override
+                    public void onSuccess(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            int iRetCode = jsonObject.getInt("retcode");
+
+                            if (iRetCode != HttpAPIConst.RESP_CODE_SUCCESS) {
+                                String sMsg = jsonObject.getString("msg");
+                                ((ActivityMain) Objects.requireNonNull(getActivity())).dismissProgress();
+                                if (iRetCode == HttpAPIConst.RespCode.DEVICE_STATUS_ALARM){
+                                    // don't do anything.
+                                    // SOS process can be duplicated with the main process
+                                    return;
+                                }
+                                Util.ShowDialogError(sMsg);
+                                if (iRetCode == HttpAPIConst.RespCode.DEVICE_STATUS_OFFLINE){
+                                    Util.monitoringWatch.netStatus = false;
+                                    updateMonitoringWatchStatus();
+                                }
+                                return;
+                            }
+
+                            // scott show process and wait to health data
+                            ((ActivityMain) Objects.requireNonNull(getActivity())).startHealthProgress(refreshHealthData, showDialog);
+
+                        } catch (JSONException e) {
+
+                        }
+                        ((ActivityMain) Objects.requireNonNull(getActivity())).dismissProgress();
+                    }
+
+                    @Override
+                    public void onError(Object error) {
+                        ((ActivityMain) Objects.requireNonNull(getActivity())).dismissProgress();
+
+                    }
+                }, getActivity().getClass().getSimpleName());
     }
 
     public void loadLastHealthData() {

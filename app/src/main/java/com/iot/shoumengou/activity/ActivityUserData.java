@@ -100,23 +100,24 @@ public class ActivityUserData extends ActivityBase implements View.OnClickListen
 
 		initControls();
 		setEventListener();
-
 		loadData();
+	}
+
+	public void checkPermissions(){
+//		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//			if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+//				ActivityCompat.requestPermissions(
+//						this,
+//						new String[] { Manifest.permission.CAMERA },
+//						AppConst.REQUEST_PERMISSION_CAMERA
+//				);
+//			}
+//		}
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-			if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-				ActivityCompat.requestPermissions(
-						this,
-						new String[] { Manifest.permission.CAMERA },
-						AppConst.REQUEST_PERMISSION_CAMERA
-				);
-			}
-		}
 	}
 
 	@Override

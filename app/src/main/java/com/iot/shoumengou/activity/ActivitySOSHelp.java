@@ -93,6 +93,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 public class ActivitySOSHelp extends ActivityBase implements OnClickListener {
 	private ImageView ivBack;
@@ -180,6 +181,47 @@ public class ActivitySOSHelp extends ActivityBase implements OnClickListener {
 		setSosData();
 
 		handler.postDelayed(runnable, 10000); // 20211014 (scott) update from 60s to 10s during SOS
+
+		checkPermissions();
+	}
+
+	public static boolean hasPermissions(Context context, String... permissions) {
+		if (context != null && permissions != null) {
+			for (String permission : permissions) {
+				if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	public void checkPermissions(){
+		int PERMISSION_ALL = 1;
+		String[] PERMISSIONS = {
+				android.Manifest.permission.ACCESS_FINE_LOCATION,
+				android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+		};
+
+		if (!hasPermissions(this, PERMISSIONS)) {
+			ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
+		}
+//		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//			if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//				ActivityCompat.requestPermissions(
+//						this,
+//						new String[] { Manifest.permission.ACCESS_FINE_LOCATION },
+//						AppConst.REQUEST_PERMISSION_LOCATION
+//				);
+//			}
+//			if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+//				ActivityCompat.requestPermissions(
+//						this,
+//						new String[] { Manifest.permission.WRITE_EXTERNAL_STORAGE },
+//						AppConst.REQUEST_PERMISSION_STORAGE
+//				);
+//			}
+//		}
 	}
 
 	@Override
@@ -192,8 +234,6 @@ public class ActivitySOSHelp extends ActivityBase implements OnClickListener {
 		Global.gLocInterval = 600000;
 	}
 
-
-
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -201,22 +241,6 @@ public class ActivitySOSHelp extends ActivityBase implements OnClickListener {
 		App.Instance().cancelPendingRequests(getTag());
 		handler.removeCallbacks(runnable);
 		handler.postDelayed(runnable, 10000); // 20211014 (scott) update from 60s to 10s during SOS
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-			if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-				ActivityCompat.requestPermissions(
-						this,
-						new String[] { Manifest.permission.ACCESS_FINE_LOCATION },
-						AppConst.REQUEST_PERMISSION_LOCATION
-				);
-			}
-			if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-				ActivityCompat.requestPermissions(
-						this,
-						new String[] { Manifest.permission.WRITE_EXTERNAL_STORAGE },
-						AppConst.REQUEST_PERMISSION_STORAGE
-				);
-			}
-		}
 	}
 
 	@Override
@@ -533,13 +557,31 @@ public class ActivitySOSHelp extends ActivityBase implements OnClickListener {
 				onNavigation();
 				break;
 			case R.id.ID_LL_CONTACT_PLATFORM:
-				onChartRequest();
+//				onChartRequest();
+				onConnectService();
 				break;
 		}
 	}
 
 	private void onNavigation() {
 		startNavigationApp(getApplicationContext());
+	}
+
+	private void onConnectService() {
+		if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+			ActivityCompat.requestPermissions(
+					this,
+					new String[]{Manifest.permission.CALL_PHONE},
+					AppConst.REQUEST_PERMISSION_STORAGE
+			);
+			return;
+		}
+		if (null != Util.servicePhone && !Util.servicePhone.isEmpty()){
+			Intent intent = new Intent(Intent.ACTION_CALL);
+//			intent.setData(Uri.parse("tel:400-0909-119"));
+			intent.setData(Uri.parse("tel:" + Util.servicePhone));
+			startActivity(intent);
+		}
 	}
 
 	private void onChartRequest() {

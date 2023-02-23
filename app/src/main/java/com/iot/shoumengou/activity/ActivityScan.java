@@ -72,6 +72,20 @@ public class ActivityScan extends ActivityBase implements OnClickListener, ZXing
 		scannerView.setMaskColor(R.color.colorAccent);
 		if (Build.MANUFACTURER.toUpperCase().equals("HUAWEI"))
 			scannerView.setAspectTolerance(0.5f);
+
+		checkPermissions();
+	}
+
+	public void checkPermissions(){
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+			if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+				ActivityCompat.requestPermissions(
+						this,
+						new String[] { Manifest.permission.CAMERA },
+						AppConst.REQUEST_PERMISSION_CAMERA
+				);
+			}
+		}
 	}
 
 	@Override
@@ -116,16 +130,6 @@ public class ActivityScan extends ActivityBase implements OnClickListener, ZXing
 	}
 
 	public void resetCamera(){
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-			if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-				ActivityCompat.requestPermissions(
-						this,
-						new String[] { Manifest.permission.CAMERA },
-						AppConst.REQUEST_PERMISSION_CAMERA
-				);
-				return;
-			}
-		}
 		scannerView.setResultHandler(this);
 		scannerView.startCamera();
 	}
@@ -170,20 +174,17 @@ public class ActivityScan extends ActivityBase implements OnClickListener, ZXing
 					ItemWatchInfo itemWatchInfo = new ItemWatchInfo(dataObject);
 					itemWatchInfo.type = "";
 
-					ItemWatchInfo itemWatch = Util.findWatchEntry(itemWatchInfo.serial);
-					if (itemWatch == null) {
-						Util.addWatchEntry(itemWatchInfo);
+					if (itemWatchInfo.isManager && itemWatchInfo.name.isEmpty()) {
+						startDeviceInfoActivity(itemWatchInfo, true);
 					} else {
-						Util.updateWatchEntry(itemWatch, itemWatchInfo);
-					}
+						ItemWatchInfo itemWatch = Util.findWatchEntry(itemWatchInfo.serial);
+						if (itemWatch == null) {
+							Util.addWatchEntry(itemWatchInfo);
+						} else {
+							Util.updateWatchEntry(itemWatch, itemWatchInfo);
+						}
 
-					Util.setMoniteringWatchInfo(itemWatchInfo);
-					Prefs.Instance().setMoniteringWatchSerial(itemWatchInfo.serial);
-					Prefs.Instance().commit();
-
-					if (itemWatchInfo.isManager && itemWatchInfo.phone.isEmpty()) {
-						startDeviceInfoActivity(itemWatchInfo);
-					} else {
+						Util.setMoniteringWatchInfo(itemWatchInfo);
 						startBindCompleteActivity(itemWatchInfo);
 					}
 				}
@@ -226,16 +227,15 @@ public class ActivityScan extends ActivityBase implements OnClickListener, ZXing
                     JSONObject dataObject = jsonObject.getJSONObject("data");
                     ItemSensorInfo itemSensorInfo = new ItemSensorInfo(dataObject);
 
-					ItemSensorInfo itemSensor = Util.findSensorEntry(itemSensorInfo.type, itemSensorInfo.serial);
-					if (itemSensor == null) {
-						Util.addSensorEntry(itemSensorInfo);
-					} else {
-						Util.updateSensorEntry(itemSensor, itemSensorInfo);
-					}
-
-                    if (itemSensorInfo.isManager && itemSensorInfo.contactPhone.isEmpty()) {
-                        startDeviceInfoActivity(itemSensorInfo);
+					if (itemSensorInfo.isManager && itemSensorInfo.contactName.isEmpty()) {
+                        startDeviceInfoActivity(itemSensorInfo, true);
                     } else {
+						ItemSensorInfo itemSensor = Util.findSensorEntry(itemSensorInfo.type, itemSensorInfo.serial);
+						if (itemSensor == null) {
+							Util.addSensorEntry(itemSensorInfo);
+						} else {
+							Util.updateSensorEntry(itemSensor, itemSensorInfo);
+						}
                         startBindCompleteActivity(itemSensorInfo);
                     }
 				}
@@ -260,7 +260,7 @@ public class ActivityScan extends ActivityBase implements OnClickListener, ZXing
 				finish();
 				break;
 			case R.id.ID_IMGVIEW_GO_DEVICE_INFO:
-				startDeviceInfoActivity(null);
+				startDeviceInfoActivity(null, false);
 				break;
 			case R.id.ID_TXTVIEW_MANUAL_INPUT:
 				onManualInput();
@@ -275,14 +275,16 @@ public class ActivityScan extends ActivityBase implements OnClickListener, ZXing
 		finish();
 	}
 
-	private void startDeviceInfoActivity(ItemDeviceInfo itemDeviceInfo) {
+	private void startDeviceInfoActivity(ItemDeviceInfo itemDeviceInfo, boolean isRegister) {
 		Intent intent;
 		if (deviceType.isEmpty()) {
 			intent = new Intent(this, ActivityWatchInfo.class);
 			intent.putExtra("device_data", itemDeviceInfo);
+			intent.putExtra("isRegister", isRegister);
 		} else {
 			intent = new Intent(this, ActivitySensorInfo.class);
 			intent.putExtra("device_data", itemDeviceInfo);
+			intent.putExtra("isRegister", isRegister);
 		}
 
         startActivityForResult(intent, REQUEST_DEVICE_INFO);

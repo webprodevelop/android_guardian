@@ -82,42 +82,8 @@ public class App extends Application {
 		super.onCreate();
 		m_instance = this;
 		App.context = getApplicationContext();
-		Init();
-		registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
-			@Override
-			public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-				mActivity = activity;
-			}
-
-			@Override
-			public void onActivityDestroyed(Activity activity) {
-//				mActivity = null;
-			}
-
-			/** Unused implementation **/
-			@Override
-			public void onActivityStarted(Activity activity) {}
-
-			@Override
-			public void onActivityResumed(Activity activity) {
-				mActivity = activity;
-			}
-			@Override
-			public void onActivityPaused(Activity activity) {}
-
-			@Override
-			public void onActivityStopped(Activity activity) {}
-
-			@Override
-			public void onActivitySaveInstanceState(Activity activity, Bundle outState) {}
-		});
-
-		PUSH_INIT_FLAG = false;
-		PUSH_LAST_ID = 0;
-
-		if (android.os.Build.DEVICE.contains("HW")) {
-			notificationHandler.postDelayed(runnableNotification, 10000);
-		}
+		m_prefs = new Prefs(this);
+		initSDK();
 	}
 
 	private boolean isMyServiceRunning(Class serviceClass) {
@@ -138,22 +104,59 @@ public class App extends Application {
 		return mActivity;
 	}
 
-	private void Init() {
-		m_prefs = new Prefs(this);
-		// Baidu
-		SDKInitializer.initialize(this);
-		SDKInitializer.setCoordType(CoordType.BD09LL);
-		// JPush
-		JPushInterface.setDebugMode(true);
-		JPushInterface.init(getBaseContext());
+	public void initSDK() {
+		if (Prefs.Instance().getAgreed()){
+			// Baidu
+			SDKInitializer.initialize(this);
+			SDKInitializer.setCoordType(CoordType.BD09LL);
+			// JPush
+			JPushInterface.setDebugMode(true);
+			JPushInterface.init(getBaseContext());
 
-//		if(!isMyServiceRunning(ServiceJPush.class)) {
-//			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//				context.startForegroundService(new Intent(context, ServiceJPush.class));
-//			} else {
-//				context.startService(new Intent(context, ServiceJPush.class));
-//			}
-//		}
+	//		if(!isMyServiceRunning(ServiceJPush.class)) {
+	//			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+	//				context.startForegroundService(new Intent(context, ServiceJPush.class));
+	//			} else {
+	//				context.startService(new Intent(context, ServiceJPush.class));
+	//			}
+	//		}
+
+			registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
+				@Override
+				public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+					mActivity = activity;
+				}
+
+				@Override
+				public void onActivityDestroyed(Activity activity) {
+//				mActivity = null;
+				}
+
+				/** Unused implementation **/
+				@Override
+				public void onActivityStarted(Activity activity) {}
+
+				@Override
+				public void onActivityResumed(Activity activity) {
+					mActivity = activity;
+				}
+				@Override
+				public void onActivityPaused(Activity activity) {}
+
+				@Override
+				public void onActivityStopped(Activity activity) {}
+
+				@Override
+				public void onActivitySaveInstanceState(Activity activity, Bundle outState) {}
+			});
+
+			PUSH_INIT_FLAG = false;
+			PUSH_LAST_ID = 0;
+
+			if (android.os.Build.DEVICE.contains("HW")) {
+				notificationHandler.postDelayed(runnableNotification, 10000);
+			}
+		}
 	}
 
 	private static Network getNetwork() {

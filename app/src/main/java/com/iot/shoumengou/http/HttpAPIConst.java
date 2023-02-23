@@ -2,8 +2,9 @@
 package com.iot.shoumengou.http;
 
 public class HttpAPIConst {
-	public static final String	URL_API				= "https://app.shoumengou.com/IOTCMS/guardian_api.do";
-//	public static final String	URL_API				= "http://192.168.10.104:8084/IOTCMS/guardian_api.do";
+//	public static final String	URL_API				= "https://apptest.shoumengou.com:4433/IOTCMS/guardian_api.do";
+//	public static final String	URL_API				= "https://app.shoumengou.com/IOTCMS/guardian_api.do";
+	public static final String	URL_API				= "http://192.168.10.104:8084/IOTCMS/guardian_api.do";
 	public static final String	URL_CAMERA			= "https://open.ys7.com/api/lapp/live/address/limited";
 
 	public static final String	CONTENT_TYPE		= "application/x-www-form-urlencoded;charset=UTF-8";
@@ -25,6 +26,7 @@ public class HttpAPIConst {
 		public static final int NO_ALARM_TASK_SUB = 312;
 		public static final int DUPLICATE_ALARM = 313;
 		public static final int PROCESSED_ALARM = 314;
+
 		public static final int PHONE_BLANK = 201;
 		public static final int PHONE_INVAILD = 202;
 		public static final int PHONE_FAIL = 203;
@@ -60,6 +62,7 @@ public class HttpAPIConst {
 		public static final int CHAT_ROOM_BUSY = 401;
 		public static final int CHAT_KEFU_BUSY = 402;
 		public static final int DEVICE_STATUS_OFFLINE = 411;
+		public static final int DEVICE_STATUS_ALARM = 412;
 		public static final int WATCH_STATUS_TAKEOFF = 416;
 
 		public static final int PAY_FAILED = 500;

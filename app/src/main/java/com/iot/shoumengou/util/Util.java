@@ -72,10 +72,12 @@ public class Util {
 	public static Map<String, ArrayList<ItemSensorInfo>> sensorMap = new HashMap<>();
 	public static String storeAppVersion;
 	public static String storeAppURL;
+	public static String servicePhone;
 	public static boolean isUpdatedHealthData = true;
 	public static long healthDataStart = 0;
 	public static long healthCheckStart = 0;
 	public static Runnable refreshHealthData = null;
+	public static boolean isFirstHealthCheck = false;
 
 //	public static void ShowDialogSuccess(int message) {
 //		Context context = App.Instance().getCurrentActivity();
@@ -323,6 +325,11 @@ public class Util {
 		monitoringWatch = watchInfo;
 		if (watchInfo != null) {
 			Util.monitoringWatchId = watchInfo.id;
+			Prefs.Instance().setMoniteringWatchSerial(watchInfo.serial);
+			Prefs.Instance().commit();
+		}else{
+			Prefs.Instance().setMoniteringWatchSerial("");
+			Prefs.Instance().commit();
 		}
 	}
 

@@ -101,31 +101,27 @@ public class ActivitySOSContact extends ActivityBase implements OnClickListener 
 
 		contactName1 = Prefs.Instance().getUserName();
 		contactPhone1 = Prefs.Instance().getUserPhone();
+		contactName2 = Prefs.Instance().getContact2Name();
+		contactPhone2 = Prefs.Instance().getContact2Phone();
+		contactName3 = Prefs.Instance().getContact3Name();
+		contactPhone3 = Prefs.Instance().getContact3Phone();
 
-		monitoringWatchInfo = Util.monitoringWatch;
-		if (monitoringWatchInfo != null) {
-			contactName2 = monitoringWatchInfo.sosContactName2;
-			contactPhone2 = monitoringWatchInfo.sosContactPhone2;
-			contactName3 = monitoringWatchInfo.sosContactName3;
-			contactPhone3 = monitoringWatchInfo.sosContactPhone3;
-		}
-
-		if (contactName1 != null && !contactName1.isEmpty()) {
+		if (contactName1 != null) {
 			tvFirstContact.setText(contactName1);
 		}
-		if (contactName2 != null && !contactName2.isEmpty()) {
+		if (contactName2 != null) {
 			edtSecondContact.setText(contactName2);
 		}
-		if (contactName3 != null && !contactName3.isEmpty()) {
+		if (contactName3 != null) {
 			edtThirdContact.setText(contactName3);
 		}
-		if (contactPhone1 != null && !contactPhone1.isEmpty()) {
+		if (contactPhone1 != null) {
 			tvFirstPhoneNumber.setText(contactPhone1);
 		}
-		if (contactPhone2 != null && !contactPhone2.isEmpty()) {
+		if (contactPhone2 != null) {
 			edtSecondPhoneNumber.setText(contactPhone2);
 		}
-		if (contactPhone3 != null && !contactPhone3.isEmpty()) {
+		if (contactPhone3 != null) {
 			edtThirdPhoneNumber.setText(contactPhone3);
 		}
 	}
@@ -330,70 +326,60 @@ public class ActivitySOSContact extends ActivityBase implements OnClickListener 
 			return;
 		}
 
-		if (monitoringWatchInfo != null) {
-			m_dlgProgress.show();
+		m_dlgProgress.show();
 
-			ItemWatchInfo monitoringWatchInfo = Util.monitoringWatch;
-			if (monitoringWatchInfo == null) {
-				return;
-			}
-
-			HttpAPI.setSosContacts(Prefs.Instance().getUserToken(), Prefs.Instance().getUserPhone(), monitoringWatchInfo.serial, contactName2, contactPhone2, edtCode1.getText().toString(), "", "", edtCode2.getText().toString(), new VolleyCallback() {
-				@Override
-				public void onSuccess(String response) {
-					m_dlgProgress.dismiss();
-					try {
-						JSONObject jsonObject = new JSONObject(response);
-						int iRetCode = jsonObject.getInt("retcode");
-						if (iRetCode != HttpAPIConst.RESP_CODE_SUCCESS) {
-							String sMsg = jsonObject.getString("msg");
-							Util.ShowDialogError(sMsg, new Util.ResultProcess() {
-								@Override
-								public void process() {
-									switch (iRetCode) {
-										case HttpAPIConst.RespCode.PHONE_BLANK:
-										case HttpAPIConst.RespCode.PHONE_INVAILD:
-											edtSecondPhoneNumber.requestFocus();
-											break;
-										case HttpAPIConst.RespCode.VALIDATE_CODE_BLANK:
-										case HttpAPIConst.RespCode.VALIDATE_CODE_FAIL:
-										case HttpAPIConst.RespCode.VALIDATE_CODE_EXPIRED:
-											edtCode1.setText("");
-											edtCode1.requestFocus();
-											break;
-										default:
-									}
+		HttpAPI.setSosContacts(Prefs.Instance().getUserToken(), Prefs.Instance().getUserPhone(), contactName2, contactPhone2, edtCode1.getText().toString(), "", "", edtCode2.getText().toString(), new VolleyCallback() {
+			@Override
+			public void onSuccess(String response) {
+				m_dlgProgress.dismiss();
+				try {
+					JSONObject jsonObject = new JSONObject(response);
+					int iRetCode = jsonObject.getInt("retcode");
+					if (iRetCode != HttpAPIConst.RESP_CODE_SUCCESS) {
+						String sMsg = jsonObject.getString("msg");
+						Util.ShowDialogError(sMsg, new Util.ResultProcess() {
+							@Override
+							public void process() {
+								switch (iRetCode) {
+									case HttpAPIConst.RespCode.PHONE_BLANK:
+									case HttpAPIConst.RespCode.PHONE_INVAILD:
+										edtSecondPhoneNumber.requestFocus();
+										break;
+									case HttpAPIConst.RespCode.VALIDATE_CODE_BLANK:
+									case HttpAPIConst.RespCode.VALIDATE_CODE_FAIL:
+									case HttpAPIConst.RespCode.VALIDATE_CODE_EXPIRED:
+										edtCode1.setText("");
+										edtCode1.requestFocus();
+										break;
+									default:
 								}
-							});
+							}
+						});
 
-							return;
-						}
-
-						monitoringWatchInfo.sosContactName1 = contactName1;
-						monitoringWatchInfo.sosContactPhone1 = contactPhone1;
-						monitoringWatchInfo.sosContactName2 = contactName2;
-						monitoringWatchInfo.sosContactPhone2 = contactPhone2;
-						monitoringWatchInfo.sosContactName3 = contactName3;
-						monitoringWatchInfo.sosContactPhone3 = contactPhone3;
-
-						Util.updateWatchEntry(monitoringWatchInfo, monitoringWatchInfo);
-
-						setResult(RESULT_OK);
-						finish();
-
+						return;
 					}
-					catch (JSONException e) {
-						Util.ShowDialogError(R.string.str_page_loading_failed);
-					}
+
+					Prefs.Instance().setContact2Name(contactName2);
+					Prefs.Instance().setContact2Phone(contactPhone2);
+					Prefs.Instance().commit();
+
+					Util.updateWatchEntry(monitoringWatchInfo, monitoringWatchInfo);
+
+					setResult(RESULT_OK);
+					finish();
+
 				}
-
-				@Override
-				public void onError(Object error) {
-					m_dlgProgress.dismiss();
+				catch (JSONException e) {
 					Util.ShowDialogError(R.string.str_page_loading_failed);
 				}
-			}, TAG);
-		}
+			}
+
+			@Override
+			public void onError(Object error) {
+				m_dlgProgress.dismiss();
+				Util.ShowDialogError(R.string.str_page_loading_failed);
+			}
+		}, TAG);
 	}
 
 	private boolean checkConfirm3(){
@@ -422,70 +408,59 @@ public class ActivitySOSContact extends ActivityBase implements OnClickListener 
 		if (!checkConfirm3()){
 			return;
 		}
+		m_dlgProgress.show();
 
-		if (monitoringWatchInfo != null) {
-			m_dlgProgress.show();
-
-			ItemWatchInfo monitoringWatchInfo = Util.monitoringWatch;
-			if (monitoringWatchInfo == null) {
-				return;
-			}
-
-			HttpAPI.setSosContacts(Prefs.Instance().getUserToken(), Prefs.Instance().getUserPhone(), monitoringWatchInfo.serial, "", "", edtCode1.getText().toString(), contactName3, contactPhone3, edtCode2.getText().toString(), new VolleyCallback() {
-				@Override
-				public void onSuccess(String response) {
-					m_dlgProgress.dismiss();
-					try {
-						JSONObject jsonObject = new JSONObject(response);
-						int iRetCode = jsonObject.getInt("retcode");
-						if (iRetCode != HttpAPIConst.RESP_CODE_SUCCESS) {
-							String sMsg = jsonObject.getString("msg");
-							Util.ShowDialogError(sMsg, new Util.ResultProcess() {
-								@Override
-								public void process() {
-									switch (iRetCode) {
-										case HttpAPIConst.RespCode.PHONE_BLANK:
-										case HttpAPIConst.RespCode.PHONE_INVAILD:
-											edtThirdPhoneNumber.requestFocus();
-											break;
-										case HttpAPIConst.RespCode.VALIDATE_CODE_BLANK:
-										case HttpAPIConst.RespCode.VALIDATE_CODE_FAIL:
-										case HttpAPIConst.RespCode.VALIDATE_CODE_EXPIRED:
-											edtCode2.setText("");
-											edtCode2.requestFocus();
-											break;
-										default:
-									}
+		HttpAPI.setSosContacts(Prefs.Instance().getUserToken(), Prefs.Instance().getUserPhone(), "", "", edtCode1.getText().toString(), contactName3, contactPhone3, edtCode2.getText().toString(), new VolleyCallback() {
+			@Override
+			public void onSuccess(String response) {
+				m_dlgProgress.dismiss();
+				try {
+					JSONObject jsonObject = new JSONObject(response);
+					int iRetCode = jsonObject.getInt("retcode");
+					if (iRetCode != HttpAPIConst.RESP_CODE_SUCCESS) {
+						String sMsg = jsonObject.getString("msg");
+						Util.ShowDialogError(sMsg, new Util.ResultProcess() {
+							@Override
+							public void process() {
+								switch (iRetCode) {
+									case HttpAPIConst.RespCode.PHONE_BLANK:
+									case HttpAPIConst.RespCode.PHONE_INVAILD:
+										edtThirdPhoneNumber.requestFocus();
+										break;
+									case HttpAPIConst.RespCode.VALIDATE_CODE_BLANK:
+									case HttpAPIConst.RespCode.VALIDATE_CODE_FAIL:
+									case HttpAPIConst.RespCode.VALIDATE_CODE_EXPIRED:
+										edtCode2.setText("");
+										edtCode2.requestFocus();
+										break;
+									default:
 								}
-							});
-							return;
-						}
-
-						monitoringWatchInfo.sosContactName1 = contactName1;
-						monitoringWatchInfo.sosContactPhone1 = contactPhone1;
-						monitoringWatchInfo.sosContactName2 = contactName2;
-						monitoringWatchInfo.sosContactPhone2 = contactPhone2;
-						monitoringWatchInfo.sosContactName3 = contactName3;
-						monitoringWatchInfo.sosContactPhone3 = contactPhone3;
-
-						Util.updateWatchEntry(monitoringWatchInfo, monitoringWatchInfo);
-
-						setResult(RESULT_OK);
-						finish();
-
+							}
+						});
+						return;
 					}
-					catch (JSONException e) {
-						Util.ShowDialogError(R.string.str_page_loading_failed);
-					}
+
+					Prefs.Instance().setContact3Name(contactName3);
+					Prefs.Instance().setContact3Phone(contactPhone3);
+					Prefs.Instance().commit();
+
+					Util.updateWatchEntry(monitoringWatchInfo, monitoringWatchInfo);
+
+					setResult(RESULT_OK);
+					finish();
+
 				}
-
-				@Override
-				public void onError(Object error) {
-					m_dlgProgress.dismiss();
+				catch (JSONException e) {
 					Util.ShowDialogError(R.string.str_page_loading_failed);
 				}
-			}, TAG);
-		}
+			}
+
+			@Override
+			public void onError(Object error) {
+				m_dlgProgress.dismiss();
+				Util.ShowDialogError(R.string.str_page_loading_failed);
+			}
+		}, TAG);
 	}
 
 	@Override

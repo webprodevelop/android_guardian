@@ -61,6 +61,7 @@ public class ActivityWatchInfo extends ActivityBase implements OnClickListener {
     private Spinner spinnerRelation;
 
     private ItemWatchInfo itemWatchInfo = null;
+    private boolean isRegister = false;
     private ArrayList<String> illList = new ArrayList<>();
     private String birthDesc = "";
 
@@ -86,6 +87,7 @@ public class ActivityWatchInfo extends ActivityBase implements OnClickListener {
         }
 
         itemWatchInfo = (ItemWatchInfo) getIntent().getSerializableExtra("device_data");
+        isRegister = (boolean) getIntent().getSerializableExtra("isRegister");
 
         if (itemWatchInfo == null) {
             finish();
@@ -140,6 +142,12 @@ public class ActivityWatchInfo extends ActivityBase implements OnClickListener {
         //Setting the ArrayAdapter data on the Spinner
         spinnerRelation.setAdapter(arrayAdapter);
         spinnerRelation.setSelection(0);
+
+        if (isRegister){
+            tvInputDesc.setText(getString(R.string.str_fill_watch_user_register_info));
+        }else{
+            tvInputDesc.setText(getString(R.string.str_fill_watch_user_info));
+        }
 
         if (itemWatchInfo.userRelation != null && !itemWatchInfo.userRelation.isEmpty()) {
             for (int i = 0; i < relations.length; i++) {
@@ -292,16 +300,16 @@ public class ActivityWatchInfo extends ActivityBase implements OnClickListener {
     }
 
     private void checkValid() {
-        boolean bValid = false;
-        if (!itemWatchInfo.name.isEmpty() || !itemWatchInfo.phone.isEmpty() || !itemWatchInfo.birthday.isEmpty()) {
-            bValid = true;
-        }
+//        boolean bValid = true;
+//        if (itemWatchInfo.name.isEmpty() || itemWatchInfo.phone.isEmpty() || itemWatchInfo.birthday.isEmpty() || itemWatchInfo.sex == -1 || itemWatchInfo.address.isEmpty() || itemWatchInfo.) {
+//            bValid = false;
+//        }
 
-        if (bValid) {
-            tvInputDesc.setVisibility(View.INVISIBLE);
-        } else {
-            tvInputDesc.setVisibility(View.VISIBLE);
-        }
+//        if (bValid) {
+//            tvInputDesc.setVisibility(View.GONE);
+//        } else {
+//            tvInputDesc.setVisibility(View.VISIBLE);
+//        }
     }
 
     @SuppressLint("NonConstantResourceId")

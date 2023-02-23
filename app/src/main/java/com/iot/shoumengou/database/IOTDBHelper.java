@@ -76,12 +76,6 @@ public class IOTDBHelper extends SQLiteOpenHelper {
     private static final String COLUMN_WATCH_RESIDENCE = "residence";
     private static final String COLUMN_WATCH_ADDRESS = "address";
     private static final String COLUMN_WATCH_CHARGE_STATUS = "charge_status";
-    private static final String COLUMN_WATCH_CONTACT1_NAME = "sos_contact1_name";
-    private static final String COLUMN_WATCH_CONTACT1_PHONE = "sos_contact1_phone";
-    private static final String COLUMN_WATCH_CONTACT2_NAME = "sos_contact2_name";
-    private static final String COLUMN_WATCH_CONTACT2_PHONE = "sos_contact2_phone";
-    private static final String COLUMN_WATCH_CONTACT3_NAME = "sos_contact3_name";
-    private static final String COLUMN_WATCH_CONTACT3_PHONE = "sos_contact3_phone";
     private static final String COLUMN_WATCH_PRESSURE_LOW_LEFT_LIMIT = "pressure_low_left_limit";
     private static final String COLUMN_WATCH_PRESSURE_HIGH_LEFT_LIMIT = "pressure_high_left_limit";
     private static final String COLUMN_WATCH_PRESSURE_LOW_RIGHT_LIMIT = "pressure_low_right_limit";
@@ -199,12 +193,6 @@ public class IOTDBHelper extends SQLiteOpenHelper {
                 + COLUMN_WATCH_RESIDENCE + " TEXT,"
                 + COLUMN_WATCH_ADDRESS + " TEXT,"
                 + COLUMN_WATCH_CHARGE_STATUS + " INTEGER DEFAULT 0,"
-                + COLUMN_WATCH_CONTACT1_NAME + " TEXT,"
-                + COLUMN_WATCH_CONTACT1_PHONE + " TEXT,"
-                + COLUMN_WATCH_CONTACT2_NAME + " TEXT,"
-                + COLUMN_WATCH_CONTACT2_PHONE + " TEXT,"
-                + COLUMN_WATCH_CONTACT3_NAME + " TEXT,"
-                + COLUMN_WATCH_CONTACT3_PHONE + " TEXT,"
                 + COLUMN_WATCH_PRESSURE_LOW_LEFT_LIMIT + " INTEGER DEFAULT 0,"
                 + COLUMN_WATCH_PRESSURE_HIGH_LEFT_LIMIT + " INTEGER DEFAULT 0,"
                 + COLUMN_WATCH_PRESSURE_LOW_RIGHT_LIMIT + " INTEGER DEFAULT 0,"

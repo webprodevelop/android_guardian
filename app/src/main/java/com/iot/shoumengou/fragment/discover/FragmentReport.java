@@ -227,7 +227,8 @@ public class FragmentReport extends Fragment implements View.OnClickListener {
                 Objects.requireNonNull(parentFrag).pushChildFragment(new FragmentHealthSettings(), FragmentHealthSettings.class.getSimpleName());
                 break;
             case R.id.ID_TXTVIEW_SUPPORT:
-                onChartRequest();
+//                onChartRequest();
+                onConnectService();
                 break;
             case R.id.ID_TXTVIEW_CALL_PHONE:
                 onPhoneRequest();
@@ -244,9 +245,27 @@ public class FragmentReport extends Fragment implements View.OnClickListener {
                     new String[]{Manifest.permission.CALL_PHONE},
                     AppConst.REQUEST_PERMISSION_STORAGE
             );
-        } else {
+            return;
+        }
+
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:400-0909-119"));
+        Objects.requireNonNull(getActivity()).startActivity(intent);
+    }
+
+    private void onConnectService() {
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(
+                    getActivity(),
+                    new String[]{Manifest.permission.CALL_PHONE},
+                    AppConst.REQUEST_PERMISSION_STORAGE
+            );
+            return;
+        }
+        if (null != Util.servicePhone && !Util.servicePhone.isEmpty()){
             Intent intent = new Intent(Intent.ACTION_CALL);
-            intent.setData(Uri.parse("tel:400-0909-119"));
+//			intent.setData(Uri.parse("tel:400-0909-119"));
+            intent.setData(Uri.parse("tel:" + Util.servicePhone));
             Objects.requireNonNull(getActivity()).startActivity(intent);
         }
     }
